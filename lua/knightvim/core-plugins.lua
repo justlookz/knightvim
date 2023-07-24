@@ -107,4 +107,7 @@ return {
             vim.g.loaded_netrwPlugin = 1
         end,
     },
+
+    -- Trouble - Mostly for error handling and references
+    -- TODO: need to setup trouble
 }

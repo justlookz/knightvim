@@ -13,7 +13,7 @@ end
 if (vim.fn.exists( vim.fn.stdpath("config") .. "/lua/user/init.lua")) == 0 then
     local file = io.open( vim.fn.stdpath("config") .. "/lua/user/init.lua", "w")
     file:write(
-        "-- this is where you create your own configuration./n-- This is something that I am not gonna change here")
+        "-- this is where you create your own configuration./n-- This is something that I am not gonna change here/n")
     file:close()
 end
 
