@@ -5,13 +5,14 @@ kvim.plugins = {}
 kvim.builtins = {}
 kvim.lsp = {}
 kvim.lsp.local_include = {}
+kvim.lsp.ghost_text = true
 
-if (vim.fn.isdirectory( vim.fn.stdpath("config") .. "/lua/user")) == 0 then
-    vim.fn.mkdir( vim.fn.stdpath("config") ..  "/lua/user")
+if (vim.fn.isdirectory(vim.fn.stdpath("config") .. "/lua/user")) == 0 then
+    vim.fn.mkdir(vim.fn.stdpath("config") .. "/lua/user")
 end
 
-if (vim.fn.filereadable( vim.fn.stdpath("config") .. "/lua/user/init.lua")) == 0 then
-    local file = io.open( vim.fn.stdpath("config") .. "/lua/user/init.lua", "w")
+if (vim.fn.filereadable(vim.fn.stdpath("config") .. "/lua/user/init.lua")) == 0 then
+    local file = io.open(vim.fn.stdpath("config") .. "/lua/user/init.lua", "w")
     file:write(
         "-- this is where you create your own configuration./n-- This is something that I am not gonna change here/n")
     file:close()
