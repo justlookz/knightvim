@@ -2,7 +2,6 @@ kvim = {}
 kvim.theme = "rose-pine-moon"
 kvim.leader = " "
 kvim.plugins = {}
-kvim.builtins = {}
 kvim.lsp = {}
 kvim.lsp.local_include = {}
 kvim.lsp.ghost_text = true

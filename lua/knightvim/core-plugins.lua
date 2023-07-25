@@ -1,4 +1,4 @@
-return {
+local core = {
 
     -- telescope - for search
     {
@@ -111,3 +111,9 @@ return {
     -- Trouble - Mostly for error handling and references
     -- TODO: need to setup trouble
 }
+
+for k, v in ipairs(kvim.plugins) do
+    core[k] = v
+end
+
+return core
