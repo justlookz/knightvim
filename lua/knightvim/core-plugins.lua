@@ -106,10 +106,15 @@ local core = {
             vim.g.loaded_netrw = 1
             vim.g.loaded_netrwPlugin = 1
         end,
+        opts = {},
     },
 
     -- Trouble - Mostly for error handling and references
-    -- TODO: need to setup trouble
+    {
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        opts = {},
+    },
 }
 
 for k, v in ipairs(kvim.plugins) do

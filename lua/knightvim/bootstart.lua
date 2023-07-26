@@ -13,9 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(require "knightvim.core-plugins")
 
-
-require("nvim-tree").setup {}
-
 vim.cmd.colorscheme(kvim.theme)
 require('lualine').setup(require("knightvim.lualine"))
 
