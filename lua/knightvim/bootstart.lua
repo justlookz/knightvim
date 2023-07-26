@@ -18,5 +18,4 @@ require('lualine').setup(require("knightvim.lualine"))
 
 require("bufferline").setup {}
 require("knightvim.telescope")
-require "knightvim.telescope"
 require "knightvim.treesitter"
