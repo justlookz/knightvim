@@ -16,6 +16,7 @@ wk.register({
 nmap("<leader>", "<nop>", "Leader Menu")
 nmap("<leader>w", ":write<cr>", "Save")
 nmap("<leader>q", vim.cmd.qall, "Quit")
+nmap("<leader>c", vim.cmd.bdelete, "Quit")
 
 nmap("<leader>sf", require("telescope.builtin").find_files, "Find file")
 nmap("<leader>sh", require("telescope.builtin").help_tags, ":help options")
