@@ -21,10 +21,10 @@ o.ignorecase = true     -- Ignore case letters when search
 o.smartcase = true      -- Ignore lowercase for the whole pattern
 o.linebreak = true      -- Wrap on word boundary
 o.termguicolors = true  -- Enable 24-bit RGB colors
--- o.laststatus = 3        -- Set global statusline
+o.laststatus = 3        -- Set global statusline
 o.encoding = 'utf-8'
 o.confirm = true
--- o.signcolumn = 'auto'
+--o.signcolumn = 'no'
 o.shortmess = "I"
 
 

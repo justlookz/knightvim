@@ -3,8 +3,10 @@ local nmap = function(left, right, dsc)
     vim.keymap.set("n", left, right, opts)
 end
 
-local Telescope_builtins = require("telescope.builtin")
 local wk = require("which-key")
+
+nmap("H", vim.cmd.BufferLineCyclePrev, "Previous Buffer")
+nmap("L", vim.cmd.BufferLineCycleNext, "Next Buffer")
 
 wk.register({
     ["<leader>s"] = { name = "search" }
@@ -13,12 +15,10 @@ wk.register({
 nmap("<leader>", "<nop>", "Leader Menu")
 nmap("<leader>w", ":write<cr>", "Save")
 nmap("<leader>q", vim.cmd.qall, "Quit")
-nmap("H", vim.cmd.BufferLineCyclePrev, "Previous Buffer")
-nmap("L", vim.cmd.BufferLineCycleNext, "Next Buffer")
-nmap("<leader>sf", Telescope_builtins.find_files, "Find file")
-nmap("<leader>sh", Telescope_builtins.help_tags, ":help options")
+nmap("<leader>sf", require("telescope.builtin").find_files, "Find file")
+nmap("<leader>sh", require("telescope.builtin").help_tags, ":help options")
 nmap("<leader>sc", function()
-        Telescope_builtins.colorscheme({
+        require("telescope.builtin").colorscheme({
             enable_preview = true,
         })
     end,
