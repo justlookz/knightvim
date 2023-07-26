@@ -1,9 +1,9 @@
-require('lualine').setup {
+return {
     options = {
         icons_enabled = true,
-        theme = kvim.theme,
-        component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
+        theme = "auto",
+        component_separators = "|",
+        section_separators = { left = ' ', right = ' ' },
         disabled_filetypes = {
             statusline = {},
             winbar = {},

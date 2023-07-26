@@ -17,7 +17,7 @@ require("lazy").setup(require "knightvim.core-plugins")
 require("nvim-tree").setup {}
 
 vim.cmd.colorscheme(kvim.theme)
-require('lualine').setup("knightvim.lualine")
+require('lualine').setup(require("knightvim.lualine"))
 
 require("bufferline").setup {}
 require("knightvim.telescope")
