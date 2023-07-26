@@ -27,7 +27,7 @@ end)
 
 for k, v in ipairs(kvim.lsp.local_include) do
     require('lspconfig')[v].setup({
-        capabilities = lsp_capabilities,
+        capabilities = require('cmp_nvim_lsp').default_capabilities(),
     })
 end
 
