@@ -25,7 +25,7 @@ o.laststatus = 3        -- Set global statusline
 o.encoding = 'utf-8'
 o.confirm = true
 --o.signcolumn = 'no'
-o.shortmess = "I"
+o.shortmess = "IfilnxtToOF"
 
 
 -- Tabs, indent

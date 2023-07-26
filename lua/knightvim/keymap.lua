@@ -15,6 +15,7 @@ wk.register({
 nmap("<leader>", "<nop>", "Leader Menu")
 nmap("<leader>w", ":write<cr>", "Save")
 nmap("<leader>q", vim.cmd.qall, "Quit")
+
 nmap("<leader>sf", require("telescope.builtin").find_files, "Find file")
 nmap("<leader>sh", require("telescope.builtin").help_tags, ":help options")
 nmap("<leader>sh", require("telescope.builtin").filetypes, ":help options")
@@ -25,5 +26,8 @@ nmap("<leader>sc", function()
     end,
     "Colorscheme"
 )
+
 nmap("<leader>u", vim.cmd.UndotreeToggle, "Undo Tree Structure")
 nmap("<leader>e", vim.cmd.NvimTreeToggle, "File Explorer")
+
+nmap("<leader>t", require("trouble").open, "Open Trouble")
