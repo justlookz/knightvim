@@ -9,7 +9,8 @@ nmap("H", vim.cmd.BufferLineCyclePrev, "Previous Buffer")
 nmap("L", vim.cmd.BufferLineCycleNext, "Next Buffer")
 
 wk.register({
-    ["<leader>s"] = { name = "search" }
+    ["<leader>s"] = { name = "search" },
+    ["<leader>t"] = { name = "Trouble" }
 })
 
 nmap("<leader>", "<nop>", "Leader Menu")
@@ -18,7 +19,7 @@ nmap("<leader>q", vim.cmd.qall, "Quit")
 
 nmap("<leader>sf", require("telescope.builtin").find_files, "Find file")
 nmap("<leader>sh", require("telescope.builtin").help_tags, ":help options")
-nmap("<leader>sh", require("telescope.builtin").filetypes, ":help options")
+nmap("<leader>st", require("telescope.builtin").filetypes, ":help options")
 nmap("<leader>sc", function()
         require("telescope.builtin").colorscheme({
             enable_preview = true,
@@ -30,4 +31,9 @@ nmap("<leader>sc", function()
 nmap("<leader>u", vim.cmd.UndotreeToggle, "Undo Tree Structure")
 nmap("<leader>e", vim.cmd.NvimTreeToggle, "File Explorer")
 
-nmap("<leader>t", require("trouble").open, "Open Trouble")
+nmap("<leader>tt", require("trouble").open, "Open Trouble")
+nmap("<leader>td", function()
+        require("trouble").open("todo")
+    end,
+    "Todos"
+)
