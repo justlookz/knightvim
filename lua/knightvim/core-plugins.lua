@@ -58,14 +58,18 @@ local core = {
     { "lukas-reineke/lsp-format.nvim" },
     {
         "p00f/clangd_extensions.nvim",
-        ft = { "c", "cpp", "h", "hpp", "C", "H" },
+        ft = { "c", "cpp", "cuda", },
         version = "*",
         lazy = true,
 
     },
 
     -- Bufferline - Title bars
-    { 'akinsho/bufferline.nvim',      version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
+    { 'akinsho/bufferline.nvim',
+    version = "*",
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    opts = {},
+},
 
     -- Auto close bracket
     {
