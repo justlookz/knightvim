@@ -1,10 +1,18 @@
 local lsp = require('lsp-zero').preset({})
 
+local auto_installed = function()
+    if kvim.lsp.auto_install then
+        return kvim.lsp.local_include
+    end
+    return false
+end
+
 require 'mason'.setup()
 require('mason-lspconfig').setup({
-    automatic_installation = kvim.lsp.local_include,
+    automatic_installation = auto_installed(),
     handlers = { lsp.default_setup },
 })
+
 lsp.skip_server_setup(kvim.lsp.local_include)
 
 lsp.on_attach(function(client, bufnr)

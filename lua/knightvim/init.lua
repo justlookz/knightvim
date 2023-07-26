@@ -5,6 +5,7 @@ kvim.plugins = {}
 kvim.lsp = {}
 kvim.lsp.local_include = {}
 kvim.lsp.ghost_text = true
+kvim.lsp.auto_install = true
 
 
 local user_path = vim.fn.stdpath("config") .. "/lua/user"
