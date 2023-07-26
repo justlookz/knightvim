@@ -17,6 +17,7 @@ nmap("<leader>w", ":write<cr>", "Save")
 nmap("<leader>q", vim.cmd.qall, "Quit")
 nmap("<leader>sf", require("telescope.builtin").find_files, "Find file")
 nmap("<leader>sh", require("telescope.builtin").help_tags, ":help options")
+nmap("<leader>sh", require("telescope.builtin").filetypes, ":help options")
 nmap("<leader>sc", function()
         require("telescope.builtin").colorscheme({
             enable_preview = true,

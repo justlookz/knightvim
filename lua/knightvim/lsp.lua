@@ -21,8 +21,8 @@ lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
     lsp.buffer_autoformat()
     omit = { "gd, gD" }
-    vim.keymap.set('n', 'gd', ':Telescope lsp_definitions<cr>', { buffer = true })
-    vim.keymap.set('n', 'gD', ":Telescope lsp_implementations<cr>", { buffer = true })
+    vim.keymap.set('n', 'gd', require("telescope.builtin").lsp_definitions, { buffer = true })
+    vim.keymap.set('n', 'gD', require("telescope.builtin").lsp_implementations, { buffer = true })
 end)
 
 for k, v in ipairs(kvim.lsp.local_include) do
