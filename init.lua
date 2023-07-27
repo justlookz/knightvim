@@ -1,1 +1,1 @@
-require ("knightvim")
+require("knightvim")

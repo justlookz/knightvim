@@ -10,7 +10,8 @@ nmap("L", vim.cmd.BufferLineCycleNext, "Next Buffer")
 
 wk.register({
     ["<leader>s"] = { name = "search" },
-    ["<leader>t"] = { name = "Trouble" }
+    ["<leader>t"] = { name = "Trouble" },
+    ["<leader>sg"] = { name = "Git" }
 })
 
 nmap("<leader>", "<nop>", "Leader Menu")
@@ -21,6 +22,9 @@ nmap("<leader>c", vim.cmd.bdelete, "Quit")
 nmap("<leader>sf", require("telescope.builtin").find_files, "Find file")
 nmap("<leader>sh", require("telescope.builtin").help_tags, ":help options")
 nmap("<leader>st", require("telescope.builtin").filetypes, ":help options")
+nmap("<leader>sgf", require("telescope.builtin").git_files, "Find file")
+
+
 nmap("<leader>sc", function()
         require("telescope.builtin").colorscheme({
             enable_preview = true,
