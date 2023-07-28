@@ -42,6 +42,8 @@ nmap("<leader>sh", require("telescope.builtin").help_tags, ":help options")
 nmap("<leader>st", require("telescope.builtin").filetypes, "filetypes")
 nmap("<leader>sw", require("telescope.builtin").live_grep, "Find words")
 nmap("<leader>sgf", require("telescope.builtin").git_files, "Find file")
+nmap("<leader>sgw", require("telescope.builtin").grep_string, "Find words")
+nmap("<leader>sgc", require("telescope.builtin").git_commits, "Find commit")
 
 
 nmap("<leader>sc", function()
