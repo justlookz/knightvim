@@ -39,7 +39,8 @@ nmap("<leader>bj", function()
 
 nmap("<leader>sf", require("telescope.builtin").find_files, "Find file")
 nmap("<leader>sh", require("telescope.builtin").help_tags, ":help options")
-nmap("<leader>st", require("telescope.builtin").filetypes, ":help options")
+nmap("<leader>st", require("telescope.builtin").filetypes, "filetypes")
+nmap("<leader>sw", require("telescope.builtin").live_grep, "Find words")
 nmap("<leader>sgf", require("telescope.builtin").git_files, "Find file")
 
 
