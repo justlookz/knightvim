@@ -45,7 +45,7 @@ local core = {
         },
     },
 
-    -- Premade snippets
+    -- friendly-snippets - Premade snippets
     { "rafamadriz/friendly-snippets" },
 
     -- Theme Rose pine
@@ -107,6 +107,7 @@ local core = {
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },
+        -- opts are ignored with config
         config = function()
             require("nvim-tree").setup()
             vim.g.loaded_netrw = 1
