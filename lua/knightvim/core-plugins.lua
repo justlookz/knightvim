@@ -134,6 +134,12 @@ local core = {
         opts = {}
     },
 
+    -- Gitsign - Github integration
+    {
+        "lewis6991/gitsigns.nvim",
+        opts = {}
+    },
+
 }
 
 for k, v in ipairs(kvim.plugins) do
