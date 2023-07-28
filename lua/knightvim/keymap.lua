@@ -61,3 +61,13 @@ nmap("<leader>td", function()
     end,
     "Todos"
 )
+nmap("<leader>tq", function()
+        require("trouble").open("quickfix")
+    end,
+    "Quickfix"
+)
+nmap("<leader>tw", function()
+        require("trouble").open("workspace_diagnostics")
+    end,
+    "Workspace Diagnostics"
+)
