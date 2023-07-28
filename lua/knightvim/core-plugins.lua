@@ -127,6 +127,12 @@ local core = {
         opts = {}
     },
 
+    -- nvim-treesitter-context - for persistent headers
+    {
+        "nvim-treesitter/nvim-treesitter-context",
+        opts = {}
+    },
+
 }
 
 for k, v in ipairs(kvim.plugins) do
