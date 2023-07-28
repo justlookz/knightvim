@@ -65,11 +65,12 @@ local core = {
     },
 
     -- Bufferline - Title bars
-    { 'akinsho/bufferline.nvim',
-    version = "*",
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    opts = {},
-},
+    {
+        'akinsho/bufferline.nvim',
+        version = "*",
+        dependencies = 'nvim-tree/nvim-web-devicons',
+        opts = {},
+    },
 
     -- Auto close bracket
     {
@@ -119,6 +120,13 @@ local core = {
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {},
     },
+
+    -- Colorizer - For colors
+    {
+        'NvChad/nvim-colorizer.lua',
+        opts = {}
+    },
+
 }
 
 for k, v in ipairs(kvim.plugins) do
