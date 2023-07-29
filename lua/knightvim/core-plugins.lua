@@ -48,11 +48,17 @@ local core = {
     -- friendly-snippets - Premade snippets
     { "rafamadriz/friendly-snippets" },
 
-    -- Theme Rose pine
+    -- Theme Rose pine - Theme
     { 'rose-pine/neovim',            name = 'rose-pine' },
+
+    --Embark - Theme
+    { 'embark-theme/vim',            name = 'embark' },
+
+    --lualine - Bottom bar
     {
         'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+        opts = { require("knightvim.lualine") }
     },
 
     { "lukas-reineke/lsp-format.nvim" },
