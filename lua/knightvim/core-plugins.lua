@@ -17,7 +17,7 @@ local core = {
     },
     {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
+        branch = 'v2.x',
         dependencies = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' }, -- Required
