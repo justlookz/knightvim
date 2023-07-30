@@ -11,6 +11,11 @@ replace nvim for other name if wanted to use with
 ```text
 $XDG_HOME_APP
 ```
+by creating an alias
+```bash
+alias kvim='$XDG_HOME_APP="~/.config/name-of-folder kvim"
+```
+replace name-of-folder with whatever name 
 
 
 # Disclamer
