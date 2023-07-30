@@ -7,6 +7,14 @@ cd ~/.config/
 git clone https://github.com/justlookz/knightvim ~/.config/nvim
 ```
 
+for windows 
+
+```powershell
+git clone https://github.com/justlookz/knightvim $env:LOCALAPPDATA\nvim
+nvim
+
+```
+
 replace nvim for other name if wanted to use with
 ```text
 $NVIM_APPNAME
