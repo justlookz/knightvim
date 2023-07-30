@@ -9,11 +9,11 @@ git clone https://github.com/justlookz/knightvim ~/.config/nvim
 
 replace nvim for other name if wanted to use with
 ```text
-$XDG_HOME_APP
+$NVIM_APPNAME
 ```
 by creating an alias
 ```bash
-alias kvim='$XDG_HOME_APP="~/.config/name-of-folder kvim"
+alias kvim='$NVIM_APPNAME="~/.config/name-of-folder kvim"
 ```
 replace name-of-folder with whatever name 
 
