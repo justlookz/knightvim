@@ -15,10 +15,13 @@ wk.register({
     ["<leader>b"] = { name = "Buffer" }
 })
 
+-- Basic Keymaps
 nmap("<leader>", "<nop>", "Leader Menu")
 nmap("<leader>w", ":write<cr>", "Save")
 nmap("<leader>q", vim.cmd.qall, "Quit")
 nmap("<leader>c", vim.cmd.bdelete, "Quit")
+
+-- buffer swapping
 nmap("<leader>bh", function()
         vim.cmd.wincmd("h")
     end,
@@ -37,26 +40,73 @@ nmap("<leader>bj", function()
     "go below")
 
 
-nmap("<leader>sf", require("telescope.builtin").find_files, "Find file")
-nmap("<leader>sh", require("telescope.builtin").help_tags, ":help options")
-nmap("<leader>st", require("telescope.builtin").filetypes, "filetypes")
-nmap("<leader>sw", require("telescope.builtin").live_grep, "Find words")
-nmap("<leader>sgf", require("telescope.builtin").git_files, "Find file")
-nmap("<leader>sgw", require("telescope.builtin").grep_string, "Find words")
-nmap("<leader>sgc", require("telescope.builtin").git_commits, "Find commit")
+-- Telescope Searches
+nmap("<leader>sf", function()
+        require("telescope.builtin")
+            .find_files(require("telescope.themes").get_dropdown())
+    end,
+    "Find file")
+
+nmap("<leader>sh", function()
+        require("telescope.builtin")
+            .help_tags(require("telescope.themes")
+                .get_dropdown())
+    end,
+    ":help options")
+
+nmap("<leader>st", function()
+    require("telescope.builtin")
+        .filetypes(require("telescope.themes")
+            .get_dropdown())
+end
+, "filetypes")
+
+nmap("<leader>sw", function()
+        require("telescope.builtin")
+            .live_grep(require("telescope.themes")
+                .get_dropdown())
+    end,
+    "Find words")
+
+nmap("<leader>sgf", function()
+        require("telescope.builtin")
+            .git_files(require("telescope.themes")
+                .get_dropdown())
+    end,
+    "Find file")
+
+nmap("<leader>sgw", function()
+        -- code
+        require("telescope.builtin")
+            .grep_string(require("telescope.themes")
+                .get_dropdown())
+    end,
+    "Find words")
+
+nmap("<leader>sgc", function()
+        require("telescope.builtin")
+            .git_commits(require("telescope.themes")
+                .get_dropdown())
+    end,
+    "Find commit")
 
 
 nmap("<leader>sc", function()
-        require("telescope.builtin").colorscheme({
-            enable_preview = true,
-        })
+        require("telescope.builtin").colorscheme(require("telescope.themes")
+            .get_dropdown({
+                enable_preview = true,
+            }))
     end,
     "Colorscheme"
 )
 
+-- Undo Tree
 nmap("<leader>u", vim.cmd.UndotreeToggle, "Undo Tree Structure")
+
+-- File Explorer
 nmap("<leader>e", vim.cmd.NvimTreeToggle, "File Explorer")
 
+-- Trouble Debug menu
 nmap("<leader>tt", require("trouble").open, "Open Trouble")
 nmap("<leader>td", function()
         require("trouble").open("todo")
