@@ -1,5 +1,5 @@
 kvim = {}
-kvim.theme = "embark"
+kvim.theme = "palenight"
 kvim.leader = " "
 kvim.plugins = {}
 kvim.lsp = {}

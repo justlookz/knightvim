@@ -54,6 +54,15 @@ local core = {
     --Embark - Theme
     { 'embark-theme/vim',            name = 'embark' },
 
+    -- Starry Collection - Themes
+    {'ray-x/starry.nvim'},
+
+    -- Tokyo-night - Theme
+    { "folke/tokyonight.nvim", },
+
+    -- Nordic - Theme
+    {'andersevenrud/nordic.nvim'},
+
     --lualine - Bottom bar
     {
         'nvim-lualine/lualine.nvim',
