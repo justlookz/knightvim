@@ -49,25 +49,31 @@ local core = {
     { "rafamadriz/friendly-snippets" },
 
     -- Theme Rose pine - Theme
-    { 'rose-pine/neovim',            name = 'rose-pine' },
+    {
+        'rose-pine/neovim',
+        name = 'rose-pine'
+    },
 
     --Embark - Theme
-    { 'embark-theme/vim',            name = 'embark' },
+    {
+        'embark-theme/vim',
+        name = 'embark'
+    },
 
     -- Starry Collection - Themes
-    {'ray-x/starry.nvim'},
+    { 'ray-x/starry.nvim' },
 
     -- Tokyo-night - Theme
     { "folke/tokyonight.nvim", },
 
     -- Nordic - Theme
-    {'andersevenrud/nordic.nvim'},
+    { 'andersevenrud/nordic.nvim' },
 
     --lualine - Bottom bar
     {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true },
-        opts = { require("knightvim.lualine") }
+        opts = require("knightvim.lualine"),
     },
 
     { "lukas-reineke/lsp-format.nvim" },
