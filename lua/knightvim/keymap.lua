@@ -12,7 +12,7 @@ wk.register({
     ["<leader>s"] = { name = "search" },
     ["<leader>t"] = { name = "Trouble" },
     ["<leader>sg"] = { name = "Git" },
-    ["<leader>b"] = { name = "Buffer" }
+    --["<leader>b"] = { name = "Buffer" }
 })
 
 -- Basic Keymaps
@@ -22,19 +22,22 @@ nmap("<leader>q", vim.cmd.qall, "Quit")
 nmap("<leader>c", vim.cmd.bdelete, "Quit")
 
 -- buffer swapping
-nmap("<leader>bh", function()
+nmap("<C-h>", function()
         vim.cmd.wincmd("h")
     end,
     "goto left")
-nmap("<leader>bl", function()
+
+nmap("<C-l>", function()
         vim.cmd.wincmd("l")
     end,
     "goto right")
-nmap("<leader>bk", function()
+
+nmap("<C-k>", function()
         vim.cmd.wincmd("k")
     end,
     "go above")
-nmap("<leader>bj", function()
+
+nmap("<C-j>", function()
         vim.cmd.wincmd("j")
     end,
     "go below")
@@ -89,7 +92,6 @@ nmap("<leader>sgc", function()
                 .get_dropdown())
     end,
     "Find commit")
-
 
 nmap("<leader>sc", function()
         require("telescope.builtin").colorscheme(require("telescope.themes")
