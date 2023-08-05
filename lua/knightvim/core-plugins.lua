@@ -27,7 +27,7 @@ local core = {
             { -- Optional
                 'williamboman/mason.nvim',
                 build = function()
-                    pcall(vim.cmd, 'MasonUpdate')
+                    require("knightvim.treesitter")
                 end,
             },
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
