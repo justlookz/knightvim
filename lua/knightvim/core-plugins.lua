@@ -17,11 +17,14 @@ local core = {
     },
     {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
+        branch = 'v2.x'
+    },
+    -- LSP Support
+    {
+        'neovim/nvim-lspconfig', -- Required
         dependencies = {
-            -- LSP Support
-            { 'neovim/nvim-lspconfig' }, -- Required
-            {                            -- Optional
+
+            { -- Optional
                 'williamboman/mason.nvim',
                 build = function()
                     pcall(vim.cmd, 'MasonUpdate')
