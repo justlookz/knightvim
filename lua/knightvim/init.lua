@@ -18,7 +18,8 @@ if (vim.fn.filereadable(user_init_path)) == 0 then
     local file = io.open(user_init_path, "w")
     if file == nil then return end
     file:write(
-        "-- this is where you create your own configuration./n-- This is something that I am not gonna change here/n")
+        "-- this is where you create your own configuration./n-- This is something that I am not gonna change here/n"
+    )
     file:close()
 end
 

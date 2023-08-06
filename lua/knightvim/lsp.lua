@@ -48,7 +48,8 @@ local cmp_action = require('lsp-zero').cmp_action()
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 
-require('luasnip.loaders.from_vscode').lazy_load()
+require('luasnip.loaders.from_vscode')
+    .lazy_load()
 
 cmp.setup({
     sources = {

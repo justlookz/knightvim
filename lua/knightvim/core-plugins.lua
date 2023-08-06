@@ -4,7 +4,13 @@ local core = {
     {
         "nvim-telescope/telescope.nvim",
         branch = '0.1.x',
-        dependencies = { 'nvim-lua/plenary.nvim' }
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope-fzf-native.nvim'
+        },
+        config = function()
+            require("knightvim.telescope")
+        end
     },
 
     -- treesitter - for highlighting
@@ -134,6 +140,8 @@ local core = {
         -- opts are ignored with config
         config = function()
             require("nvim-tree").setup()
+            -- ensures that the Explorer and nvim-tree doesnt crash
+            -- each other
             vim.g.loaded_netrw = 1
             vim.g.loaded_netrwPlugin = 1
         end,
@@ -167,5 +175,4 @@ local core = {
 }
 
 vim.tbl_extend("force", core, kvim.plugins)
-
 return core

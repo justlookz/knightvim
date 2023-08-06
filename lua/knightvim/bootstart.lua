@@ -14,5 +14,3 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup(require "knightvim.core-plugins")
 
 vim.cmd.colorscheme(kvim.theme)
-
-require("knightvim.telescope")
