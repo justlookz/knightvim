@@ -166,8 +166,6 @@ local core = {
 
 }
 
-for k, v in ipairs(kvim.plugins) do
-    core[k] = v
-end
+vim.tbl_extend("force", core, kvim.plugins)
 
 return core
