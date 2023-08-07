@@ -21,10 +21,6 @@ local core = {
             ts_update()
         end,
     },
-    {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x'
-    },
     -- LSP Support
     {
         'neovim/nvim-lspconfig', -- Required
