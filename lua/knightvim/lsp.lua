@@ -25,6 +25,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
             { buffer = args.buf, desc = "Definitions from lsp" })
 
         vim.keymap.set(
+            'n', '<leader>std',
+            require("telescope.builtin")
+            .lsp_type_definitions,
+            { buffer = args.buf, desc = "Type definitions from lsp" })
+
+        vim.keymap.set(
             'n', '<leader>si',
             require("telescope.builtin")
             .lsp_implementations,
@@ -38,6 +44,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set(
             'n', 'gd',
             vim.lsp.buf.definition,
+            { buffer = args.buf, desc = 'Definition from lsp' })
+
+        vim.keymap.set(
+            'n', 'gtd',
+            vim.lsp.buf.type_definition,
             { buffer = args.buf, desc = 'Definition from lsp' })
 
         vim.keymap.set(

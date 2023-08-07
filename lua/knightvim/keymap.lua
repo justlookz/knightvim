@@ -57,7 +57,7 @@ nmap("<leader>sh", function()
     end,
     ":help options")
 
-nmap("<leader>st", function()
+nmap("<leader>sy", function()
     require("telescope.builtin")
         .filetypes(require("telescope.themes")
             .get_dropdown())
