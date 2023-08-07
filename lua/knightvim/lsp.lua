@@ -2,7 +2,7 @@ local auto_installed = function()
     if kvim.lsp.auto_install then
         return kvim.lsp.local_include
     end
-    return false
+    return true
 end
 
 
@@ -11,6 +11,7 @@ require('mason-lspconfig').setup({
     automatic_installation = auto_installed(),
 })
 
+-- Keymaps for Lsp - If not lsp exist no keymap exists
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(args)
         vim.keymap.set(
@@ -64,14 +65,31 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     end,
 })
 
-for k, v in ipairs(kvim.lsp.local_include) do
-    require('lspconfig')[v].setup({
-        capabilities = require('cmp_nvim_lsp').default_capabilities(),
-    })
+
+-- Activate LspServers -----------------------
+local lsp_server = require("mason-lspconfig")
+    .get_installed_servers()
+
+if lsp_server ~= nil then
+    for k, v in ipairs(lsp_server) do
+        require('lspconfig')[v].setup({
+            capabilities = require('cmp_nvim_lsp')
+                .default_capabilities(),
+        })
+    end
 end
 
--- Make sure you setup `cmp` after lsp-zero
+if kvim.lsp.local_include ~= nil then
+    for k, v in ipairs(kvim.lsp.local_include) do
+        require('lspconfig')[v].setup({
+            capabilities = require('cmp_nvim_lsp')
+                .default_capabilities(),
+        })
+    end
+end
+----------------------------------------------
 
+-- Autoclose Brackets
 require('nvim-autopairs').setup({
     ignored_next_char = "[%w%.]", -- will ignore alphanumeric and `.` symbol
     -- enable_check_bracket_line = false
@@ -88,7 +106,9 @@ require('luasnip.loaders.from_vscode')
 
 local has_words_before = function()
     unpack = unpack or table.unpack
-    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    local line, col = unpack(
+        vim.api.nvim_win_get_cursor(0)
+    )
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
