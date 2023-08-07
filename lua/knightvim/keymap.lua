@@ -9,7 +9,7 @@ nmap("H", vim.cmd.BufferLineCyclePrev, "Previous Buffer")
 nmap("L", vim.cmd.BufferLineCycleNext, "Next Buffer")
 
 wk.register({
-    ["<leader>s"] = { name = "search" },
+    ["<leader>s"] = { name = "Search" },
     ["<leader>t"] = { name = "Trouble" },
     ["<leader>sg"] = { name = "Git" },
     --["<leader>b"] = { name = "Buffer" }
