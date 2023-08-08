@@ -13,6 +13,8 @@ wk.register({
     ["<leader>t"] = { name = "Trouble" },
     ["<leader>sg"] = { name = "Git" },
     gt = "Goto type...",
+    ["v]"] = "Match forward ...",
+    ["v["] = "Match Backward ...",
 })
 
 -- Basic Keymaps
