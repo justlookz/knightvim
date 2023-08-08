@@ -5,7 +5,6 @@ local auto_installed = function()
     return true
 end
 
-
 require 'mason'.setup()
 require('mason-lspconfig').setup({
     automatic_installation = auto_installed(),
@@ -113,10 +112,16 @@ local has_words_before = function()
 end
 
 cmp.setup({
+    snippet = {
+        -- REQUIRED - you must specify a snippet engine
+        expand = function(args)
+            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        end,
+    },
     sources = {
         { name = "nvim_lua" },
-        { name = 'luasnip' },
         { name = 'nvim_lsp', },
+        { name = 'luasnip' },
         { name = "path", },
         -- { name = "cmdline" },
         { name = "buffer", },
