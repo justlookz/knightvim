@@ -78,20 +78,27 @@ nmap("<leader>sgf", function()
     end,
     "Find file")
 
+nmap("<leader>sgc", function()
+        require("telescope.builtin")
+            .git_commits(require("telescope.themes")
+                .get_dropdown())
+    end,
+    "Find Commits on project")
+
+nmap("<leader>sgb", function()
+        require("telescope.builtin")
+            .git_bcommits(require("telescope.themes")
+                .get_dropdown())
+    end,
+    "Find Commits on buffer")
+
 nmap("<leader>sgw", function()
         -- code
         require("telescope.builtin")
             .grep_string(require("telescope.themes")
                 .get_dropdown())
     end,
-    "Find words")
-
-nmap("<leader>sgc", function()
-        require("telescope.builtin")
-            .git_commits(require("telescope.themes")
-                .get_dropdown())
-    end,
-    "Find commit")
+    "Find words in project")
 
 nmap("<leader>sc", function()
         require("telescope.builtin").colorscheme(require("telescope.themes")
