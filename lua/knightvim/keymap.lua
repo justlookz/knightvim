@@ -5,23 +5,24 @@ end
 
 local wk = require("which-key")
 
-nmap("H", vim.cmd.BufferLineCyclePrev, "Previous Buffer")
-nmap("L", vim.cmd.BufferLineCycleNext, "Next Buffer")
-
 wk.register({
-    ["<leader>s"] = { name = "Search" },
-    ["<leader>t"] = { name = "Trouble" },
-    ["<leader>sg"] = { name = "Git" },
-    gt = "Goto type...",
+    ["<leader>s"] = "Search",
+    ["<leader>t"] = "Trouble",
+    ["<leader>sg"] = "Git",
+    ["gt"] = "Goto type...",
     ["v]"] = "Match forward ...",
     ["v["] = "Match Backward ...",
 })
+
 
 -- Basic Keymaps
 nmap("<leader>", "<nop>", "Leader Menu")
 nmap("<leader>w", ":write<cr>", "Save")
 nmap("<leader>q", vim.cmd.qall, "Quit")
 nmap("<leader>c", vim.cmd.bdelete, "Quit")
+nmap("H", vim.cmd.BufferLineCyclePrev, "Previous Buffer")
+nmap("L", vim.cmd.BufferLineCycleNext, "Next Buffer")
+
 
 -- buffer swapping
 nmap("<C-h>", function()
@@ -52,6 +53,13 @@ nmap("<leader>sf", function()
     end,
     "Find file")
 
+nmap("<leader>se", function()
+        require("telescope.builtin")
+            .treesitter(require("telescope.themes").get_dropdown())
+    end,
+    "Treesitter Scope")
+
+
 nmap("<leader>sh", function()
         require("telescope.builtin")
             .help_tags(require("telescope.themes")
@@ -73,6 +81,7 @@ nmap("<leader>sw", function()
     end,
     "Find words")
 
+-- Telescope for git
 nmap("<leader>sgf", function()
         require("telescope.builtin")
             .git_files(require("telescope.themes")
@@ -111,11 +120,14 @@ nmap("<leader>sc", function()
     "Colorscheme"
 )
 
+
 -- Undo Tree
 nmap("<leader>u", vim.cmd.UndotreeToggle, "Undo Tree Structure")
 
+
 -- File Explorer
 nmap("<leader>e", vim.cmd.NvimTreeToggle, "File Explorer")
+
 
 -- Trouble Debug menu
 nmap("<leader>tt", require("trouble").open, "Open Trouble")
