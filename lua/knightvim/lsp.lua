@@ -47,6 +47,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
             { buffer = args.buf, desc = 'Definition from lsp' })
 
         vim.keymap.set(
+            'n', 'gc',
+            vim.lsp.buf.code_action,
+            { buffer = args.buf, desc = 'Code actions from lsp' })
+
+        vim.keymap.set(
             'n', 'gtd',
             vim.lsp.buf.type_definition,
             { buffer = args.buf, desc = 'Definition from lsp' })
@@ -70,7 +75,7 @@ local lsp_server = require("mason-lspconfig")
     .get_installed_servers()
 
 if lsp_server ~= nil then
-    for k, v in ipairs(lsp_server) do
+    for _, v in ipairs(lsp_server) do
         require('lspconfig')[v].setup({
             capabilities = require('cmp_nvim_lsp')
                 .default_capabilities(),
@@ -79,7 +84,7 @@ if lsp_server ~= nil then
 end
 
 if kvim.lsp.local_include ~= nil then
-    for k, v in ipairs(kvim.lsp.local_include) do
+    for _, v in ipairs(kvim.lsp.local_include) do
         require('lspconfig')[v].setup({
             capabilities = require('cmp_nvim_lsp')
                 .default_capabilities(),
@@ -135,8 +140,6 @@ cmp.setup({
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-                -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-                -- they way you will only jump inside the snippet region
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
             elseif has_words_before() then
@@ -155,8 +158,10 @@ cmp.setup({
                 fallback()
             end
         end, { "i", "s" }),
+
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
+
     experimental = { ghost_text = kvim.lsp.ghost_text, },
 })
 

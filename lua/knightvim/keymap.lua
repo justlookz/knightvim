@@ -12,7 +12,7 @@ wk.register({
     ["<leader>s"] = { name = "Search" },
     ["<leader>t"] = { name = "Trouble" },
     ["<leader>sg"] = { name = "Git" },
-    --["<leader>b"] = { name = "Buffer" }
+    gt = "Goto type...",
 })
 
 -- Basic Keymaps
