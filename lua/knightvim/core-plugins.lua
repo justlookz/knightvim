@@ -169,7 +169,7 @@ local core = {
     -- Gitsign - Github integration
     {
         "lewis6991/gitsigns.nvim",
-        opts = {}
+        opts = require("knightvim.gitsign")
     },
 
 }
