@@ -26,7 +26,31 @@ return {
             noremap = true,
             desc = "Previous Hunk"
         })
+
+        vim.keymap.set(
+            'n', '<leader>ugs',
+            function()
+                vim.cmd.Gitsigns("toggle_signs")
+            end,
+            {
+                buffer = bufnr,
+                desc = "Toggle signs",
+                noremap = true,
+            })
+
+        vim.keymap.set(
+            'n', '<leader>ugn',
+            function()
+                vim.cmd.Gitsigns("toggle_numhl")
+            end,
+            {
+                buffer = bufnr,
+                desc = "Toggle Number Highlighting for sign",
+                noremap = true,
+            })
     end,
+
+    -- settings
     signs                        = {
         add          = { text = '│' },
         change       = { text = '│' },
@@ -50,7 +74,10 @@ return {
         delay = 1000,
         ignore_whitespace = false,
     },
-    current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
+
+    current_line_blame_formatter =
+    '<author>, <author_time:%Y-%m-%d> - <summary>',
+
     sign_priority                = 6,
     update_debounce              = 100,
     status_formatter             = nil,   -- Use default

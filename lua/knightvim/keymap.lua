@@ -9,6 +9,9 @@ wk.register({
     ["<leader>s"] = "Search",
     ["<leader>t"] = "Trouble",
     ["<leader>sg"] = "Git",
+    ["<leader>u"] = "ui settings",
+    ["<leader>ug"] = "Git signs",
+
     ["gt"] = "Goto type...",
     ["v]"] = "Match forward ...",
     ["v["] = "Match Backward ...",
