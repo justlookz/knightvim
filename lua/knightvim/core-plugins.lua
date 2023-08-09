@@ -13,6 +13,7 @@ local core = {
         end
     },
 
+
     -- treesitter - for highlighting
     {
         'nvim-treesitter/nvim-treesitter',
@@ -21,6 +22,8 @@ local core = {
             ts_update()
         end,
     },
+
+
     -- LSP Support
     {
         'neovim/nvim-lspconfig', -- Required
@@ -53,6 +56,7 @@ local core = {
     -- friendly-snippets - Premade snippets
     { "rafamadriz/friendly-snippets" },
 
+
     -- Theme Rose pine - Theme
     {
         'rose-pine/neovim',
@@ -74,6 +78,7 @@ local core = {
     -- Nordic - Theme
     { 'andersevenrud/nordic.nvim' },
 
+
     --lualine - Bottom bar
     {
         'nvim-lualine/lualine.nvim',
@@ -82,13 +87,7 @@ local core = {
     },
 
     { "lukas-reineke/lsp-format.nvim" },
-    {
-        "p00f/clangd_extensions.nvim",
-        ft = { "c", "cpp", "cuda", },
-        version = "*",
-        lazy = true,
 
-    },
 
     -- Bufferline - Title bars
     {
@@ -97,6 +96,7 @@ local core = {
         dependencies = 'nvim-tree/nvim-web-devicons',
         opts = {},
     },
+
 
     -- Auto close bracket
     {
@@ -118,12 +118,14 @@ local core = {
     -- Fzf
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 
+
     -- todo-comments - for comments highlightin
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         opts = {},
     },
+
 
     -- Neovim-Tree - File Explorer
     {
@@ -136,12 +138,11 @@ local core = {
         -- opts are ignored with config
         config = function()
             require("nvim-tree").setup()
-            -- ensures that the Explorer and nvim-tree doesnt crash
-            -- each other
             vim.g.loaded_netrw = 1
             vim.g.loaded_netrwPlugin = 1
         end,
     },
+
 
     -- Trouble - Mostly for error handling and references
     {
@@ -150,17 +151,20 @@ local core = {
         opts = {},
     },
 
+
     -- Colorizer - For colors
     {
         'NvChad/nvim-colorizer.lua',
         opts = {}
     },
 
+
     -- nvim-treesitter-context - for persistent headers
     {
         "nvim-treesitter/nvim-treesitter-context",
         opts = {}
     },
+
 
     -- Gitsign - Github integration
     {
