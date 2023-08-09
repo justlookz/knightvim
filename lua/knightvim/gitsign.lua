@@ -48,6 +48,17 @@ return {
                 desc = "Toggle Number Highlighting for sign",
                 noremap = true,
             })
+
+        vim.keymap.set(
+            'n', '<leader>ugc',
+            function()
+                vim.cmd.Gitsigns("toggle_current_line_blame")
+            end,
+            {
+                buffer = bufnr,
+                desc = "Toggle Current line blame",
+                noremap = true,
+            })
     end,
 
     -- settings
