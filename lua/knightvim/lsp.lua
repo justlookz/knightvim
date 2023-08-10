@@ -47,6 +47,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
             { buffer = args.buf, desc = 'Definition from lsp' })
 
         vim.keymap.set(
+            'n', 'gm',
+            vim.lsp.buf.implementation,
+            {
+                buffer = args.buf,
+                desc = 'Implementation from lsp',
+                noremap = true,
+            })
+
+        vim.keymap.set(
             'n', 'gc',
             vim.lsp.buf.code_action,
             { buffer = args.buf, desc = 'Code actions from lsp' })
@@ -70,7 +79,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
             'n', '[d',
             vim.diagnostic.goto_prev,
             { buffer = args.buf, desc = "Previous diagnostic" })
-    end,
+    end, -- callback end
 })
 
 vim.api.nvim_create_autocmd('BufWritePre', {
