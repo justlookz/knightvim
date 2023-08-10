@@ -60,6 +60,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
             'n', '<leader>r',
             vim.lsp.buf.rename,
             { buffer = args.buf, desc = 'Rename a variable from lsp' })
+
+        vim.keymap.set(
+            'n', ']d',
+            vim.diagnostic.goto_next,
+            { buffer = args.buf, desc = "Next diagnostic" })
+
+        vim.keymap.set(
+            'n', '[d',
+            vim.diagnostic.goto_prev,
+            { buffer = args.buf, desc = "Previous diagnostic" })
     end,
 })
 
