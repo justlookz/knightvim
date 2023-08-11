@@ -11,6 +11,7 @@ wk.register({
     ["<leader>sg"] = "Git",
     ["<leader>u"] = "ui settings",
     ["<leader>ug"] = "Git signs",
+    ["<leader>d"] = "Debug [Dap]",
 
     ["gt"] = "Goto type...",
     ["v]"] = "Match forward ...",
@@ -148,4 +149,25 @@ nmap("<leader>tw", function()
         require("trouble").open("workspace_diagnostics")
     end,
     "Workspace Diagnostics"
+)
+
+-- Dap
+nmap("<leader>db",
+    require("dap").toggle_breakpoint,
+    "Toggle Breakpoint"
+)
+
+nmap("<leader>dc",
+    require("dap").continue,
+    "Continue"
+)
+
+nmap("<leader>di",
+    require("dap").step_into,
+    "Step into"
+)
+
+nmap("<leader>do",
+    require("dap").step_over,
+    "Step over"
 )

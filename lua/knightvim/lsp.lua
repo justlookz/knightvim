@@ -9,7 +9,6 @@ require 'mason'.setup()
 require('mason-lspconfig').setup({
     automatic_installation = auto_installed(),
 })
-require("mason-nvim-dap").setup()
 
 -- Keymaps for Lsp - If not lsp exist no keymap exists
 vim.api.nvim_create_autocmd('LspAttach', {
