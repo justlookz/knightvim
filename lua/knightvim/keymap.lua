@@ -125,11 +125,11 @@ nmap("<leader>sc", function()
 
 
 -- Undo Tree
-nmap("<leader>u", vim.cmd.UndotreeToggle, "Undo Tree Structure")
+nmap("<leader>uu", vim.cmd.UndotreeToggle, "Undo Tree Structure")
 
 
 -- File Explorer
-nmap("<leader>e", vim.cmd.NvimTreeToggle, "File Explorer")
+nmap("<leader>ue", vim.cmd.NvimTreeToggle, "File Explorer")
 
 
 -- Trouble Debug menu
