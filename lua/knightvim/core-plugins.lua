@@ -53,6 +53,16 @@ local core = {
         },
     },
 
+
+    -- Dap with Mason-Dap-Config
+    {
+        "jay-babu/mason-nvim-dap.nvim",
+        dependencies = {
+            "williamboman/mason.nvim",
+            "mfussenegger/nvim-dap",
+        }
+    },
+
     -- friendly-snippets - Premade snippets
     { "rafamadriz/friendly-snippets" },
 
@@ -87,6 +97,13 @@ local core = {
     },
 
     { "lukas-reineke/lsp-format.nvim" },
+
+
+    -- Notifier -- Nice notofication
+    {
+        "vigoux/notifier.nvim",
+        opts = {},
+    },
 
 
     -- Bufferline - Title bars
