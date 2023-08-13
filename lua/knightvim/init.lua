@@ -1,5 +1,5 @@
 kvim = {}
-kvim.theme = "palenight"
+kvim.theme = "mariana_lighter"
 kvim.leader = " "
 kvim.plugins = {}
 kvim.lsp = {}
@@ -7,7 +7,8 @@ kvim.lsp.local_include = {}
 kvim.lsp.ghost_text = true
 kvim.lsp.auto_install = true
 
--- ensure user exsistance
+-- ensure user folder exsistance
+-- and init for user fokder
 local user_path = vim.fn.stdpath("config") .. "/lua/user"
 local user_init_path = vim.fn.stdpath("config") .. "/lua/user/init.lua"
 if (vim.fn.isdirectory(user_path)) == 0 then

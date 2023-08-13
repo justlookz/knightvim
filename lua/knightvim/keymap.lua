@@ -11,7 +11,8 @@ wk.register({
     ["<leader>sg"] = "Git",
     ["<leader>u"] = "ui settings",
     ["<leader>ug"] = "Git signs",
-    ["<leader>d"] = "Debug [Dap]",
+    ["<leader>d"] = "Debug - Dap",
+    ["<leader>L"] = "Lazy - Package manager",
 
     ["gt"] = "Goto type...",
     ["v]"] = "Match forward ...",
@@ -34,7 +35,17 @@ nmap("<C-h>", function()
     end,
     "goto left")
 
+nmap("<C-left>", function()
+        vim.cmd.wincmd("h")
+    end,
+    "goto left")
+
 nmap("<C-l>", function()
+        vim.cmd.wincmd("l")
+    end,
+    "goto right")
+
+nmap("<C-right>", function()
         vim.cmd.wincmd("l")
     end,
     "goto right")
@@ -44,7 +55,18 @@ nmap("<C-k>", function()
     end,
     "go above")
 
+nmap("<C-up>", function()
+        vim.cmd.wincmd("k")
+    end,
+    "go above")
+
+
 nmap("<C-j>", function()
+        vim.cmd.wincmd("j")
+    end,
+    "go below")
+
+nmap("<C-down>", function()
         vim.cmd.wincmd("j")
     end,
     "go below")
@@ -115,7 +137,7 @@ nmap("<leader>sgw", function()
     end,
     "Find words in project")
 
-nmap("<leader>sc", function()
+nmap("<leader>uc", function()
         require("telescope.builtin").colorscheme(require("telescope.themes")
             .get_dropdown({
                 enable_preview = true,
@@ -171,3 +193,19 @@ nmap("<leader>do",
     require("dap").step_over,
     "Step over"
 )
+
+
+-- Lazy - Package manager
+nmap("<leader>LL", vim.cmd.Lazy, "Open")
+
+nmap("<leader>Ls", function()
+    vim.cmd.Lazy("sync")
+end, "Sync")
+
+nmap("<leader>Lu", function()
+    vim.cmd.Lazy("update")
+end, "Update")
+
+nmap("<leader>Lr", function()
+    vim.cmd.Lazy("restore")
+end, "Restore")
