@@ -12,7 +12,7 @@ end
 --- Servers that are available from Mason or the System
 --- by using the execution command as name
 local function lsp_server_setup(lsp_list)
-    if lsp_server ~= nil then
+    if lsp_list ~= nil then
         for _, v in ipairs(lsp_list) do
             require('lspconfig')[v].setup({
                 capabilities = require('cmp_nvim_lsp')
@@ -118,16 +118,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- Before Write ------------------------------
 vim.api.nvim_create_autocmd('BufWritePre', {
     callback = function(args)
-        vim.lsp.buf.format()
+        if vim.lsp.buf.format ~= nil then
+            vim.lsp.buf.format()
+        end
     end,
 })
-
 -- end before Write --------------------------
 
 
 -- Activate LspServers -----------------------
 local lsp_server = require("mason-lspconfig")
     .get_installed_servers()
+
 lsp_server_setup(lsp_server)
 lsp_server_setup(kvim.lsp.local_include)
 
