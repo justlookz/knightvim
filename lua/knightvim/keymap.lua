@@ -1,3 +1,10 @@
+--- Helper function wraper for keymap
+--- @param left string | table : The shortcut that is created
+--- @param right string | function : The shortcut or function that is
+--- going to be executed
+--- @param dsc string : Is the description of the shortcut
+--- useful for Which-key and nmap command to see what the
+--- Command is doing at a glance
 local nmap = function(left, right, dsc)
     local opts = { noremap = true, silent = true, desc = dsc }
     vim.keymap.set("n", left, right, opts)

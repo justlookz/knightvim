@@ -91,10 +91,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
             { buffer = args.buf, desc = "Previous diagnostic" })
     end, -- callback end
 })
+-- End of Keymaps ----------------------------
+
 
 vim.api.nvim_create_autocmd('BufWritePre', {
     callback = function(args)
-        vim.lsp.buf.format()
+        pcall(vim.lsp.buf.format)
     end,
 })
 
@@ -103,7 +105,10 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 local lsp_server = require("mason-lspconfig")
     .get_installed_servers()
 
-
+--- Helper function for lsp configuration
+--- @param lsp_list table: Is a table with string names of
+--- Servers that are available from Mason or the System
+--- by using the execution command as name
 local function lsp_server_setup(lsp_list)
     if lsp_server ~= nil then
         for _, v in ipairs(lsp_list) do
@@ -120,11 +125,11 @@ lsp_server_setup(kvim.lsp.local_include)
 
 ----------------------------------------------
 
+
 -- Autoclose Brackets
 require('nvim-autopairs').setup({
     ignored_next_char = "[%w%.]", -- will ignore alphanumeric and `.` symbol
     -- enable_check_bracket_line = false
-
 })
 
 local luasnip = require("luasnip")
