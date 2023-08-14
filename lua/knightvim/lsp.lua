@@ -56,6 +56,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
             })
 
         vim.keymap.set(
+            'n', 'gh',
+            vim.lsp.buf.signature_help,
+            {
+                buffer = args.buf,
+                desc = 'Signature help from lsp',
+                noremap = true,
+            })
+
+
+        vim.keymap.set(
             'n', 'gc',
             vim.lsp.buf.code_action,
             { buffer = args.buf, desc = 'Code actions from lsp' })
@@ -93,23 +103,21 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 local lsp_server = require("mason-lspconfig")
     .get_installed_servers()
 
-if lsp_server ~= nil then
-    for _, v in ipairs(lsp_server) do
-        require('lspconfig')[v].setup({
-            capabilities = require('cmp_nvim_lsp')
-                .default_capabilities(),
-        })
+
+local function lsp_server_setup(lsp_list)
+    if lsp_server ~= nil then
+        for _, v in ipairs(lsp_list) do
+            require('lspconfig')[v].setup({
+                capabilities = require('cmp_nvim_lsp')
+                    .default_capabilities(),
+            })
+        end
     end
 end
 
-if kvim.lsp.local_include ~= nil then
-    for _, v in ipairs(kvim.lsp.local_include) do
-        require('lspconfig')[v].setup({
-            capabilities = require('cmp_nvim_lsp')
-                .default_capabilities(),
-        })
-    end
-end
+lsp_server_setup(lsp_server)
+lsp_server_setup(kvim.lsp.local_include)
+
 ----------------------------------------------
 
 -- Autoclose Brackets
