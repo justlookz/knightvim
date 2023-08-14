@@ -31,7 +31,7 @@ require('mason-lspconfig').setup({
 })
 -- end Mason Configs -------------------------
 
--- Keymaps for Lsp - If not lsp exist no keymap exists
+-- Keymaps for Lsp - If not lsp exist no keymap exists and autosave at the end
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(args)
         vim.keymap.set(
@@ -110,18 +110,25 @@ vim.api.nvim_create_autocmd('LspAttach', {
             'n', '[d',
             vim.diagnostic.goto_prev,
             { buffer = args.buf, desc = "Previous diagnostic" })
+
+        -- End of Keymaps --------------------
+
+
+        -- Before Write ----------------------
+        vim.api.nvim_create_autocmd('BufWritePre', {
+            callback = function(args)
+                local client = vim.lsp.get_active_clients()[1]
+
+                if client then
+                    if client.server_capabilities.documentFormattingProvider then
+                        vim.lsp.buf.format { async = false }
+                    end
+                end
+            end,
+        })
+        -- end before Write ------------------
     end, -- callback end
 })
--- End of Keymaps ----------------------------
-
-
--- Before Write ------------------------------
-vim.api.nvim_create_autocmd('BufWritePre', {
-    callback = function(args)
-        vim.lsp.buf.format()
-    end,
-})
--- end before Write --------------------------
 
 
 -- Activate LspServers -----------------------
@@ -130,7 +137,6 @@ local lsp_server = require("mason-lspconfig")
 
 lsp_server_setup(lsp_server)
 lsp_server_setup(kvim.lsp.local_include)
-
 -- End activate Lsp---------------------------
 
 
