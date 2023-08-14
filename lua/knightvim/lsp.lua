@@ -1,3 +1,5 @@
+--- Helper function to test if kvim.lsp.local_include
+--- is empty or not
 local auto_installed = function()
     if kvim.lsp.auto_install then
         return kvim.lsp.local_include
@@ -5,10 +7,29 @@ local auto_installed = function()
     return true
 end
 
+--- Helper function for lsp configuration
+--- @param lsp_list table: Is a table with string names of
+--- Servers that are available from Mason or the System
+--- by using the execution command as name
+local function lsp_server_setup(lsp_list)
+    if lsp_server ~= nil then
+        for _, v in ipairs(lsp_list) do
+            require('lspconfig')[v].setup({
+                capabilities = require('cmp_nvim_lsp')
+                    .default_capabilities(),
+            })
+        end
+    end
+end
+-- end helper function -----------------------
+
+
+-- Mason Configs -----------------------------
 require 'mason'.setup()
 require('mason-lspconfig').setup({
     automatic_installation = auto_installed(),
 })
+-- end Mason Configs -------------------------
 
 -- Keymaps for Lsp - If not lsp exist no keymap exists
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -94,44 +115,34 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- End of Keymaps ----------------------------
 
 
+-- Before Write ------------------------------
 vim.api.nvim_create_autocmd('BufWritePre', {
     callback = function(args)
-        pcall(vim.lsp.buf.format)
+        vim.lsp.buf.format()
     end,
 })
+
+-- end before Write --------------------------
 
 
 -- Activate LspServers -----------------------
 local lsp_server = require("mason-lspconfig")
     .get_installed_servers()
-
---- Helper function for lsp configuration
---- @param lsp_list table: Is a table with string names of
---- Servers that are available from Mason or the System
---- by using the execution command as name
-local function lsp_server_setup(lsp_list)
-    if lsp_server ~= nil then
-        for _, v in ipairs(lsp_list) do
-            require('lspconfig')[v].setup({
-                capabilities = require('cmp_nvim_lsp')
-                    .default_capabilities(),
-            })
-        end
-    end
-end
-
 lsp_server_setup(lsp_server)
 lsp_server_setup(kvim.lsp.local_include)
 
-----------------------------------------------
+-- End activate Lsp---------------------------
 
 
--- Autoclose Brackets
+-- Autoclose Brackets ------------------------
 require('nvim-autopairs').setup({
     ignored_next_char = "[%w%.]", -- will ignore alphanumeric and `.` symbol
     -- enable_check_bracket_line = false
 })
+-- End Autoclose Brackets --------------------
 
+
+-- Cmp configuration -------------------------
 local luasnip = require("luasnip")
 local cmp = require('cmp')
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
@@ -201,3 +212,4 @@ cmp.event:on(
     'confirm_done',
     cmp_autopairs.on_confirm_done()
 )
+-- End Cmp configuration ---------------------
