@@ -4,13 +4,13 @@ for linux the command for cloning and using knightvim is
 
 ```bash
 cd ~/.config/
-git clone https://github.com/justlookz/knightvim ~/.config/nvim
+git clone --depth 1 https://github.com/justlookz/knightvim ~/.config/nvim
 ```
 
 for windows 
 
 ```powershell
-git clone https://github.com/justlookz/knightvim $env:LOCALAPPDATA\nvim
+git clone --depth 1 https://github.com/justlookz/knightvim $env:LOCALAPPDATA\nvim
 nvim
 
 ```
