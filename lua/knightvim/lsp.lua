@@ -118,9 +118,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- Before Write ------------------------------
 vim.api.nvim_create_autocmd('BufWritePre', {
     callback = function(args)
-        if vim.lsp.buf.format ~= nil then
-            vim.lsp.buf.format()
-        end
+        vim.lsp.buf.format()
     end,
 })
 -- end before Write --------------------------
