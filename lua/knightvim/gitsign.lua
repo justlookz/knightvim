@@ -10,10 +10,10 @@ return {
             vim.schedule(function() gs.next_hunk() end)
             return '<Ignore>'
         end, {
-            expr = true,
-            buffer = bufnr,
+            expr    = true,
+            buffer  = bufnr,
             noremap = true,
-            desc = "Next Hunk"
+            desc    = "Next Hunk"
         })
 
         vim.keymap.set('n', '[c', function()
@@ -21,10 +21,10 @@ return {
             vim.schedule(function() gs.prev_hunk() end)
             return '<Ignore>'
         end, {
-            expr = true,
-            buffer = bufnr,
+            expr    = true,
+            buffer  = bufnr,
             noremap = true,
-            desc = "Previous Hunk"
+            desc    = "Previous Hunk"
         })
 
         vim.keymap.set(
@@ -33,8 +33,8 @@ return {
                 vim.cmd.Gitsigns("toggle_signs")
             end,
             {
-                buffer = bufnr,
-                desc = "Toggle signs",
+                buffer  = bufnr,
+                desc    = "Toggle signs",
                 noremap = true,
             })
 
@@ -44,8 +44,8 @@ return {
                 vim.cmd.Gitsigns("toggle_numhl")
             end,
             {
-                buffer = bufnr,
-                desc = "Toggle Number Highlighting for sign",
+                buffer  = bufnr,
+                desc    = "Toggle Number Highlighting for sign",
                 noremap = true,
             })
 
@@ -55,8 +55,8 @@ return {
                 vim.cmd.Gitsigns("toggle_current_line_blame")
             end,
             {
-                buffer = bufnr,
-                desc = "Toggle Current line blame",
+                buffer  = bufnr,
+                desc    = "Toggle Current line blame",
                 noremap = true,
             })
     end,

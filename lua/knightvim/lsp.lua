@@ -60,19 +60,25 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set(
             'n', 'gD',
             vim.lsp.buf.declaration,
-            { buffer = args.buf, desc = 'Declaration from lsp' })
+            {
+                buffer = args.buf,
+                desc   = 'Declaration from lsp'
+            })
 
         vim.keymap.set(
             'n', 'gd',
             vim.lsp.buf.definition,
-            { buffer = args.buf, desc = 'Definition from lsp' })
+            {
+                buffer = args.buf,
+                desc   = 'Definition from lsp'
+            })
 
         vim.keymap.set(
             'n', 'gm',
             vim.lsp.buf.implementation,
             {
-                buffer = args.buf,
-                desc = 'Implementation from lsp',
+                buffer  = args.buf,
+                desc    = 'Implementation from lsp',
                 noremap = true,
             })
 
@@ -80,8 +86,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
             'n', 'gh',
             vim.lsp.buf.signature_help,
             {
-                buffer = args.buf,
-                desc = 'Signature help from lsp',
+                buffer  = args.buf,
+                desc    = 'Signature help from lsp',
                 noremap = true,
             })
 
@@ -89,27 +95,42 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set(
             'n', 'gc',
             vim.lsp.buf.code_action,
-            { buffer = args.buf, desc = 'Code actions from lsp' })
+            {
+                buffer = args.buf,
+                desc   = 'Code actions from lsp'
+            })
 
         vim.keymap.set(
             'n', 'gtd',
             vim.lsp.buf.type_definition,
-            { buffer = args.buf, desc = 'Definition from lsp' })
+            {
+                buffer = args.buf,
+                desc   = 'Definition from lsp'
+            })
 
         vim.keymap.set(
             'n', '<leader>r',
             vim.lsp.buf.rename,
-            { buffer = args.buf, desc = 'Rename a variable from lsp' })
+            {
+                buffer = args.buf,
+                desc   = 'Rename a variable from lsp'
+            })
 
         vim.keymap.set(
             'n', ']d',
             vim.diagnostic.goto_next,
-            { buffer = args.buf, desc = "Next diagnostic" })
+            {
+                buffer = args.buf,
+                desc   = "Next diagnostic"
+            })
 
         vim.keymap.set(
             'n', '[d',
             vim.diagnostic.goto_prev,
-            { buffer = args.buf, desc = "Previous diagnostic" })
+            {
+                buffer = args.buf,
+                desc   = "Previous diagnostic"
+            })
 
         -- End of Keymaps --------------------
 
@@ -149,8 +170,8 @@ require('nvim-autopairs').setup({
 
 
 -- Cmp configuration -------------------------
-local luasnip = require("luasnip")
-local cmp = require('cmp')
+local luasnip       = require("luasnip")
+local cmp           = require('cmp')
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 
@@ -186,7 +207,7 @@ cmp.setup({
         trailing_slash = false,
     },
     mapping = {
-        ["<Tab>"] = cmp.mapping(function(fallback)
+        ["<Tab>"]   = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
@@ -208,7 +229,7 @@ cmp.setup({
             end
         end, { "i", "s" }),
 
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<CR>']    = cmp.mapping.confirm({ select = true }),
     },
 
     experimental = { ghost_text = kvim.lsp.ghost_text, },
