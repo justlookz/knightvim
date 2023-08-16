@@ -11,12 +11,13 @@ kvim.lsp.auto_install = true
 -- and init for user fokder
 local user_path = vim.fn.stdpath("config") .. "/lua/user"
 local user_init_path = vim.fn.stdpath("config") .. "/lua/user/init.lua"
-if (vim.fn.isdirectory(user_path)) == 0 then
-    vim.fn.mkdir(user_path)
-end
 
 -- ensure user config files
 if (vim.fn.filereadable(user_init_path)) == 0 then
+    if (vim.fn.isdirectory(user_path)) == 0 then
+        vim.fn.mkdir(user_path)
+    end
+
     local file = io.open(user_init_path, "w")
     if file == nil then return end
     file:write(

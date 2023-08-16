@@ -13,17 +13,17 @@ end
 local wk = require("which-key")
 
 wk.register({
-    ["<leader>s"] = "Search",
-    ["<leader>t"] = "Trouble",
+    ["<leader>s"]  = "Search",
+    ["<leader>t"]  = "Trouble",
     ["<leader>sg"] = "Git",
-    ["<leader>u"] = "ui settings",
+    ["<leader>u"]  = "ui settings",
     ["<leader>ug"] = "Git signs",
-    ["<leader>d"] = "Debug - Dap",
-    ["<leader>L"] = "Lazy - Package manager",
+    ["<leader>d"]  = "Debug - Dap",
+    ["<leader>L"]  = "Lazy - Package manager",
 
-    ["gt"] = "Goto type...",
-    ["v]"] = "Match forward ...",
-    ["v["] = "Match Backward ...",
+    ["gt"]         = "Goto type...",
+    ["v]"]         = "Match forward ...",
+    ["v["]         = "Match Backward ...",
 })
 
 
