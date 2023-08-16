@@ -17,6 +17,7 @@ wk.register({
     ["<leader>t"]  = "Trouble",
     ["<leader>sg"] = "Git",
     ["<leader>u"]  = "ui settings",
+    ["<leader>us"] = "Persistent Settings",
     ["<leader>ug"] = "Git signs",
     ["<leader>d"]  = "Debug - Dap",
     ["<leader>L"]  = "Lazy - Package manager",
@@ -216,3 +217,11 @@ end, "Update")
 nmap("<leader>Lr", function()
     vim.cmd.Lazy("restore")
 end, "Restore")
+
+-- toggler
+local toggler = require("knightvim.toggler")
+toggler.setup()
+
+nmap("<leader>usn", function()
+    toggler.toggle("number")
+end, "Toggle Numbers")

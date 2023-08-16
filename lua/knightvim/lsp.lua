@@ -1,6 +1,6 @@
 --- Helper function to test if kvim.lsp.local_include
 --- is empty or not
-local auto_installed = function()
+local function auto_installed()
     if kvim.lsp.auto_install then
         return kvim.lsp.local_include
     end
