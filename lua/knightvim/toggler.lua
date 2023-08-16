@@ -2,8 +2,7 @@
 --- @param path string : The path that is where the lua file is saved
 local toggler = {}
 local path = vim.fn.stdpath("config") .. "/lua/user/toggler-settings.lua"
-
-local settings = dofile(path)
+local settings = {}
 
 function toggler.setup(args)
     if args then
@@ -15,9 +14,8 @@ function toggler.setup(args)
             path = args.path
         end
     end
-    if vim.fn.glob(path) then
-        vim.tbl_extend("force", settings, require("user.toggler-settings"))
-    end -- if
+
+    local settings = dofile(path)
 
     for k, v in pairs(settings) do
         vim.o[k] = v
@@ -37,10 +35,8 @@ function toggler.on_toggle()
     local f = io.open(path, "w+")
     if f ~= nil then
         f:write("return {\n    ")
-        print("save settings ...")
         print(settings.number)
         for k, v in pairs(settings) do
-            print(k .. "=" .. tostring(v) .. " is saved")
             f:write(k .. " = " .. tostring(v) .. "\n    ")
         end -- for
         f:write("}")
