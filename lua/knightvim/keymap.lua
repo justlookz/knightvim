@@ -220,8 +220,15 @@ end, "Restore")
 
 -- toggler
 local toggler = require("knightvim.toggler")
-toggler.setup()
 
 nmap("<leader>usn", function()
     toggler.toggle("number")
 end, "Toggle Numbers")
+
+nmap("<leader>usr", function()
+    toggler.toggle("rnu")
+end, "Toggle relative Numbers")
+
+nmap("<leader>usc", function()
+    toggler.toggle("confirm")
+end, "Toggle Confirm")

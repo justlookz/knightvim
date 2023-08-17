@@ -13,4 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(require "knightvim.core-plugins")
 
+require("knightvim.toggler").setup()
+
 vim.cmd.colorscheme(kvim.theme)

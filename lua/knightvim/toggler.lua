@@ -15,29 +15,32 @@ function toggler.setup(args)
         end
     end
 
-    local settings = dofile(path)
+    local _, settings = pcall(dofile, path)
 
     for k, v in pairs(settings) do
-        vim.o[k] = v
+        vim.opt[k] = v
     end -- for
-end
+end     -- function
 
 --- Toggle a vim.o[arg] setting
 --- @param args string : The name of option to toggle
 function toggler.toggle(args)
-    vim.o[args] = not vim.o[args]
-    settings[args] = vim.o[args]
+    if vim.o[args] == true then
+        vim.o[args] = false
+        settings[args] = false
+    else
+        vim.o[args] = true
+        settings[args] = true
+    end
     toggler.on_toggle()
 end
 
---- Autocommand before exit [ :q | :qa | :qw | :qwa ]
 function toggler.on_toggle()
-    local f = io.open(path, "w+")
+    local f = io.open(path, "w")
     if f ~= nil then
-        f:write("return {\n    ")
-        print(settings.number)
+        f:write("return {\n")
         for k, v in pairs(settings) do
-            f:write(k .. " = " .. tostring(v) .. "\n    ")
+            f:write("    " .. k .. " = " .. tostring(v) .. ",\n")
         end -- for
         f:write("}")
         f:close()
