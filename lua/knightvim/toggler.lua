@@ -5,22 +5,25 @@ local path = vim.fn.stdpath("config") .. "/lua/user/toggler-settings.lua"
 local settings = {}
 
 function toggler.setup(args)
-    if args then
-        if args.settings then
-            vim.tbl_extend("force", settings, args.settings)
-        end
-
-        if args.path then
-            path = args.path
-        end
+    if args and args.path then
+        path = args.path
     end
 
     local _, settings = pcall(dofile, path)
+    if args and args.settings then
+        vim.tbl_extend("keep", settings, args.settings)
+    end
 
-    for k, v in pairs(settings) do
-        vim.opt[k] = v
-    end -- for
-end     -- function
+    if settings ~= nil then
+        for k, v in pairs(settings) do
+            vim.opt[k] = v
+        end -- for
+    end     --if settings
+
+    if args and args.on_attach and vim.is_callable(args.on_attach) then
+        on_attach()
+    end
+end -- function
 
 --- Toggle a vim.o[arg] setting
 --- @param args string : The name of option to toggle
@@ -35,9 +38,10 @@ function toggler.toggle(args)
     toggler.on_toggle()
 end
 
+--- Run on toggler events
 function toggler.on_toggle()
     local f = io.open(path, "w")
-    if f ~= nil then
+    if f ~= nil and settings ~= nil then
         f:write("return {\n")
         for k, v in pairs(settings) do
             f:write("    " .. k .. " = " .. tostring(v) .. ",\n")
