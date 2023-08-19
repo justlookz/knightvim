@@ -219,7 +219,7 @@ nmap("<leader>Lr", function()
 end, "Restore")
 
 -- toggler
-local toggler = require("knightvim.toggler")
+local toggler = require("knightvim.toggler.functions")
 
 nmap("<leader>usn", function()
     toggler.toggle("number")
