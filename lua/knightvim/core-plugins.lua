@@ -191,5 +191,5 @@ local core = {
 
 }
 
-vim.tbl_extend("force", core, kvim.plugins)
+vim.tbl_deep_extend("force", core, kvim.plugins)
 return core
