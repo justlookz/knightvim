@@ -10,6 +10,9 @@ local nmap = function(left, right, dsc)
     vim.keymap.set("n", left, right, opts)
 end
 
+-- toggler
+local toggler = require("knightvim.toggler.functions")
+
 local wk = require("which-key")
 
 wk.register({
@@ -32,7 +35,7 @@ wk.register({
 nmap("<leader>", "<nop>", "Leader Menu")
 nmap("<leader>w", ":write<cr>", "Save")
 nmap("<leader>q", vim.cmd.qall, "Quit")
-nmap("<leader>c", vim.cmd.bdelete, "Quit")
+nmap("<leader>x", vim.cmd.bdelete, "Close Buffer")
 nmap("H", vim.cmd.BufferLineCyclePrev, "Previous Buffer")
 nmap("L", vim.cmd.BufferLineCycleNext, "Next Buffer")
 
@@ -217,9 +220,6 @@ end, "Update")
 nmap("<leader>Lr", function()
     vim.cmd.Lazy("restore")
 end, "Restore")
-
--- toggler
-local toggler = require("knightvim.toggler.functions")
 
 nmap("<leader>usn", function()
     toggler.toggle("number")

@@ -30,11 +30,12 @@ end
 function M.set(option, value)
     if option == "colorscheme" then
         vim.cmd.colorscheme(value)
-        settings[option] = value
+        Toggler_globals.settings[option] = value
     else
         vim.o[option] = value
         Toggler_globals.settings[option] = value
     end
+    M.on_toggle()
 end
 
 --- Run on toggler events
@@ -44,14 +45,17 @@ function M.on_toggle()
     -- end
 
     local f = io.open(Toggler_globals.path, "w")
-    if f == nil and Toggler_globals.settings == nil then
+    if f == nil or Toggler_globals.settings == nil then
         vim.api.nvim_notify("Settings are not loaded or file is not loaded on toggler", vim.log.levels.DEBUG)
         return
     end
     f:write("return {\n")
     for k, v in pairs(Toggler_globals.settings) do
-        print(k, tostring(v))
-        f:write("    " .. k .. " = " .. tostring(v) .. ",\n")
+        if type(v) == "string" then
+            f:write("    " .. k .. " = '" .. tostring(v) .. "',\n")
+        else
+            f:write("    " .. k .. " = " .. tostring(v) .. ",\n")
+        end
     end -- for
     f:write("}")
     f:close()

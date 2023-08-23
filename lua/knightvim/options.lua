@@ -11,6 +11,7 @@ o.swapfile      = false                       -- Don't use swapfile
 o.completeopt   = 'menuone,noinsert,noselect' -- Autocomplete options
 
 -- Neovim UI
+o.number        = true     -- Show line number
 o.showmatch     = true     -- Highlight matching parenthesis
 o.foldmethod    = 'marker' -- Enable folding (default 'foldmarker')
 o.colorcolumn   = '64,78'  -- Line lenght marker at 80 columns
