@@ -96,7 +96,8 @@ local core = {
         opts = require("knightvim.lualine"),
     },
 
-    { "lukas-reineke/lsp-format.nvim" },
+
+    --{ "lukas-reineke/lsp-format.nvim" },
 
 
     -- Notifier -- Nice notofication
