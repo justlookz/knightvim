@@ -6,7 +6,7 @@
 --- useful for Which-key and nmap command to see what the
 --- Command is doing at a glance
 local nmap = function(left, right, dsc)
-    local opts = { noremap = true, silent = true, desc = dsc }
+    local opts = { noremap = true, silent = true, desc = dsc or desc }
     vim.keymap.set("n", left, right, opts)
 end
 
@@ -188,22 +188,34 @@ nmap("<leader>tw", function()
 -- Dap
 nmap("<leader>db",
     require("dap").toggle_breakpoint,
-    "Toggle Breakpoint"
+    "Toggle Breakpoint[F8]"
+)
+nmap("<f8>",
+    require("dap").toggle_breakpoint
 )
 
 nmap("<leader>dc",
     require("dap").continue,
-    "Continue"
+    "Continue[F5]"
+)
+nmap("<F5>",
+    require("dap").continue
 )
 
 nmap("<leader>di",
     require("dap").step_into,
-    "Step into"
+    "Step into[F6]"
+)
+nmap("<F6>",
+    require("dap").step_into
 )
 
 nmap("<leader>do",
     require("dap").step_over,
-    "Step over"
+    "Step over[F7]"
+)
+nmap("<F7>",
+    require("dap").step_over
 )
 
 
@@ -222,6 +234,8 @@ nmap("<leader>Lr", function()
     vim.cmd.Lazy("restore")
 end, "Restore")
 
+
+-- UI settings with or without persistent
 nmap("<leader>usn", function()
     toggler.toggle("number")
 end, "Toggle Numbers")
@@ -233,3 +247,7 @@ end, "Toggle relative Numbers")
 nmap("<leader>usc", function()
     toggler.toggle("confirm")
 end, "Toggle Confirm")
+
+nmap("<leader>ut", function()
+    vim.cmd("7split | terminal")
+end, "Terminal")
