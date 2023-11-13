@@ -207,7 +207,7 @@ cmp.setup({
         trailing_slash = false,
     },
     mapping = {
-        ["<C-n>"]   = cmp.mapping(function(fallback)
+        ["<C-n>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
@@ -219,7 +219,7 @@ cmp.setup({
             end
         end, { "i", "s" }),
 
-        ["<C-S-n>"] = cmp.mapping(function(fallback)
+        ["<C-b>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
             elseif luasnip.jumpable(-1) then
@@ -229,7 +229,7 @@ cmp.setup({
             end
         end, { "i", "s" }),
 
-        ['<CR>']    = cmp.mapping.confirm({ select = false }),
+        ['<CR>']  = cmp.mapping.confirm({ select = false }),
     },
 
     experimental = { ghost_text = kvim.lsp.ghost_text, },
