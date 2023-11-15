@@ -7,13 +7,22 @@ cd ~/.config/
 git clone --depth 1 https://github.com/justlookz/knightvim ~/.config/nvim
 ```
 
+need git and neovim 
+
 for windows 
+
+need packages from winget (windows store)
+```powershell
+winget install -e --id LLVM.LLVM;winget install -e --id Neovim.Neovim.Nightly;winget install -e --id Git.Git
+```
 
 ```powershell
 git clone --depth 1 https://github.com/justlookz/knightvim $env:LOCALAPPDATA\nvim
 nvim
 
 ```
+
+
 
 replace nvim for other name if wanted to use with
 ```text
