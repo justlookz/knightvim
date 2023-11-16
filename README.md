@@ -9,6 +9,12 @@ git clone --depth 1 https://github.com/justlookz/knightvim ~/.config/nvim
 
 need git and neovim 
 
+for apt 
+
+```bash
+sudo apt upgrade && sudo apt install git neovim
+```
+
 for windows 
 
 need packages from winget (windows store)
