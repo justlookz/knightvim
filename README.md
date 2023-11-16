@@ -1,3 +1,7 @@
+# Suggestions
+
+If by any mean you see this github by searching through and need a configuration, I highly suggest to use LazyVim or AstroNvim or fork kickstart
+
 # Installation 
 
 for linux the command for cloning and using knightvim is 
