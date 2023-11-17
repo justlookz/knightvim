@@ -16,7 +16,7 @@ need git and neovim
 for apt 
 
 ```bash
-sudo apt upgrade && sudo apt install git neovim
+sudo apt update && sudo apt install git neovim
 ```
 
 for windows 
