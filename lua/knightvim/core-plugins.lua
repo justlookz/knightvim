@@ -49,6 +49,8 @@ local core = {
 
             { 'hrsh7th/cmp-nvim-lsp-document-symbol' },
             { 'saadparwaiz1/cmp_luasnip' },
+            -- Dap integration
+            { "rcarriga/cmp-dap" },
 
         },
     },
