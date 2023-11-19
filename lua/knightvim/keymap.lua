@@ -168,7 +168,7 @@ nmap("<leader>ue", vim.cmd.NvimTreeToggle, "File Explorer")
 
 
 -- Trouble Debug menu
-nmap("<leader>tt", require("trouble").open, "Open Trouble")
+nmap("<leader>tt", require("trouble").toggle, "Toggle Trouble")
 nmap("<leader>td", function()
         require("trouble").open("todo")
     end,
