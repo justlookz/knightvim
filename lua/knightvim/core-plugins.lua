@@ -63,6 +63,11 @@ local core = {
         }
     },
 
+    --Dap lsp integration
+    {
+        "nvim-telescope/telescope-dap.nvim"
+    },
+
     -- friendly-snippets - Premade snippets
     { "rafamadriz/friendly-snippets" },
 
