@@ -70,6 +70,12 @@ local core = {
         "nvim-telescope/telescope-dap.nvim"
     },
 
+    {
+        "rcarriga/nvim-dap-ui",
+        requires = { "mfussenegger/nvim-dap" },
+        opts = {}
+    },
+
     -- friendly-snippets - Premade snippets
     { "rafamadriz/friendly-snippets" },
 

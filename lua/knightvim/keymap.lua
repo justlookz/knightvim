@@ -157,7 +157,8 @@ nmap("<leader>uc", function()
     end,
     "Colorscheme"
 )
-
+nmap("<leader>ud",
+    require("dapui").toggle, "Dap Ui toggle")
 
 -- Undo Tree
 nmap("<leader>uu", vim.cmd.UndotreeToggle, "Undo Tree Structure")
