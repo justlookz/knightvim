@@ -40,7 +40,7 @@ $NVIM_APPNAME
 ```
 by creating an alias
 ```bash
-alias kvim='$NVIM_APPNAME="/name-of-folder kvim"
+alias kvim='$NVIM_APPNAME="/name-of-folder nvim"
 ```
 replace name-of-folder with whatever name 
 
