@@ -55,6 +55,9 @@ local core = {
         },
     },
 
+    -- Commentary
+    { "https://github.com/tpope/vim-commentary" },
+
 
     -- Dap with Mason-Dap-Config
     {
@@ -196,6 +199,8 @@ local core = {
         opts = {}
     },
 
+    --git Fugitive
+    { "https://github.com/tpope/vim-fugitive" },
 
     -- Gitsign - Github integration
     {
