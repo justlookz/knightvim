@@ -79,6 +79,9 @@ local core = {
         opts = {}
     },
 
+    -- Codi
+    { "https://github.com/metakirby5/codi.vim" },
+
     -- friendly-snippets - Premade snippets
     { "https://github.com/rafamadriz/friendly-snippets" },
 
