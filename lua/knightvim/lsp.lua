@@ -93,7 +93,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 
         vim.keymap.set(
-            'n', 'gc',
+            'n', 'ga',
             vim.lsp.buf.code_action,
             {
                 buffer = args.buf,

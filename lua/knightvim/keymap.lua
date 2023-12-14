@@ -29,6 +29,8 @@ wk.register({
     ["gt"]         = "Goto type...",
     ["v]"]         = "Match forward ...",
     ["v["]         = "Match Backward ...",
+    ["gcc"]        = "Comment line",
+    ["gc"]         = { "Comment selection", mode = "v" }
 })
 
 
