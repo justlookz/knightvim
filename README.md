@@ -11,7 +11,13 @@ cd ~/.config/
 git clone --depth 1 https://github.com/justlookz/knightvim ~/.config/nvim
 ```
 
-need git and neovim 
+need git and neovim
+
+if nvim configs already exists, dont forget to remove them first
+
+```bash
+rm -rf ~/.config/nvim
+```
 
 for apt 
 
