@@ -99,7 +99,7 @@ local core = {
     },
 
     -- Starry Collection - Themes
-    { 'https://github.com/ray-x/starry.nvim' },
+    --{ 'https://github.com/ray-x/starry.nvim' },
 
     -- Tokyo-night - Theme
     { "https://github.com/folke/tokyonight.nvim", },
