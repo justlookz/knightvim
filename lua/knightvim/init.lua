@@ -1,5 +1,5 @@
 kvim = {}
-kvim.theme = "rose-pine"
+kvim.theme = "rose-pine-moon"
 kvim.leader = " "
 kvim.plugins = {}
 kvim.lsp = {}
