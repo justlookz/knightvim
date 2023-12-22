@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup(require "knightvim.core-plugins")
+require("lazy").setup("knightvim.plugins")
 
 require("knightvim.toggler").setup()
 
