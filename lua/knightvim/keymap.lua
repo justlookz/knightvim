@@ -85,89 +85,8 @@ nmap("<C-down>", function()
     end,
     "go below")
 
-
--- Telescope Searches
-nmap("<leader>sf", function()
-        require("telescope.builtin")
-            .find_files(require("telescope.themes").get_dropdown())
-    end,
-    "Find file")
-
-nmap("<leader>se", function()
-        require("telescope.builtin")
-            .treesitter(require("telescope.themes").get_dropdown())
-    end,
-    "Treesitter Scope")
-
-
-nmap("<leader>sh", function()
-        require("telescope.builtin")
-            .help_tags(require("telescope.themes")
-                .get_dropdown())
-    end,
-    ":help options")
-
-nmap("<leader>sy", function()
-    require("telescope.builtin")
-        .filetypes(require("telescope.themes")
-            .get_dropdown())
-end
-, "filetypes")
-
-nmap("<leader>sw", function()
-        require("telescope.builtin")
-            .live_grep(require("telescope.themes")
-                .get_dropdown())
-    end,
-    "Find words")
-
--- Telescope for git
-nmap("<leader>sgf", function()
-        require("telescope.builtin")
-            .git_files(require("telescope.themes")
-                .get_dropdown())
-    end,
-    "Find file")
-
-nmap("<leader>sgc", function()
-        require("telescope.builtin")
-            .git_commits(require("telescope.themes")
-                .get_dropdown())
-    end,
-    "Find Commits on project")
-
-nmap("<leader>sgb", function()
-        require("telescope.builtin")
-            .git_bcommits(require("telescope.themes")
-                .get_dropdown())
-    end,
-    "Find Commits on buffer")
-
-nmap("<leader>sgw", function()
-        -- code
-        require("telescope.builtin")
-            .grep_string(require("telescope.themes")
-                .get_dropdown())
-    end,
-    "Find words in project")
-
-nmap("<leader>uc", function()
-        require("telescope.builtin").colorscheme(require("telescope.themes")
-            .get_dropdown({
-                enable_preview = true,
-            }))
-    end,
-    "Colorscheme"
-)
-nmap("<leader>ud",
-    require("dapui").toggle, "Dap Ui toggle")
-
 -- Undo Tree
 nmap("<leader>uu", vim.cmd.UndotreeToggle, "Undo Tree Structure")
-
-
--- File Explorer
-nmap("<leader>ue", vim.cmd.NvimTreeToggle, "File Explorer")
 
 
 -- Trouble Debug menu
@@ -221,6 +140,11 @@ nmap("<F7>",
     require("dap").step_over
 )
 
+nmap(
+    "<leader>ud",
+    require("dapui").toggle,
+    "Dap Ui toggle"
+)
 
 -- Lazy - Package manager
 nmap("<leader>LL", vim.cmd.Lazy, "Open")

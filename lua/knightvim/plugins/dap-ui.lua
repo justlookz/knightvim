@@ -1,6 +1,5 @@
-return     {
-        "https://github.com/rcarriga/nvim-dap-ui",
-        requires = { "mfussenegger/nvim-dap" },
-        opts = {}
-    }
-
+return {
+    "https://github.com/rcarriga/nvim-dap-ui",
+    requires = { "https://github.com/rcarriga/mfussenegger/nvim-dap" },
+    opts = {},
+}

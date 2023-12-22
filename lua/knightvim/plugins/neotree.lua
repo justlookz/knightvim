@@ -12,4 +12,13 @@ return {
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1
     end,
+    keys = {
+        -- File Explorer
+        {
+            "<leader>ue",
+            vim.cmd.NvimTreeToggle,
+            desc = "File Explorer",
+            mode = "n",
+        },
+    },
 }
