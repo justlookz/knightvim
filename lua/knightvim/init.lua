@@ -8,7 +8,7 @@ kvim.lsp.ghost_text = true
 kvim.lsp.auto_install = true
 
 -- ensure user folder exsistance
--- and init for user fokder
+-- and init for user folder
 local user_path = vim.fn.stdpath("config") .. "/lua/user"
 local user_init_path = vim.fn.stdpath("config") .. "/lua/user/init.lua"
 

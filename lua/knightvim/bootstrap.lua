@@ -1,4 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+--- if path none existed clone lazy to that path
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
         "git",
@@ -11,6 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+--- This is used to load lazy from pligins folder
 require("lazy").setup("knightvim.plugins")
 
 require("knightvim.toggler").setup()
