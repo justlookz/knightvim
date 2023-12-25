@@ -6,34 +6,11 @@
 --- useful for Which-key and nmap command to see what the
 --- Command is doing at a glance
 local nmap = function(left, right, dsc)
-    local opts = { noremap = true, silent = true, desc = dsc or desc }
+    local opts = { noremap = true, silent = true, desc = dsc }
     vim.keymap.set("n", left, right, opts)
 end
 
--- toggler
 local toggler = require("knightvim.toggler.functions")
-
-local wk = require("which-key")
-
-wk.register({
-    ["<leader>s"]  = "Search",
-    ["<leader>t"]  = "Trouble",
-    ["<leader>sg"] = "Git",
-    ["<leader>st"] = "Type",
-    ["<leader>u"]  = "ui settings",
-    ["<leader>us"] = "Persistent Settings",
-    ["<leader>ug"] = "Git signs",
-    ["<leader>d"]  = "Debug - Dap",
-    ["<leader>L"]  = "Lazy - Package manager",
-
-    ["gt"]         = "Goto type...",
-    ["v]"]         = "Match forward ...",
-    ["v["]         = "Match Backward ...",
-    ["gcc"]        = "Comment line",
-    ["gc"]         = { "Comment selection", mode = "v" }
-})
-
-
 -- Basic Keymaps
 nmap("<leader>", "<nop>", "Leader Menu")
 nmap("<leader>w", ":write<cr>", "Save")
