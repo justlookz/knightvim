@@ -13,7 +13,7 @@ end
 local toggler = require("knightvim.toggler.functions")
 -- Basic Keymaps
 nmap("<leader>", "<nop>", "Leader Menu")
-nmap("<leader>w", ":write<cr>", "Save")
+nmap("<leader>w", vim.cmd.write, "Save")
 nmap("<leader>q", vim.cmd.qall, "Quit")
 nmap("<leader>x", vim.cmd.bdelete, "Close Buffer")
 nmap("H", vim.cmd.BufferLineCyclePrev, "Previous Buffer")
@@ -21,46 +21,64 @@ nmap("L", vim.cmd.BufferLineCycleNext, "Next Buffer")
 
 
 -- buffer swapping
-nmap("<C-h>", function()
+nmap(
+    "<C-h>",
+    function()
         vim.cmd.wincmd("h")
     end,
-    "goto left")
+    "goto left"
+)
 
 nmap("<C-left>", function()
         vim.cmd.wincmd("h")
     end,
-    "goto left")
+    "goto left"
+)
 
-nmap("<C-l>", function()
+nmap(
+    "<C-l>",
+    function()
         vim.cmd.wincmd("l")
     end,
-    "goto right")
+    "goto right"
+)
 
 nmap("<C-right>", function()
         vim.cmd.wincmd("l")
     end,
     "goto right")
 
-nmap("<C-k>", function()
+nmap(
+    "<C-k>",
+    function()
         vim.cmd.wincmd("k")
     end,
-    "go above")
+    "go above"
+)
 
-nmap("<C-up>", function()
+nmap(
+    "<C-up>",
+    function()
         vim.cmd.wincmd("k")
     end,
-    "go above")
+    "go above"
+)
 
 
-nmap("<C-j>", function()
+nmap("<C-j>",
+    function()
         vim.cmd.wincmd("j")
     end,
-    "go below")
+    "go below"
+)
 
-nmap("<C-down>", function()
+nmap(
+    "<C-down>",
+    function()
         vim.cmd.wincmd("j")
     end,
-    "go below")
+    "go below"
+)
 
 nmap(
     "<leader>ud",
@@ -69,34 +87,45 @@ nmap(
 )
 
 -- Lazy - Package manager
-nmap("<leader>LL", vim.cmd.Lazy, "Open")
+nmap("<leader>LL", "<cmd>Lazy<cr>", "Open Lazy [Package manager]")
 
-nmap("<leader>Ls", function()
-    vim.cmd.Lazy("sync")
-end, "Sync")
+nmap("<leader>Ls",
+    "<cmd>Lazy sync<cr>", "Sync")
 
-nmap("<leader>Lu", function()
-    vim.cmd.Lazy("update")
-end, "Update")
+nmap("<leader>Lu",
+    "<cmd>Lazy update<cr>", "Update")
 
-nmap("<leader>Lr", function()
-    vim.cmd.Lazy("restore")
-end, "Restore")
+nmap("<leader>Lr",
+    "<cmd>Lazy restore<cr>", "Restore")
 
 
 -- UI settings with or without persistent
-nmap("<leader>usn", function()
-    toggler.toggle("number")
-end, "Toggle Numbers")
+nmap(
+    "<leader>usn",
+    function()
+        toggler.toggle("number")
+    end,
+    "Toggle Numbers"
+)
 
-nmap("<leader>usr", function()
-    toggler.toggle("rnu")
-end, "Toggle relative Numbers")
+nmap(
+    "<leader>usr",
+    function()
+        toggler.toggle("rnu")
+    end,
+    "Toggle relative Numbers"
+)
 
-nmap("<leader>usc", function()
-    toggler.toggle("confirm")
-end, "Toggle Confirm")
+nmap(
+    "<leader>usc",
+    function()
+        toggler.toggle("confirm")
+    end,
+    "Toggle Confirm"
+)
 
-nmap("<leader>ut", function()
-    vim.cmd("7split | terminal")
-end, "Terminal")
+nmap(
+    "<leader>ut",
+    "<cmd>7split | terminal<cr>",
+    "Terminal"
+)
