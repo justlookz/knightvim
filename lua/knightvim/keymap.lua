@@ -85,61 +85,6 @@ nmap("<C-down>", function()
     end,
     "go below")
 
--- Undo Tree
-nmap("<leader>uu", vim.cmd.UndotreeToggle, "Undo Tree Structure")
-
-
--- Trouble Debug menu
-nmap("<leader>tt", require("trouble").toggle, "Toggle Trouble")
-nmap("<leader>td", function()
-        require("trouble").open("todo")
-    end,
-    "Todos"
-)
-nmap("<leader>tq", function()
-        require("trouble").open("quickfix")
-    end,
-    "Quickfix"
-)
-nmap("<leader>tw", function()
-        require("trouble").open("workspace_diagnostics")
-    end,
-    "Workspace Diagnostics"
-)
-
--- Dap
-nmap("<leader>db",
-    require("dap").toggle_breakpoint,
-    "Toggle Breakpoint[F8]"
-)
-nmap("<f8>",
-    require("dap").toggle_breakpoint
-)
-
-nmap("<leader>dc",
-    require("dap").continue,
-    "Continue[F5]"
-)
-nmap("<F5>",
-    require("dap").continue
-)
-
-nmap("<leader>di",
-    require("dap").step_into,
-    "Step into[F6]"
-)
-nmap("<F6>",
-    require("dap").step_into
-)
-
-nmap("<leader>do",
-    require("dap").step_over,
-    "Step over[F7]"
-)
-nmap("<F7>",
-    require("dap").step_over
-)
-
 nmap(
     "<leader>ud",
     require("dapui").toggle,

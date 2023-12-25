@@ -11,7 +11,7 @@ return {
         -- the loading is important
 
         local telescope = require("telescope")
-        local actions = require("telescope.actions")
+        --local actions = require("telescope.actions")
         local trouble = require("trouble.providers.telescope")
 
         telescope.setup {
