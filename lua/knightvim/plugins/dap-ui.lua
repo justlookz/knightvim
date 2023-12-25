@@ -3,4 +3,11 @@ return {
     requires = { "https://github.com/rcarriga/mfussenegger/nvim-dap" },
     opts = {},
     lazy = true,
+    keys = {
+        {
+            "<leader>ud",
+            "<cmd>lua require('dapui').toggle()<cr>",
+            desc = "Dap Ui toggle"
+        },
+    }
 }

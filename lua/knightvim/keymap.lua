@@ -80,12 +80,6 @@ nmap(
     "go below"
 )
 
-nmap(
-    "<leader>ud",
-    require("dapui").toggle,
-    "Dap Ui toggle"
-)
-
 -- Lazy - Package manager
 nmap("<leader>LL", "<cmd>Lazy<cr>", "Open Lazy [Package manager]")
 
