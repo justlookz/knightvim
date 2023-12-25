@@ -6,16 +6,18 @@ return {
         -- Dap
         { "<F8>", "<leader>db" },
 
-        { "<leader>db",
+        {
+            "<leader>db",
             "<cmd>DapToggleBreakpoint<cr>",
-            "Toggle Breakpoint[F8]"
+            desc = "Toggle Breakpoint[F8]"
         },
 
         { "<F5>", "<leader>dc" },
 
-        { "<leader>dc",
+        {
+            "<leader>dc",
             "<cmd>DapContinue<cr>",
-            "Continue[F5]"
+            desc = "Continue[F5]"
         },
 
         { "<F6>", "<leader>di" },
