@@ -6,6 +6,7 @@ return {
         'https://github.com/nvim-lua/plenary.nvim',
         'https://github.com/nvim-telescope/telescope-fzf-native.nvim'
     },
+    lazy = true,
     config = function()
         -- You dont need to set any of these options. These are the default ones. Only
         -- the loading is important

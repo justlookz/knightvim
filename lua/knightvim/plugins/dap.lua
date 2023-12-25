@@ -1,6 +1,7 @@
 return {
 
     "mfussenegger/nvim-dap",
+    lazy = true,
     keys = {
         -- Dap
         { "<F8>", "<leader>db" },

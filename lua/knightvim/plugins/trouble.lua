@@ -3,6 +3,7 @@ return {
     "folke/trouble.nvim",
     dependencies = { "https://github.com/nvim-tree/nvim-web-devicons" },
     opts = {},
+    lazy = true,
     keys = {
 
         -- Trouble Debug menu
