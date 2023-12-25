@@ -125,6 +125,30 @@ nmap(
 )
 
 nmap(
+    "<leader>usw",
+    function()
+        toggler.toggle("wrap")
+    end,
+    "Toggle wrap"
+)
+
+nmap(
+    "<leader>usw",
+    function()
+        toggler.toggle("wrap")
+    end,
+    "Toggle wrap"
+)
+
+nmap(
+    "<leader>usm",
+    function()
+        toggler.toggle_with_states("bg", "dark", "light")
+    end,
+    "Toggle bg mode"
+)
+
+nmap(
     "<leader>ut",
     "<cmd>7split | terminal<cr>",
     "Terminal"
