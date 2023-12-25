@@ -44,20 +44,26 @@ function M.on_toggle()
     --     print(k, tostring(v) .. "\n")
     -- end
 
+    local first = 1
     local f = io.open(Toggler_globals.path, "w")
     if f == nil or Toggler_globals.settings == nil then
         vim.api.nvim_notify("Settings are not loaded or file is not loaded on toggler", vim.log.levels.DEBUG)
         return
     end
-    f:write("return {\n")
+    f:write("local N = {}\n")
     for k, v in pairs(Toggler_globals.settings) do
+        if first == 0 then
+            f:write(",")
+            first = 0
+        end
+
         if type(v) == "string" then
-            f:write("    " .. k .. " = '" .. tostring(v) .. "',\n")
+            f:write("\nN." .. k .. " = '" .. tostring(v) .. "'")
         else
-            f:write("    " .. k .. " = " .. tostring(v) .. ",\n")
+            f:write("\nN." .. k .. " = " .. tostring(v) .. "")
         end
     end -- for
-    f:write("}")
+    f:write("\n\nreturn N")
     f:close()
 end -- function
 

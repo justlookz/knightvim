@@ -1,8 +1,9 @@
 -- toggler
---- @param Toggler_globals table : Contains global for toggler
---- @param Toggler_globals.path string : The path that is where the lua file is saved
---- @param settings table : Table or saved states
 local M = {}
+
+--- @global Toggler_globals table : Contains global for toggler
+--- @global Toggler_globals.path string : The path that is where the lua file is saved
+--- @global settings table : Table or saved states
 Toggler_globals = {}
 Toggler_globals.settings = {}
 Toggler_globals.path = vim.fn.stdpath("config") .. "/lua/user/toggler-settings.lua"
@@ -12,11 +13,12 @@ function M.setup(args)
         Toggler_globals.path = args.path
     end
 
-    local err
-    err, Toggler_globals.settings = pcall(dofile, Toggler_globals.path)
-    -- for k, v in pairs(Toggler_globals.settings) do
-    --     print(k, tostring(v) .. "\n")
-    -- end
+    _, Toggler_globals.settings = pcall(dofile, Toggler_globals.path)
+
+    print(Toggler_globals.settings)
+    if type(Toggler_globals.settings) == "string" then
+        Toggler_globals.settings = {}
+    end
 
     if args and args.settings then
         vim.tbl_deep_extend("force", args.settings, Toggler_globals.settings)
@@ -33,7 +35,7 @@ function M.setup(args)
     end     --if settings
 
     if args and args.on_attach and vim.is_callable(args.on_attach) then
-        on_attach()
+        args.on_attach()
     end
 end -- function
 
