@@ -16,6 +16,7 @@ return {
             ["<leader>ug"] = "Git signs",
             ["<leader>d"]  = "Debug - Dap",
             ["<leader>L"]  = "Lazy - Package manager",
+            ["<leader>g"]  = "Git actions",
 
             ["gt"]         = "Goto type...",
             ["v]"]         = "Match forward ...",
