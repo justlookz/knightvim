@@ -15,7 +15,6 @@ function M.setup(args)
 
     _, Toggler_globals.settings = pcall(dofile, Toggler_globals.path)
 
-    print(Toggler_globals.settings)
     if type(Toggler_globals.settings) == "string" then
         Toggler_globals.settings = {}
     end
