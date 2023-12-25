@@ -149,6 +149,14 @@ nmap(
 )
 
 nmap(
+    "<leader>usl",
+    function()
+        toggler.toggle_with_states("colorcolumn", "64,78", "")
+    end,
+    "Toggle Horizontal lines"
+)
+
+nmap(
     "<leader>ut",
     "<cmd>7split | terminal<cr>",
     "Terminal"
