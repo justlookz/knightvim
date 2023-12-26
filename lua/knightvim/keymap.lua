@@ -127,11 +127,11 @@ nmap(
 )
 
 nmap(
-    "<leader>usw",
+    "<leader>use",
     function()
-        toggler.toggle("wrap")
+        toggler.toggle("expandtab")
     end,
-    "Toggle wrap"
+    "Toggle Space or Tab"
 )
 
 nmap(
