@@ -57,10 +57,15 @@ alias kvim='$NVIM_APPNAME="name-of-folder nvim"
 
 replace name-of-folder with whatever name
 
+# EXAMPLE
+
+```bash
+git clone --depth 1 https://github.com/justlookz/knightvim ~/.config/kvim
+```
+
 ```bash
 alias kvim='$NVIM_APPNAME="kvim nvim"
 ```
-
 
 # Disclamer
 This is my personal configuration. 
