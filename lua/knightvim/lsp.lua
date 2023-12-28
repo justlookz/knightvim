@@ -141,7 +141,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 local client = vim.lsp.get_active_clients()[1]
 
                 if client then
-                    if client.server_capabilities.documentFormattingProvider then
+                    if client.server_capabilities.documentFormattingProvider and kvim.lsp.autoformat then
                         vim.lsp.buf.format { async = false }
                     end
                 end
