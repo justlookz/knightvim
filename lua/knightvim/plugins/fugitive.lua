@@ -1,6 +1,7 @@
 --git Fugitive
 return {
     "https://github.com/tpope/vim-fugitive",
+    lazy = false,
     keys = {
         {
             "<leader>ga",

@@ -34,4 +34,4 @@ require "user"
 require("knightvim.options")
 require("knightvim.bootstrap")
 require("knightvim.keymap")
-require("knightvim.lsp")
+require("knightvim.autocommands")
