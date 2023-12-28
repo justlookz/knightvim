@@ -4,12 +4,14 @@ return {
     event = "VeryLazy",
     dependencies = {
 
-        { -- Optional
+        {
             'https://github.com/williamboman/mason.nvim',
         },
-        { 'https://github.com/williamboman/mason-lspconfig.nvim' }, -- Optional
-        -- Autocompletion
-            },
+        { 'https://github.com/williamboman/mason-lspconfig.nvim' },
+        {
+            'https://github.com/hrsh7th/cmp-nvim-lsp',
+        }
+    },
     config = function()
         local function lsp_server_setup(lsp_list)
             if lsp_list ~= nil then

@@ -2,12 +2,6 @@ return {
 
     'https://github.com/hrsh7th/cmp-nvim-lsp',
     dependencies = {
-        {
-            'https://github.com/williamboman/mason.nvim',
-        },
-        {
-            'https://github.com/neovim/nvim-lspconfig' },
-        { 'https://github.com/williamboman/mason-lspconfig.nvim' },
         { 'https://github.com/hrsh7th/nvim-cmp' },
         { 'https://github.com/L3MON4D3/LuaSnip' },
 
