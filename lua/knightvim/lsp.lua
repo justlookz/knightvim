@@ -1,10 +1,10 @@
 --- Helper function to test if kvim.lsp.local_include
 --- is empty or not
-local function auto_installed()
+local function no_auto_installed()
     if kvim.lsp.auto_install then
         return kvim.lsp.local_include
     end
-    return true
+    return false
 end
 
 --- Helper function for lsp configuration
@@ -27,7 +27,9 @@ end
 -- Mason Configs -----------------------------
 require 'mason'.setup()
 require('mason-lspconfig').setup({
-    automatic_installation = auto_installed(),
+    automatic_installation = {
+        exclude = no_auto_installed(),
+    },
 })
 -- end Mason Configs -------------------------
 
@@ -153,8 +155,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 
 -- Activate LspServers -----------------------
-local lsp_server = require("mason-lspconfig")
-    .get_installed_servers()
+local lsp_server = require("mason-lspconfig").get_installed_servers()
 
 lsp_server_setup(lsp_server)
 lsp_server_setup(kvim.lsp.local_include)
@@ -175,8 +176,7 @@ local cmp           = require('cmp')
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 
-require('luasnip.loaders.from_vscode')
-    .lazy_load()
+require('luasnip.loaders.from_vscode').lazy_load()
 
 local has_words_before = function()
     unpack = unpack or table.unpack
@@ -187,6 +187,11 @@ local has_words_before = function()
 end
 
 cmp.setup({
+    enabled = function()
+        return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
+            or require("cmp_dap").is_dap_buffer()
+    end,
+
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
@@ -235,20 +240,11 @@ cmp.setup({
     experimental = { ghost_text = kvim.lsp.ghost_text, },
 })
 
--- Dap integration
-require("cmp").setup({
-    enabled = function()
-        return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
-            or require("cmp_dap").is_dap_buffer()
-    end
-})
-
 require("cmp").setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
     sources = {
         { name = "dap" },
     },
 })
--- end Dap integration
 
 cmp.event:on(
     'confirm_done',
