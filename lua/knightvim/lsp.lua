@@ -240,7 +240,7 @@ cmp.setup({
     experimental = { ghost_text = kvim.lsp.ghost_text, },
 })
 
-require("cmp").setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
     sources = {
         { name = "dap" },
     },
