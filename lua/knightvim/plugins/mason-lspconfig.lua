@@ -3,6 +3,7 @@ return {
     dependencies = {
         'https://github.com/williamboman/mason.nvim',
     },
+    event = "VeryLazy",
     configs = function()
         local function no_auto_installed()
             if kvim.lsp.auto_install then
@@ -16,5 +17,6 @@ return {
                 exclude = no_auto_installed(),
             },
         })
+        pcall(vim.cmd, 'MasonUpdate')
     end
 }

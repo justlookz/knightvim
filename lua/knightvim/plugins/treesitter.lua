@@ -31,6 +31,5 @@ return {
             },
         }
 
-        pcall(vim.cmd, 'MasonUpdate')
     end,
 }
