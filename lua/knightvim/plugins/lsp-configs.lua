@@ -1,7 +1,6 @@
 -- LSP Support
 return {
     'https://github.com/neovim/nvim-lspconfig', -- Required
-    event = "VeryLazy",
     dependencies = {
 
         {
@@ -9,7 +8,7 @@ return {
         },
         { 'https://github.com/williamboman/mason-lspconfig.nvim' },
         {
-            'https://github.com/hrsh7th/cmp-nvim-lsp',
+            'https://github.com/neovim/nvim-lspconfig',
         }
     },
     config = function()
@@ -18,7 +17,7 @@ return {
                 for _, v in ipairs(lsp_list) do
                     require('lspconfig')[v].setup({
                         capabilities = require('cmp_nvim_lsp')
-                            .default_capabilities(),
+                        .default_capabilities(),
                     })
                 end
             end
