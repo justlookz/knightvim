@@ -116,6 +116,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
         -- end before Write ------------------
     end, -- callback end
 })
-
--- Cmp configuration -------------------------
--- End Cmp configuration ---------------------
