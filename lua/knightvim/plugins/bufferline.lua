@@ -4,4 +4,5 @@ return {
     version = "*",
     dependencies = 'https://github.com/nvim-tree/nvim-web-devicons',
     opts = {},
+    lazy = false,
 }

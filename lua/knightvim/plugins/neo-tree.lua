@@ -3,6 +3,7 @@ return {
     "https://github.com/nvim-tree/nvim-tree.lua",
     version = "*",
     lazy = false,
+    event = "VeryLazy",
     dependencies = {
         "https://github.com/nvim-tree/nvim-web-devicons",
     },

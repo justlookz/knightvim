@@ -1,4 +1,4 @@
-local core = {
+local M = {
 
     -- Starry Collection - Themes
     --{ 'https://github.com/ray-x/starry.nvim' },
@@ -7,5 +7,5 @@ local core = {
 
 }
 
-vim.tbl_deep_extend("force", core, kvim.plugins)
-return core
+vim.tbl_deep_extend("force", M, kvim.plugins)
+return M

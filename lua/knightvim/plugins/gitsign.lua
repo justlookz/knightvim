@@ -1,6 +1,7 @@
 -- Gitsign - Github integration
 return {
     "lewis6991/gitsigns.nvim",
+    event = "VeryLazy",
     opts = {
         on_attach                    = function(bufnr)
             -- from Gitsigns

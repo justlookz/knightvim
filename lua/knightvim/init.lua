@@ -4,6 +4,7 @@ kvim.leader = " "
 kvim.plugins = {}
 kvim.lsp = {}
 kvim.lsp.local_include = {}
+kvim.lsp.custom_servers = {}
 kvim.lsp.ghost_text = true
 kvim.lsp.auto_install = true
 
