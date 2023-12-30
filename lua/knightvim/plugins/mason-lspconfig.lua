@@ -15,6 +15,6 @@ return {
                 exclude = no_auto_installed(),
             },
         })
-        ---pcall(vim.cmd, 'MasonUpdate')
+        pcall(vim.cmd, 'MasonUpdate')
     end
 }
