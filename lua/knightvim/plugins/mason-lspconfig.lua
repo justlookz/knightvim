@@ -13,6 +13,7 @@ return {
         require('mason-lspconfig').setup({
             automatic_installation = {
                 exclude = no_auto_installed(),
+                handlers = {},
             },
         })
         pcall(vim.cmd, 'MasonUpdate')
