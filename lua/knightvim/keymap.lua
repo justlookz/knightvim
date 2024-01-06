@@ -22,34 +22,34 @@ nmap("L", vim.cmd.BufferLineCycleNext, "Next Buffer")
 
 -- buffer swapping
 nmap(
-    "<C-h>",
+    "<A-h>",
     function()
         vim.cmd.wincmd("h")
     end,
     "goto left"
 )
 
-nmap("<C-left>", function()
+nmap("<A-left>", function()
         vim.cmd.wincmd("h")
     end,
     "goto left"
 )
 
 nmap(
-    "<C-l>",
+    "<A-l>",
     function()
         vim.cmd.wincmd("l")
     end,
     "goto right"
 )
 
-nmap("<C-right>", function()
+nmap("<A-right>", function()
         vim.cmd.wincmd("l")
     end,
     "goto right")
 
 nmap(
-    "<C-k>",
+    "<A-k>",
     function()
         vim.cmd.wincmd("k")
     end,
@@ -57,7 +57,7 @@ nmap(
 )
 
 nmap(
-    "<C-up>",
+    "<A-up>",
     function()
         vim.cmd.wincmd("k")
     end,
@@ -65,7 +65,7 @@ nmap(
 )
 
 
-nmap("<C-j>",
+nmap("<A-j>",
     function()
         vim.cmd.wincmd("j")
     end,
@@ -73,7 +73,7 @@ nmap("<C-j>",
 )
 
 nmap(
-    "<C-down>",
+    "<A-down>",
     function()
         vim.cmd.wincmd("j")
     end,
