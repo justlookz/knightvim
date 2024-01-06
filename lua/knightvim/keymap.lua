@@ -155,3 +155,36 @@ nmap(
     "<cmd>7split | terminal<cr>",
     "Terminal"
 )
+
+vim.keymap.set(
+    "i", "<C-j>",
+    "<esc>:m .+1<cr>==gi",
+    { desc = "move down" })
+
+vim.keymap.set(
+    "i", "<C-k>",
+    "<Esc>:m .-2<CR>==gi",
+    { desc = "move down" }
+)
+
+vim.keymap.set(
+    "n", "<C-j>",
+    ":m .+1<cr>==",
+    { desc = "move down" })
+
+vim.keymap.set(
+    "n", "<C-k>",
+    ":m .-2<CR>==",
+    { desc = "move down" }
+)
+
+vim.keymap.set(
+    "v", "<C-j>",
+    ":m '>+1<cr>gv=gv",
+    { desc = "move down" })
+
+vim.keymap.set(
+    "v", "<C-k>",
+    ":m '<-2<CR>gv=gv",
+    { desc = "move down" }
+)
