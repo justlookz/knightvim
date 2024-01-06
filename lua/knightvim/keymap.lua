@@ -164,7 +164,7 @@ vim.keymap.set(
 vim.keymap.set(
     "i", "<C-k>",
     "<Esc>:m .-2<CR>==gi",
-    { desc = "move down" }
+    { desc = "move up" }
 )
 
 vim.keymap.set(
@@ -175,7 +175,7 @@ vim.keymap.set(
 vim.keymap.set(
     "n", "<C-k>",
     ":m .-2<CR>==",
-    { desc = "move down" }
+    { desc = "move up" }
 )
 
 vim.keymap.set(
@@ -186,5 +186,5 @@ vim.keymap.set(
 vim.keymap.set(
     "v", "<C-k>",
     ":m '<-2<CR>gv=gv",
-    { desc = "move down" }
+    { desc = "move up" }
 )
