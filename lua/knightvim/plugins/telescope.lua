@@ -142,17 +142,15 @@ return {
         },
 
         {
-            "<leader>sw",
+            "<leader>st",
             function()
                 require("telescope.builtin")
                     .live_grep(require("telescope.themes")
                         .get_dropdown())
             end,
-            desc = "Find words",
+            desc = "Find text",
             mode = "n",
         },
-
-
 
     },
 }

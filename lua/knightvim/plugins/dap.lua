@@ -8,7 +8,9 @@ return {
 
         {
             "<leader>db",
-            "<cmd>DapToggleBreakpoint<cr>",
+            function()
+                require("dap").toggle_breakpoint()
+            end,
             desc = "Toggle Breakpoint[F8]"
         },
 
@@ -16,7 +18,9 @@ return {
 
         {
             "<leader>dc",
-            "<cmd>DapContinue<cr>",
+            function()
+                require("dap").continue()
+            end,
             desc = "Continue[F5]"
         },
 
@@ -24,7 +28,9 @@ return {
 
         {
             "<leader>di",
-            "<cmd>DapStepInto<cr>",
+            function()
+                require("dap").step_into()
+            end,
             desc = "Step into[F6]"
         },
 
@@ -32,9 +38,22 @@ return {
 
         {
             "<leader>do",
-            "<cmd>DapStepOver<cr>",
+            function()
+                require("dap").step_over()
+            end,
             desc = "Step over[F7]"
         },
+
+        { "<F9>", "<leader>du" },
+
+        {
+            "<leader>du",
+            function()
+                require("dap").step_out()
+            end,
+            desc = "Step out[F9]"
+        },
+
     }
 
 }

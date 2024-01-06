@@ -6,7 +6,9 @@ return {
     keys = {
         {
             "<leader>ud",
-            "<cmd>lua require('dapui').toggle()<cr>",
+            function()
+                require('dapui').toggle()
+            end,
             desc = "Dap Ui toggle"
         },
     }

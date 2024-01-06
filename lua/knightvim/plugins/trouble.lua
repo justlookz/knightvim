@@ -9,20 +9,61 @@ return {
         -- Trouble Debug menu
         {
             "<leader>tt",
-            "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
+            function()
+                require("trouble").toggle()
+            end,
+            desc = "Toggle Trouble"
+        },
 
         {
             "<leader>td",
             "<cmd>TodoTrouble<cr>",
-            "Todos"
-        },
-        { "<leader>tq", "<cmd>Trouble quickfix<cr>",
-            "Quickfix"
+            desc = "Todos"
         },
         {
+            "<leader>tq",
+            function()
+                require("trouble").toggle("quickfix")
+            end,
+            desc = "Quickfix"
+        },
+
+        {
             "<leader>tw",
-            "<cmd>Trouble workspace_diagnostics<cr>",
-            "Workspace Diagnostics"
+            function()
+                require("trouble").toggle("workspace_diagnostics")
+            end,
+            desc = "Workspace Diagnostics"
+        },
+
+        {
+            "<leader>tn",
+            function()
+                require("trouble").next({
+                    skip_groups = true,
+                    jump = true
+                })
+            end,
+            desc = "next"
+        },
+
+        {
+            "<leader>tp",
+            function()
+                require("trouble").previous({
+                    skip_groups = true,
+                    jump = true
+                })
+            end,
+            desc = "previous"
+        },
+
+        {
+            "<leader>tr",
+            function()
+                require("trouble").toggle("lsp_references")
+            end,
+            desc = "Lsp references"
         },
 
     },
