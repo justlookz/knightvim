@@ -10,6 +10,7 @@ return {
             ["<leader>s"]  = "Search",
             ["<leader>t"]  = "Trouble",
             ["<leader>sg"] = "Git",
+            ["<leader>st"] = "Type",
             ["<leader>u"]  = "ui settings",
             ["<leader>us"] = "Persistent Settings",
             ["<leader>ug"] = "Git signs",

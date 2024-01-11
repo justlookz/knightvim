@@ -142,7 +142,7 @@ return {
         },
 
         {
-            "<leader>st",
+            "<leader>sw",
             function()
                 require("telescope.builtin")
                     .live_grep(require("telescope.themes")
