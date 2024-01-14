@@ -4,7 +4,11 @@ return {
     lazy = false,
     keys = {
         -- Undo Tree
-        { "<leader>uu", vim.cmd.UndotreeToggle, desc = "Undo Tree Structure" },
+        {
+            "<leader>uu",
+            vim.cmd.UndotreeToggle,
+            desc = "Undo Tree Structure"
+        },
 
 
     }

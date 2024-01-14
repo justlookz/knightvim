@@ -2,5 +2,5 @@
 return {
     'https://github.com/NvChad/nvim-colorizer.lua',
     opts = {},
-    lazy = true,
+    lazy = false,
 }

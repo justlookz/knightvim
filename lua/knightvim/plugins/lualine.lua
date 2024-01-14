@@ -1,10 +1,10 @@
 --lualine - Bottom bar
 return {
     'https://github.com/nvim-lualine/lualine.nvim',
-    requires = { 'https://github.com/nvim-tree/nvim-web-devicons', opt = true },
+    dependencies = { 'https://github.com/nvim-tree/nvim-web-devicons', opt = true },
     lazy = false,
     event = "VeryLazy",
-    opts = {
+    opts = { -- {{{
         options           = {
             icons_enabled        = true,
             theme                = "auto",
@@ -43,5 +43,5 @@ return {
         winbar            = {},
         inactive_winbar   = {},
         extensions        = {}
-    }
+    } -- }}}
 }

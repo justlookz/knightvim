@@ -1,7 +1,7 @@
 return {
     "https://github.com/hrsh7th/nvim-cmp",
     lazy = false,
-    dependencies = {
+    dependencies = { -- {{{
         { "https://github.com/hrsh7th/cmp-nvim-lsp" },
         { 'https://github.com/hrsh7th/nvim-cmp' },
         { 'https://github.com/L3MON4D3/LuaSnip' },
@@ -17,7 +17,7 @@ return {
         { "https://github.com/rcarriga/cmp-dap" },
         { 'https://github.com/windwp/nvim-autopairs' },
         { "https://github.com/rafamadriz/friendly-snippets", },
-    },
+    }, -- }}}
     config = function()
         local luasnip       = require("luasnip")
         local cmp           = require('cmp')
@@ -26,27 +26,27 @@ return {
 
         require('luasnip.loaders.from_vscode').lazy_load()
 
-        local has_words_before = function()
+        local has_words_before = function() -- {{{
             unpack = unpack or table.unpack
             local line, col = unpack(
                 vim.api.nvim_win_get_cursor(0)
             )
             return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-        end
+        end -- }}}
 
         cmp.setup({
-            enabled = function()
+            enabled = function() -- {{{
                 return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
                     or require("cmp_dap").is_dap_buffer()
-            end,
+            end,        -- }}}
 
-            snippet = {
+            snippet = { -- {{{
                 -- REQUIRED - you must specify a snippet engine
                 expand = function(args)
                     require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
                 end,
-            },
-            sources = {
+            },                                               -- }}}
+            sources = {                                      -- {{{
                 { name = "nvim_lua" },
                 { name = 'nvim_lsp', },
                 { name = 'luasnip' },
@@ -55,12 +55,12 @@ return {
                 { name = "buffer", },
                 { name = 'nvim_lsp_document_symbol' },
                 { name = "calc", },
-            },
+            }, -- }}}
             options = {
                 trailing_slash = false,
             },
             mapping = {
-                ["<C-n>"] = cmp.mapping(function(fallback)
+                ["<C-n>"] = cmp.mapping(function(fallback) -- {{{
                     if cmp.visible() then
                         cmp.select_next_item()
                     elseif luasnip.expand_or_jumpable() then
@@ -70,9 +70,9 @@ return {
                     else
                         fallback()
                     end
-                end, { "i", "s" }),
+                end, { "i", "s" }),                        -- }}}
 
-                ["<C-b>"] = cmp.mapping(function(fallback)
+                ["<C-b>"] = cmp.mapping(function(fallback) -- {{{
                     if cmp.visible() then
                         cmp.select_prev_item()
                     elseif luasnip.jumpable(-1) then
@@ -80,14 +80,14 @@ return {
                     else
                         fallback()
                     end
-                end, { "i", "s" }),
+                end, { "i", "s" }), -- }}}
 
                 ['<CR>']  = cmp.mapping.confirm({ select = false }),
             },
 
             experimental = { ghost_text = kvim.lsp.ghost_text, },
         })
-
+        -- Setup for dapui {{{
         cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
             sources = {
                 { name = "dap" },
@@ -99,4 +99,4 @@ return {
             cmp_autopairs.on_confirm_done()
         )
     end,
-}
+} -- }}}
