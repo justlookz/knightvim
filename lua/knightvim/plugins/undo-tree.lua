@@ -9,7 +9,5 @@ return {
             vim.cmd.UndotreeToggle,
             desc = "Undo Tree Structure"
         },
-
-
     }
 }
