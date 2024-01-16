@@ -23,7 +23,6 @@ return {
         local cmp           = require('cmp')
         local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
-
         require('luasnip.loaders.from_vscode').lazy_load()
 
         local has_words_before = function() -- {{{
@@ -60,7 +59,7 @@ return {
                 trailing_slash = false,
             },
             mapping = {
-                ["<C-n>"] = cmp.mapping(function(fallback) -- {{{
+                ["<C-n>"]     = cmp.mapping(function(fallback) -- {{{
                     if cmp.visible() then
                         cmp.select_next_item()
                     elseif luasnip.expand_or_jumpable() then
@@ -70,9 +69,16 @@ return {
                     else
                         fallback()
                     end
-                end, { "i", "s" }),                        -- }}}
+                end, { "i", "s" }),                            -- }}}
+                ["<C-Space>"] = cmp.mapping(function(fallback) -- {{{
+                    if luasnip.expand_or_jumpable() then
+                        luasnip.expand_or_jump()
+                    else
+                        fallback()
+                    end
+                end, { "i", "s" }),                            -- }}}
 
-                ["<C-b>"] = cmp.mapping(function(fallback) -- {{{
+                ["<C-b>"]     = cmp.mapping(function(fallback) -- {{{
                     if cmp.visible() then
                         cmp.select_prev_item()
                     elseif luasnip.jumpable(-1) then
@@ -82,7 +88,7 @@ return {
                     end
                 end, { "i", "s" }), -- }}}
 
-                ['<CR>']  = cmp.mapping.confirm({ select = false }),
+                ['<CR>']      = cmp.mapping.confirm({ select = false }),
             },
 
             experimental = { ghost_text = kvim.lsp.ghost_text, },
@@ -98,5 +104,24 @@ return {
             'confirm_done',
             cmp_autopairs.on_confirm_done()
         )
+        -- }}}
+
+        -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+        cmp.setup.cmdline({ '/', '?' }, {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = {
+                { name = 'buffer' }
+            }
+        })
+
+        -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+        cmp.setup.cmdline(':', {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = cmp.config.sources({
+                { name = 'path' }
+            }, {
+                { name = 'cmdline' }
+            })
+        })
     end,
-} -- }}}
+}

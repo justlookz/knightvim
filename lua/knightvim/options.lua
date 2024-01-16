@@ -34,7 +34,7 @@ vim.o.shiftwidth = 4     -- Shift 4 spaces when tab
 vim.o.tabstop = 4        -- 1 tab == 4 spaces
 vim.o.smartindent = true -- Autoindent new lines
 
--- Memory, CPU
+-- Memory, CPU{{{
 vim.o.hidden = true     -- Enable background buffers
 vim.o.history = 100     -- Remember N lines in history
 vim.o.lazyredraw = true -- Faster scrolling
@@ -43,4 +43,6 @@ vim.o.updatetime = 250  -- ms to wait for trigger an event
 vim.o.undofile = true   -- Persistent Undo History
 
 vim.o.timeout = true
-vim.o.timeoutlen = 300
+vim.o.timeoutlen = 300 -- }}}
+
+vim.opt.foldmethod = "marker"
