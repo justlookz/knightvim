@@ -1,6 +1,6 @@
 return {
 
-    "mfussenegger/nvim-dap",
+    "https://github.com/mfussenegger/nvim-dap",
     lazy = true,
     keys = {
         -- Dap

@@ -1,5 +1,5 @@
 return {
-    "lukas-reineke/headlines.nvim",
-    dependencies = "nvim-treesitter/nvim-treesitter",
+    "https://github.com/lukas-reineke/headlines.nvim",
+    dependencies = "https://github.com/nvim-treesitter/nvim-treesitter",
     opts = {},
 }

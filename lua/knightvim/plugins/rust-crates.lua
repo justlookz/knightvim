@@ -1,6 +1,6 @@
 return {
-    'saecki/crates.nvim',
+    'https://github.com/saecki/crates.nvim',
     event = { "BufRead Cargo.toml" },
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = { 'https://github.com/nvim-lua/plenary.nvim' },
     opts = {},
 }
