@@ -2,7 +2,7 @@
 return {
     'https://github.com/akinsho/bufferline.nvim',
     version = "*",
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = { 'https://github.com/nvim-tree/nvim-web-devicons' },
     opts = {},
     event = "VeryLazy",
     keys = {
