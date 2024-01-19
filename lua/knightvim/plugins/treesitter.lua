@@ -11,6 +11,12 @@ return {
 
             auto_install     = true,
 
+            indent           = { enable = true },
+
+            autotag          = { enable = true },
+
+            rainbow          = { enable = true, extendent_mode = true },
+
             ignore_install   = {},
 
             highlight        = {
@@ -28,5 +34,21 @@ return {
                 additional_vim_regex_highlighting = false,
             },
         }
+
+        vim.o.foldmethod = "expr"
+        vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+        vim.o.foldlevelstart = 99
+
+        vim.api.nvim_create_autocmd("BufWinEnter", {
+            callback = function()
+                vim.cmd [[silent! loadview]]
+            end
+        })
+
+        vim.api.nvim_create_autocmd("BufWinLeave", {
+            callback = function()
+                vim.cmd [[mkview]]
+            end
+        })
     end,
 }
