@@ -46,7 +46,7 @@ return {
 
         vim.api.nvim_create_autocmd("BufWinLeave", {
             callback = function()
-                vim.cmd [[mkview]]
+                vim.cmd [[silent! mkview]]
             end
         })
     end,
