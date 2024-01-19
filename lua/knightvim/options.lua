@@ -44,5 +44,3 @@ vim.o.undofile = true   -- Persistent Undo History
 
 vim.o.timeout = true
 vim.o.timeoutlen = 300 -- }}}
-
-vim.opt.foldmethod = "marker"

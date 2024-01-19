@@ -3,7 +3,6 @@ return {
     'https://github.com/nvim-treesitter/nvim-treesitter',
     build = ":silent TSUpdateSync",
     config = function()
-        -- code
         require 'nvim-treesitter.configs'.setup {
             ensure_installed = { "c", "cpp", "lua", "vim", "vimdoc", "query" },
 
@@ -35,8 +34,8 @@ return {
             },
         }
 
-        vim.o.foldmethod = "expr"
-        vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+        vim.o.foldmethod     = "expr"
+        vim.o.foldexpr       = "nvim_treesitter#foldexpr()"
         vim.o.foldlevelstart = 99
 
         vim.api.nvim_create_autocmd("BufWinEnter", {

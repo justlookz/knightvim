@@ -10,6 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
         lazypath,
     })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 --- This is used to load lazy from pligins folder
@@ -17,8 +18,8 @@ require("lazy").setup({
     { import = "knightvim.plugins" },
     { import = "knightvim.plugins.colorscheme" },
     { import = "knightvim.plugins.lsp" },
-    { import = "knightvim.plugins.dap" }
-
+    { import = "knightvim.plugins.dap" },
+    { import = "knightvim.plugins.treesitter" },
 })
 
 require("knightvim.toggler").setup()
