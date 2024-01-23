@@ -81,25 +81,25 @@ vim.keymap.set(
 -- Lazy - Package manager
 vim.keymap.set(
     "n", "<leader>LL",
-    "<cmd>Lazy<cr>",
+    "<CMD>Lazy<CR>",
     { desc = "Open Lazy [Package manager]" }
 )
 
 vim.keymap.set(
     "n", "<leader>Ls",
-    "<cmd>Lazy sync<cr>",
+    "<CMD>Lazy sync<CR>",
     { desc = "Sync" }
 )
 
 vim.keymap.set(
     "n", "<leader>Lu",
-    "<cmd>Lazy update<cr>",
+    "<CMD>Lazy update<CR>",
     { desc = "Update" }
 )
 
 vim.keymap.set(
     "n", "<leader>Lr",
-    "<cmd>Lazy restore<cr>",
+    "<CMD>Lazy restore<CR>",
     { desc = "Restore" }
 )
 
@@ -163,40 +163,40 @@ vim.keymap.set(
 
 vim.keymap.set(
     "n", "<leader>ut",
-    "<cmd>7split | terminal<cr>",
+    "<CMD>7split | terminal<CR>",
     { desc = "Terminal" }
 )
 
 vim.keymap.set(
     "i", "<C-j>",
-    "<esc>:m .+1<cr>==gi",
+    "<esc><CMD>m .+1<CR>==gi",
     { desc = "move down" })
 
 vim.keymap.set(
     "i", "<C-k>",
-    "<Esc>:m .-2<CR>==gi",
+    "<Esc><CMD>m .-2<CR>==gi",
     { desc = "move up" }
 )
 
 vim.keymap.set(
     "n", "<C-j>",
-    ":m .+1<cr>==",
+    "<CMD>m .+1<CR>==",
     { desc = "move down" })
 
 vim.keymap.set(
     "n", "<C-k>",
-    ":m .-2<CR>==",
+    "<CMD>m .-2<CR>==",
     { desc = "move up" }
 )
 
 vim.keymap.set(
     "v", "<C-j>",
-    ":m '>+1<cr>gv=gv",
+    "<CMD>m '>+1<CR>gv=gv",
     { desc = "move down" })
 
 vim.keymap.set(
     "v", "<C-k>",
-    ":m '<-2<CR>gv=gv",
+    "<CMD>m '<-2<CR>gv=gv",
     { desc = "move up" }
 )
 
