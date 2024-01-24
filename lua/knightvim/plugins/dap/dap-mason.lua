@@ -5,7 +5,6 @@ return {
         "https://github.com/williamboman/mason.nvim",
         "https://github.com/mfussenegger/nvim-dap",
     },
-    lazy = true,
     config = function()
         require('mason-nvim-dap').setup({
             ensure_installed = { 'stylua', 'cppdbg' },

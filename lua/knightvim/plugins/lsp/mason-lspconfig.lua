@@ -17,5 +17,6 @@ return {
             },
         })
         pcall(vim.cmd, 'silent! MasonUpdate')
-    end
+    end,
+    lazy = false,
 }
