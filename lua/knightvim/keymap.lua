@@ -209,3 +209,13 @@ vim.keymap.set(
     "n", "<C-u>", "<C-u>zz",
     { desc = "Fast moving down and centered" }
 )
+
+vim.keymap.set(
+    "n", "L", vim.cmd.bnext,
+    { desc = "Go to next buffer" }
+)
+
+vim.keymap.set(
+    "n", "H", vim.cmd.bprev,
+    { desc = "Go to previous buffer" }
+)
