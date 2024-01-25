@@ -191,12 +191,12 @@ vim.keymap.set(
 
 vim.keymap.set(
     "v", "<C-j>",
-    "<CMD>m '>+1<CR>gv=gv",
+    ":m '>+1<CR>gv=gv",
     { desc = "move down" })
 
 vim.keymap.set(
     "v", "<C-k>",
-    "<CMD>m '<-2<CR>gv=gv",
+    ":m '<-2<CR>gv=gv",
     { desc = "move up" }
 )
 
