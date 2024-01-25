@@ -19,6 +19,7 @@ require("lazy").setup({
     { import = "knightvim.plugins.colorscheme" },
     { import = "knightvim.plugins.lsp" },
     { import = "knightvim.plugins.dap" },
+    { import = "knightvim.plugins.ui" },
     { import = "knightvim.plugins.treesitter" },
 })
 
