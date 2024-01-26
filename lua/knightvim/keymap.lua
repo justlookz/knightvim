@@ -14,7 +14,7 @@ vim.keymap.set("n", "<leader>x", vim.cmd.bdelete, { desc = "Close Buffer" })
 
 -- buffer swapping
 vim.keymap.set(
-    "n", "<A-h>",
+    "n", "<C-h>",
     function()
         vim.cmd.wincmd("h")
     end,
@@ -22,7 +22,7 @@ vim.keymap.set(
 )
 
 vim.keymap.set(
-    "n", "<A-left>",
+    "n", "<C-left>",
     function()
         vim.cmd.wincmd("h")
     end,
@@ -30,7 +30,7 @@ vim.keymap.set(
 )
 
 vim.keymap.set(
-    "n", "<A-l>",
+    "n", "<C-l>",
     function()
         vim.cmd.wincmd("l")
     end,
@@ -38,7 +38,7 @@ vim.keymap.set(
 )
 
 vim.keymap.set(
-    "n", "<A-right>",
+    "n", "<C-right>",
     function()
         vim.cmd.wincmd("l")
     end,
@@ -46,7 +46,7 @@ vim.keymap.set(
 )
 
 vim.keymap.set(
-    "n", "<A-k>",
+    "n", "<C-k>",
     function()
         vim.cmd.wincmd("k")
     end,
@@ -54,7 +54,7 @@ vim.keymap.set(
 )
 
 vim.keymap.set(
-    "n", "<A-up>",
+    "n", "<C-up>",
     function()
         vim.cmd.wincmd("k")
     end,
@@ -63,7 +63,7 @@ vim.keymap.set(
 
 
 vim.keymap.set(
-    "n", "<A-j>",
+    "n", "<C-j>",
     function()
         vim.cmd.wincmd("j")
     end,
@@ -71,7 +71,7 @@ vim.keymap.set(
 )
 
 vim.keymap.set(
-    "n", "<A-down>",
+    "n", "<C-down>",
     function()
         vim.cmd.wincmd("j")
     end,
@@ -168,34 +168,34 @@ vim.keymap.set(
 )
 
 vim.keymap.set(
-    "i", "<C-j>",
+    "i", "<A-j>",
     "<esc><CMD>m .+1<CR>==gi",
     { desc = "move down" })
 
 vim.keymap.set(
-    "i", "<C-k>",
+    "i", "<A-k>",
     "<Esc><CMD>m .-2<CR>==gi",
     { desc = "move up" }
 )
 
 vim.keymap.set(
-    "n", "<C-j>",
+    "n", "<A-j>",
     "<CMD>m .+1<CR>==",
     { desc = "move down" })
 
 vim.keymap.set(
-    "n", "<C-k>",
+    "n", "<A-k>",
     "<CMD>m .-2<CR>==",
     { desc = "move up" }
 )
 
 vim.keymap.set(
-    "v", "<C-j>",
+    "v", "<A-j>",
     ":m '>+1<CR>gv=gv",
     { desc = "move down" })
 
 vim.keymap.set(
-    "v", "<C-k>",
+    "v", "<A-k>",
     ":m '<-2<CR>gv=gv",
     { desc = "move up" }
 )

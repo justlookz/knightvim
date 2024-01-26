@@ -15,7 +15,7 @@ return {
         },
         {
             "<leader>gp",
-            "<cmd>silent Git push<cr>",
+            "<cmd>Git push<cr>",
             desc = "Git push on current origin"
         },
     },
