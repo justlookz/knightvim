@@ -4,8 +4,8 @@ return {
     lazy = false,
     keys = {
         {
-            "<leader>ga",
-            "<cmd>Git add %<cr>",
+            "<leader>gw",
+            "<cmd>Gwrite<cr>",
             desc = "Git add current file"
         },
         {
