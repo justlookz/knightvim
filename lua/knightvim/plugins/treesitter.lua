@@ -14,6 +14,34 @@ return {
     },
 
     {
+        "https://github.com/Wansmer/treesj",
+        opts = { use_default_keymaps = true, },
+        keys = {
+            {
+                "<leader>ff",
+                function()
+                    require("treesj").toggle()
+                end,
+                desc = "Toggle split - join",
+            },
+            {
+                "<leader>fs",
+                function()
+                    require("treesj").split()
+                end,
+                desc = "Split",
+            },
+            {
+                "<leader>fj",
+                function()
+                    require("treesj").join()
+                end,
+                desc = "Join",
+            },
+        }
+    },
+
+    {
         'https://github.com/nvim-treesitter/nvim-treesitter',
         build = ":silent TSUpdateSync",
         config = function()

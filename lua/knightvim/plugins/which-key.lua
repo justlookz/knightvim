@@ -8,6 +8,7 @@ return {
 
         wk.register({
             ["<leader>s"]  = "Search",
+            ["<leader>f"]  = "Split - Join text",
             ["<leader>t"]  = "Trouble",
             ["<leader>sg"] = "Git",
             ["<leader>st"] = "Type",
