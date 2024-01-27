@@ -4,7 +4,7 @@ return {
     build = ":silent TSUpdateSync",
     config = function()
         require 'nvim-treesitter.configs'.setup {
-            ensure_installed = { "c", "cpp", "lua", "vim", "vimdoc", "query" },
+            ensure_installed = { "c", "cpp", "lua", "vim", "vimdoc", "query", "sql" },
 
             sync_install     = false,
 

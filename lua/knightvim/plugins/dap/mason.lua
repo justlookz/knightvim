@@ -8,7 +8,14 @@ return {
     config = function()
         require('mason-nvim-dap').setup({
             ensure_installed = { 'stylua', 'cppdbg' },
-            handlers = {},
+            handlers = {
+                function(config)
+                    -- all sources with no handler get passed here
+
+                    -- Keep original functionality
+                    require('mason-nvim-dap').default_setup(config)
+                end,
+            },
         })
     end
 }
