@@ -64,7 +64,7 @@ git clone --depth 1 https://github.com/justlookz/knightvim ~/.config/kvim
 ```
 
 ```bash
-alias kvim='$NVIM_APPNAME="kvim nvim"
+alias kvim='NVIM_APPNAME="kvim nvim"
 ```
 
 # Disclamer
