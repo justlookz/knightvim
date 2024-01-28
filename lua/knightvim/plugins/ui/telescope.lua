@@ -107,6 +107,16 @@ return {
             },
 
             {
+                "<leader><leader>",
+                function()
+                    require("telescope.builtin")
+                        .find_files(require("telescope.themes").get_dropdown())
+                end,
+                desc = "Find file",
+                mode = "n",
+            },
+
+            {
                 "<leader>se",
                 function()
                     require("telescope.builtin")
