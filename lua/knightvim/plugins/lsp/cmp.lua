@@ -34,18 +34,18 @@ return {
         end -- }}}
 
         cmp.setup({
-            enabled = function() -- {{{
+            enabled = function()
                 return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
                     or require("cmp_dap").is_dap_buffer()
-            end,        -- }}}
+            end,
 
-            snippet = { -- {{{
+            snippet = {
                 -- REQUIRED - you must specify a snippet engine
                 expand = function(args)
                     require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
                 end,
-            },                                               -- }}}
-            sources = {                                      -- {{{
+            },
+            sources = {
                 { name = "nvim_lua" },
                 { name = 'nvim_lsp', },
                 { name = 'luasnip' },
@@ -69,14 +69,14 @@ return {
                     else
                         fallback()
                     end
-                end, { "i", "s" }),                            -- }}}
+                end, { "i", "s" }),
                 ["<C-Space>"] = cmp.mapping(function(fallback) -- {{{
                     if luasnip.expand_or_jumpable() then
                         luasnip.expand_or_jump()
                     else
                         fallback()
                     end
-                end, { "i", "s" }),                            -- }}}
+                end, { "i", "s" }),
 
                 ["<C-b>"]     = cmp.mapping(function(fallback) -- {{{
                     if cmp.visible() then
@@ -93,7 +93,7 @@ return {
 
             experimental = { ghost_text = kvim.lsp.ghost_text, },
         })
-        -- Setup for dapui {{{
+        -- Setup for dapui
         cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
             sources = {
                 { name = "dap" },
@@ -104,7 +104,7 @@ return {
             'confirm_done',
             cmp_autopairs.on_confirm_done()
         )
-        -- }}}
+
 
         -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
         cmp.setup.cmdline({ '/', '?' }, {
