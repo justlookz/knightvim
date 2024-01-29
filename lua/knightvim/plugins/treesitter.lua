@@ -15,7 +15,9 @@ return {
 
     {
         "https://github.com/Wansmer/treesj",
-        opts = { use_default_keymaps = true, },
+        opts = {
+            use_default_keymaps = false,
+        },
         keys = {
             {
                 "<leader>ff",
