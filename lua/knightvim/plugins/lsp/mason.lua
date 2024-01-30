@@ -12,7 +12,7 @@ return {
         },
         config = function()
             local function no_auto_installed()
-                if kvim.lsp.auto_install then
+                if kvim.lsp.auto_install and kvim.lsp.local_include then
                     return kvim.lsp.local_include
                 end
                 return false
