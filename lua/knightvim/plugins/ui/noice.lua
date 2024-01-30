@@ -5,7 +5,7 @@ return {
     opts = {
         messages = { enabled = false },
         notify = { enabled = false },
-        --lsp = { signature = { enabled = false } },
+        lsp = { signature = { enabled = false } },
     },
     dependencies = {
         "https://github.com/MunifTanjim/nui.nvim",
