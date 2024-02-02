@@ -219,3 +219,7 @@ vim.keymap.set(
     "n", "H", vim.cmd.bprev,
     { desc = "Go to previous buffer" }
 )
+
+vim.keymap.set(
+    "t", "<ESC>", "<C-\\><C-n>"
+)
