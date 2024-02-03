@@ -7,7 +7,7 @@ If by any mean you see this github by searching through and need a configuration
 for linux the command for cloning and using knightvim is 
 
 ```bash
-git clone --depth 1 --branch stable_1.0 https://github.com/justlookz/knightvim ~/.config/nvim
+git clone --depth 1 --branch stable_1.1 https://github.com/justlookz/knightvim ~/.config/nvim
 ```
 
 need git and neovim
@@ -38,7 +38,7 @@ winget install -e --id LLVM.LLVM;winget install -e --id Neovim.Neovim.Nightly;wi
 and clone it
 
 ```powershell
-git clone --depth 1 --branch stable_1.0 https://github.com/justlookz/knightvim $env:LOCALAPPDATA\nvim
+git clone --depth 1 --branch stable_1.1 https://github.com/justlookz/knightvim $env:LOCALAPPDATA\nvim
 nvim
 
 ```
