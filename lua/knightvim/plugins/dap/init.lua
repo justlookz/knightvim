@@ -2,6 +2,49 @@ return {
 
     "https://github.com/mfussenegger/nvim-dap",
     lazy = true,
+    init = function()
+        local dap = require("dap")
+        dap.adapters.gdb = {
+            type = "executable",
+            command = "gdb",
+            args = { "-i", "dap" }
+        }
+
+        local gdb = {
+
+            name = "Launch with gdb",
+            type = "gdb",
+            request = "launch",
+            program = function()
+                return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+            end,
+            cwd = "${workspaceFolder}",
+        }
+
+        dap.adapters.lldb = {
+            type = 'executable',
+            command = 'lldb-vscode',
+            name = 'lldb'
+        }
+
+        local lldb =
+        {
+            name = 'Launch with lldb $PATH',
+            type = 'lldb',
+            request = 'launch',
+            program = function()
+                return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+            end,
+            cwd = '${workspaceFolder}',
+            stopOnEntry = false,
+            args = {},
+        }
+
+
+        dap.configurations.cpp = { lldb, gdb }
+        dap.configurations.c = { lldb, gdb }
+        dap.configurations.rust = { lldb, gdb }
+    end,
     keys = {
         -- Dap
         { "<F8>", "<leader>db" },
