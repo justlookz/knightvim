@@ -1,5 +1,5 @@
 kvim = {}
-kvim.theme = "nordic"
+kvim.theme = "nordfox"
 kvim.leader = " "
 kvim.plugins = {}
 kvim.lsp = {}
