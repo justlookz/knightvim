@@ -90,6 +90,14 @@ return {
             desc = "Toggle Breakpoint[F8]"
         },
 
+        {
+            "<leader>dt",
+            function()
+                require("dap").terminate()
+            end,
+            desc = "Toggle Breakpoint[F8]"
+        },
+
         { "<F5>", "<leader>dc" },
 
         {
