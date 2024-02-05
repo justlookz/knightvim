@@ -7,5 +7,7 @@ local M = {
 
 }
 
-vim.tbl_deep_extend("force", M, kvim.plugins)
+if kvim.plugins then
+    vim.tbl_deep_extend("force", M, kvim.plugins)
+end
 return M

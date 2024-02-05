@@ -1,7 +1,7 @@
 return {
     "https://github.com/hrsh7th/nvim-cmp",
     lazy = false,
-    dependencies = { -- {{{
+    dependencies = {
         { "https://github.com/hrsh7th/cmp-nvim-lsp" },
         { 'https://github.com/hrsh7th/nvim-cmp' },
         { 'https://github.com/L3MON4D3/LuaSnip' },
@@ -17,7 +17,7 @@ return {
         { "https://github.com/rcarriga/cmp-dap" },
         { 'https://github.com/windwp/nvim-autopairs' },
         { "https://github.com/rafamadriz/friendly-snippets", },
-    }, -- }}}
+    },
     config = function()
         local luasnip       = require("luasnip")
         local cmp           = require('cmp')
@@ -25,13 +25,13 @@ return {
 
         require('luasnip.loaders.from_vscode').lazy_load()
 
-        local has_words_before = function() -- {{{
+        local has_words_before = function()
             unpack = unpack or table.unpack
             local line, col = unpack(
                 vim.api.nvim_win_get_cursor(0)
             )
             return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-        end -- }}}
+        end
 
         cmp.setup({
             enabled = function()
@@ -54,7 +54,7 @@ return {
                 { name = "buffer", },
                 { name = 'nvim_lsp_document_symbol' },
                 { name = "calc", },
-            }, -- }}}
+            },
             options = {
                 trailing_slash = false,
             },

@@ -1,7 +1,7 @@
 kvim = {}
 kvim.theme = "nordfox"
 kvim.leader = " "
-kvim.plugins = {}
+kvim.plugins = nil
 kvim.lsp = {}
 kvim.lsp.local_include = nil
 kvim.lsp.custom_servers = {}
