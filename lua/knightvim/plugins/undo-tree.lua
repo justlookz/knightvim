@@ -2,6 +2,7 @@
 return {
     'https://github.com/mbbill/undotree',
     lazy = false,
+    event = "VeryLazy",
     keys = {
         -- Undo Tree
         {

@@ -2,6 +2,7 @@
 return {
     "https://github.com/tpope/vim-fugitive",
     lazy = false,
+    event = "VeryLazy",
     keys = {
         {
             "<leader>gw",
