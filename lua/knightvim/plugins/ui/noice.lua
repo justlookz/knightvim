@@ -1,7 +1,6 @@
 -- lazy.nvim
 return {
     "https://github.com/folke/noice.nvim",
-    event = "VeryLazy",
     opts = {
         messages = { enabled = false },
         notify = { enabled = false },

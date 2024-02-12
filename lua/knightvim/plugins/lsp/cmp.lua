@@ -98,7 +98,7 @@ return {
                 end, { "i", "s" }),
 
                 ['<C-e>'] = cmp.mapping.abort(),
-                ['<C-y>'] = cmp.mapping.confirm({ select = false }),
+                ['<C-y>'] = cmp.mapping.confirm({ select = true }),
                 ['<CR>']  = cmp.mapping.confirm({ select = false }),
             },
 
