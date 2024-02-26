@@ -25,5 +25,3 @@ require("lazy").setup({
 require("knightvim.toggler").setup()
 
 vim.cmd.colorscheme(kvim.theme)
-
-vim.cmd [[ packadd termdebug ]]
