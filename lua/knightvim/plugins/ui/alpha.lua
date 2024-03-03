@@ -3,5 +3,6 @@ return {
     dependencies = { 'https://github.com/nvim-tree/nvim-web-devicons' },
     config = function()
         require 'alpha'.setup(require 'alpha.themes.startify'.config)
-    end
+    end,
+    enabled = kvim.core_plugins.alpha
 }

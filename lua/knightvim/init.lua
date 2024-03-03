@@ -8,6 +8,8 @@ kvim.lsp.custom_servers = {}
 kvim.lsp.ghost_text = true
 kvim.lsp.auto_install = true
 kvim.lsp.autoformat = true
+kvim.core_plugins = {}
+kvim.core_plugins.alpha = false
 
 -- ensure user folder exsistance
 -- and init for user folder
