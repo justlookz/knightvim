@@ -1,4 +1,9 @@
+local lsp_group =
+    vim.api.nvim_create_augroup(
+        "lsp_group", { clear = true }
+    )
 vim.api.nvim_create_autocmd('LspAttach', {
+    group = lsp_group,
     callback = function(args)
         vim.keymap.set(
             'n', 'K',
@@ -102,8 +107,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 
         -- Before Write ----------------------
+        local auto_save_group =
+            vim.api.nvim_create_augroup(
+                "auto_save_group", { clear = true }
+            )
         vim.api.nvim_create_autocmd('BufWritePre', {
-            callback = function(args)
+            group = auto_save_group,
+            callback = function()
                 local client = vim.lsp.get_active_clients()[1]
 
                 if client then
@@ -114,5 +124,30 @@ vim.api.nvim_create_autocmd('LspAttach', {
             end,
         })
         -- end before Write ------------------
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if client and client.server_capabilities.documentHighlightProvider then
+            local hightlight_word_group =
+                vim.api.nvim_create_augroup(
+                    "hightlight_word_group", { clear = true }
+                )
+
+            vim.api.nvim_create_autocmd(
+                { "CursorHold", "CursorHoldI" },
+                {
+                    group = hightlight_word_group,
+                    buffer = args.buf,
+                    callback = vim.lsp.buf.document_highlight
+                }
+            )
+
+            vim.api.nvim_create_autocmd(
+                { "CursorMoved", "CursorMovedI" },
+                {
+                    group = hightlight_word_group,
+                    buffer = args.buf,
+                    callback = vim.lsp.buf.clear_references
+                }
+            )
+        end
     end, -- callback end
 })
