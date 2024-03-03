@@ -1,7 +1,7 @@
 -- LSP Support
 return {
     'https://github.com/neovim/nvim-lspconfig', -- Required
-    dependencies = {                            -- {{{
+    dependencies = {
 
         {
             'https://github.com/williamboman/mason.nvim',
@@ -10,14 +10,18 @@ return {
         {
             'https://github.com/neovim/nvim-lspconfig',
         }
-    },                                            -- }}}
+    },
     config = function()
+        local capabilities = vim.tbl_deep_extend(
+            "force",
+            vim.lsp.protocol.make_client_capabilities(),
+            require("cmp_nvim_lsp").default_capabilities()
+        )
         local function lsp_server_setup(lsp_list) -- {{{
             if lsp_list ~= nil then
                 for _, v in ipairs(lsp_list) do
                     require('lspconfig')[v].setup({
-                        capabilities = require('cmp_nvim_lsp')
-                            .default_capabilities(),
+                        capabilities = capabilities,
                     })
                 end
             end
