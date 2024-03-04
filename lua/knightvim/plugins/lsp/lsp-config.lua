@@ -1,6 +1,9 @@
 -- LSP Support
 return {
     'https://github.com/neovim/nvim-lspconfig', -- Required
+    opts = {
+        inlay_hints = { enabled = true },
+    },
     dependencies = {
 
         {

@@ -7,20 +7,20 @@ return {
         local wk = require("which-key")
 
         wk.register({
-            ["<leader>s"]  = "Search",
-            ["<leader>f"]  = "Split - Join text",
-            ["<leader>sg"] = "Git",
-            ["<leader>st"] = "Type",
-            ["<leader>u"]  = "ui settings",
-            ["<leader>us"] = "Persistent Settings",
-            ["<leader>ug"] = "Git signs",
-            ["<leader>d"]  = "Debug - Dap",
-            ["<leader>L"]  = "Lazy - Package manager",
-            ["<leader>g"]  = "Git actions",
+            ["<leader>s"]  = { name = "Search" },
+            ["<leader>f"]  = { name = "Split - Join text" },
+            ["<leader>sg"] = { name = "Git" },
+            ["<leader>st"] = { name = "Type" },
+            ["<leader>u"]  = { name = "ui settings" },
+            ["<leader>us"] = { name = "Persistent Settings" },
+            ["<leader>ug"] = { name = "Git signs" },
+            ["<leader>d"]  = { name = "Debug - Dap" },
+            ["<leader>L"]  = { name = "Lazy - Package manager" },
+            ["<leader>g"]  = { name = "Git actions" },
 
-            ["gt"]         = "Goto type...",
-            ["v]"]         = "Match forward ...",
-            ["v["]         = "Match Backward ...",
+            ["gt"]         = { name = "Goto type..." },
+            ["v]"]         = { name = "Match forward ..." },
+            ["v["]         = { name = "Match Backward ..." },
         })
     end,
 }
