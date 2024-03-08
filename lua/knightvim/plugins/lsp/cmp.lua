@@ -16,7 +16,7 @@ return {
         { 'https://github.com/saadparwaiz1/cmp_luasnip' },
         { "https://github.com/rcarriga/cmp-dap" },
         { 'https://github.com/windwp/nvim-autopairs' },
-        { "https://github.com/rafamadriz/friendly-snippets", },
+        { "https://github.com/rafamadriz/friendly-snippets" },
     },
     config = function()
         local luasnip       = require("luasnip")

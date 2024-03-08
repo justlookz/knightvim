@@ -1,3 +1,4 @@
 return {
-    "LunarVim/bigfile.nvim",
+    { "LunarVim/bigfile.nvim", opts = {} },
+
 }
