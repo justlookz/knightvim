@@ -1,11 +1,8 @@
 -- LSP Support
 return {
     'https://github.com/neovim/nvim-lspconfig', -- Required
-    opts = {
-        inlay_hints = { enabled = true },
-    },
+    opts = { inlay_hints = { enabled = true } },
     dependencies = {
-
         {
             'https://github.com/williamboman/mason.nvim',
         },
@@ -30,7 +27,9 @@ return {
             end
         end -- }}}
 
-        local lsp_server = require("mason-lspconfig").get_installed_servers()
+        local lsp_server = require(
+            "mason-lspconfig"
+        ).get_installed_servers()
 
         lsp_server_setup(lsp_server)
         lsp_server_setup(kvim.lsp.local_include)
