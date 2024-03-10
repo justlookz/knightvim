@@ -15,13 +15,13 @@ vim.opt.rtp:prepend(lazypath)
 
 --- This is used to load lazy from pligins folder
 require("lazy").setup({
-    { import = "knightvim.plugins" },
-    { import = "knightvim.plugins.colorscheme" },
-    { import = "knightvim.plugins.lsp" },
-    { import = "knightvim.plugins.dap" },
-    { import = "knightvim.plugins.ui" },
+    { import = "plugins" },
+    { import = "plugins.colorscheme" },
+    { import = "plugins.lsp" },
+    { import = "plugins.dap" },
+    { import = "plugins.ui" },
 })
 
-require("knightvim.toggler").setup()
+require("toggler").setup()
 
 vim.cmd.colorscheme(kvim.theme)

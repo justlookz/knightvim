@@ -1,4 +1,4 @@
-local toggler = require("knightvim.toggler.functions")
+local toggler = require("toggler.functions")
 -- Basic Keymaps
 vim.keymap.set(
     "n", "<leader>", "<nop>",

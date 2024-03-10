@@ -46,6 +46,7 @@ return {
     {
         'https://github.com/nvim-treesitter/nvim-treesitter',
         build = ":silent TSUpdateSync",
+        event = "VeryLazy",
         config = function()
             require 'nvim-treesitter.configs'.setup {
                 ensure_installed = { "c", "cpp", "lua", "vim", "vimdoc", "query", "sql" },
