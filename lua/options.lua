@@ -44,4 +44,3 @@ vim.opt.undofile = true   -- Persistent Undo History
 
 vim.opt.timeout = true
 vim.opt.timeoutlen = 300
-vim.opt.cmdheight = 0

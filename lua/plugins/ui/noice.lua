@@ -11,5 +11,7 @@ return {
     },
     init = function()
         vim.o.lazyredraw = false
+        vim.opt.cmdheight = 0
     end,
+    enabled = kvim.core_plugins.alpha
 }
