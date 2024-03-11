@@ -1,225 +1,233 @@
 local toggler = require("toggler.functions")
+
+local map = vim.keymap.set
+
 -- Basic Keymaps
-vim.keymap.set(
+map(
     "n", "<leader>", "<nop>",
     { desc = "Leader Menu" }
 )
-vim.keymap.set(
+map(
     "n", "<leader>w",
     vim.cmd.write, { desc = "Save" }
 )
-vim.keymap.set("n", "<leader>q", vim.cmd.qall, { desc = "Quit" })
-vim.keymap.set("n", "<leader>x", vim.cmd.bdelete, { desc = "Close Buffer" })
+map("n", "<leader>q", vim.cmd.qall, { desc = "Quit" })
+map("n", "<leader>x", vim.cmd.bdelete, { desc = "Close Buffer" })
 
 
 -- buffer swapping
-vim.keymap.set(
-    "n", "<C-h>",
-    function()
-        vim.cmd.wincmd("h")
-    end,
+map(
+    "n",
+    "<C-h>",
+    function() vim.cmd.wincmd("h") end,
     { desc = "goto left" }
 )
 
-vim.keymap.set(
-    "n", "<C-left>",
-    function()
-        vim.cmd.wincmd("h")
-    end,
+map(
+    "n",
+    "<C-left>",
+    function() vim.cmd.wincmd("h") end,
     { desc = "goto left" }
 )
 
-vim.keymap.set(
-    "n", "<C-l>",
-    function()
-        vim.cmd.wincmd("l")
-    end,
+map(
+    "n",
+    "<C-l>",
+    function() vim.cmd.wincmd("l") end,
     { desc = "goto right" }
 )
 
-vim.keymap.set(
+map(
     "n", "<C-right>",
-    function()
-        vim.cmd.wincmd("l")
-    end,
+    function() vim.cmd.wincmd("l") end,
     { desc = "goto right" }
 )
 
-vim.keymap.set(
+map(
     "n", "<C-k>",
-    function()
-        vim.cmd.wincmd("k")
-    end,
+    function() vim.cmd.wincmd("k") end,
     { desc = "go above" }
 )
 
-vim.keymap.set(
-    "n", "<C-up>",
-    function()
-        vim.cmd.wincmd("k")
-    end,
+map(
+    "n",
+    "<C-up>",
+    function() vim.cmd.wincmd("k") end,
     { desc = "go above" }
 )
 
 
-vim.keymap.set(
-    "n", "<C-j>",
-    function()
-        vim.cmd.wincmd("j")
-    end,
+map(
+    "n",
+    "<C-j>",
+    function() vim.cmd.wincmd("j") end,
     { desc = "go below" }
 )
 
-vim.keymap.set(
-    "n", "<C-down>",
-    function()
-        vim.cmd.wincmd("j")
-    end,
+map(
+    "n",
+    "<C-down>",
+    function() vim.cmd.wincmd("j") end,
     { desc = "go below" }
 )
 
 -- Lazy - Package manager
-vim.keymap.set(
-    "n", "<leader>LL",
+map(
+    "n",
+    "<leader>LL",
     "<CMD>Lazy<CR>",
     { desc = "Open Lazy [Package manager]" }
 )
 
-vim.keymap.set(
-    "n", "<leader>Ls",
+map(
+    "n",
+    "<leader>Ls",
     "<CMD>Lazy sync<CR>",
     { desc = "Sync" }
 )
 
-vim.keymap.set(
-    "n", "<leader>Lu",
+map(
+    "n",
+    "<leader>Lu",
     "<CMD>Lazy update<CR>",
     { desc = "Update" }
 )
 
-vim.keymap.set(
-    "n", "<leader>Lr",
+map(
+    "n",
+    "<leader>Lr",
     "<CMD>Lazy restore<CR>",
     { desc = "Restore" }
 )
 
 
 -- UI settings with or without persistent
-vim.keymap.set(
-    "n", "<leader>usn",
-    function()
-        toggler.toggle("number")
-    end,
+map(
+    "n",
+    "<leader>usn",
+    function() toggler.toggle("number") end,
     { desc = "Toggle Numbers" }
 )
 
-vim.keymap.set(
-    "n", "<leader>usr",
-    function()
-        toggler.toggle("rnu")
-    end,
+map(
+    "n",
+    "<leader>usr",
+    function() toggler.toggle("rnu") end,
     { desc = "Toggle relative Numbers" }
 )
 
-vim.keymap.set(
-    "n", "<leader>usc",
-    function()
-        toggler.toggle("confirm")
-    end,
+map(
+    "n",
+    "<leader>usc",
+    function() toggler.toggle("confirm") end,
     { desc = "Toggle Confirm" }
 )
 
-vim.keymap.set(
-    "n", "<leader>usw",
-    function()
-        toggler.toggle("wrap")
-    end,
+map(
+    "n",
+    "<leader>usw",
+    function() toggler.toggle("wrap") end,
     { desc = "Toggle wrap" }
 )
 
-vim.keymap.set(
-    "n", "<leader>use",
-    function()
-        toggler.toggle("expandtab")
-    end,
+map(
+    "n",
+    "<leader>use",
+    function() toggler.toggle("expandtab") end,
     { desc = "Toggle Space or Tab" }
 )
 
-vim.keymap.set(
-    "n", "<leader>usm",
-    function()
-        toggler.toggle_with_states("bg", "dark", "light")
-    end,
+map(
+    "n",
+    "<leader>usm",
+    function() toggler.toggle_with_states("bg", "dark", "light") end,
     { desc = "Toggle bg mode" }
 )
 
-vim.keymap.set(
-    "n", "<leader>usl",
+map(
+    "n",
+    "<leader>usl",
     function()
         toggler.toggle_with_states("colorcolumn", "64,78", "")
     end,
     { desc = "Toggle Horizontal lines" }
 )
 
-vim.keymap.set(
-    "n", "<leader>ut",
+map(
+    "n",
+    "<leader>ut",
     "<CMD>7split | terminal<CR>",
     { desc = "Terminal" }
 )
 
-vim.keymap.set(
-    "i", "<A-j>",
+map(
+    "i",
+    "<A-j>",
     "<esc><CMD>m .+1<CR>==gi",
-    { desc = "move down" })
+    { desc = "move down" }
+)
 
-vim.keymap.set(
-    "i", "<A-k>",
+map(
+    "i",
+    "<A-k>",
     "<Esc><CMD>m .-2<CR>==gi",
     { desc = "move up" }
 )
 
-vim.keymap.set(
-    "n", "<A-j>",
+map(
+    "n",
+    "<A-j>",
     "<CMD>m .+1<CR>==",
-    { desc = "move down" })
+    { desc = "move down" }
+)
 
-vim.keymap.set(
-    "n", "<A-k>",
+map(
+    "n",
+    "<A-k>",
     "<CMD>m .-2<CR>==",
     { desc = "move up" }
 )
 
-vim.keymap.set(
-    "v", "<A-j>",
+map(
+    "v",
+    "<A-j>",
     ":m '>+1<CR>gv=gv",
-    { desc = "move down" })
+    { desc = "move down" }
+)
 
-vim.keymap.set(
-    "v", "<A-k>",
+map(
+    "v",
+    "<A-k>",
     ":m '<-2<CR>gv=gv",
     { desc = "move up" }
 )
 
-vim.keymap.set(
-    "n", "<C-d>", "<C-d>zz",
+map(
+    "n",
+    "<C-d>",
+    "<C-d>zz",
     { desc = "Fast moving down and centered" }
 )
 
-vim.keymap.set(
-    "n", "<C-u>", "<C-u>zz",
+map(
+    "n",
+    "<C-u>",
+    "<C-u>zz",
     { desc = "Fast moving down and centered" }
 )
 
-vim.keymap.set(
-    "n", "L", vim.cmd.bnext,
+map(
+    "n",
+    "L",
+    vim.cmd.bnext,
     { desc = "Go to next buffer" }
 )
 
-vim.keymap.set(
-    "n", "H", vim.cmd.bprev,
+map(
+    "n",
+    "H",
+    vim.cmd.bprev,
     { desc = "Go to previous buffer" }
 )
 
-vim.keymap.set(
-    "t", "<ESC>", "<C-\\><C-n>"
-)
+map("t", "<ESC>", "<C-\\><C-n>")
