@@ -4,8 +4,9 @@ vim.g.mapleader        = kvim.leader
 -- https://github.com/brainfucksec/neovim-lua/blob/main/nvim/lua/core/options.lua
 
 -- General
-vim.opt.mouse          = 'a'                         -- Enable mouse support
-vim.opt.clipboard      = 'unnamedplus'               -- Copy/paste to system clipboard
+vim.opt.mouse          = 'a' -- Enable mouse support
+-- No need. "* keymap load clipboard seperating them
+-- vim.opt.clipboard      = 'unnamedplus'               -- Copy/paste to system clipboard
 vim.opt.swapfile       = false                       -- Don't use swapfile
 vim.opt.completeopt    = 'menuone,noinsert,noselect' -- Autocomplete options
 
