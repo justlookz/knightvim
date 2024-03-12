@@ -1,10 +1,8 @@
 # Suggestions
 
 If by any mean you see this github by searching through and need a configuration, I highly suggest to use LazyVim or AstroNvim or fork kickstart
-<div color=blue align="center"></div>
-# Installation 
-</div>
 
+# Installation 
 for linux the command for cloning and using knightvim is 
 
 ```bash
@@ -24,21 +22,18 @@ rm -rf ~/.config/nvim
 ```
 
 ## for apt 
-
 ```bash
 sudo apt update && sudo apt install git neovim sqlite
 ```
 sqlite needed for dadbod and dadbodui \(sql\)
 
 ## for windows 
-
 need packages from winget (windows store)
 ```powershell
 winget install -e --id LLVM.LLVM;winget install -e --id Neovim.Neovim.Nightly;winget install -e --id Git.Git
 ```
 
 and clone it
-
 ```powershell
 git clone --depth 1 --branch stable_1.1 https://github.com/justlookz/knightvim $env:LOCALAPPDATA\nvim
 nvim
@@ -50,15 +45,11 @@ nvim
 $NVIM_APPNAME
 ```
 by creating an alias
-
 ```bash
 alias kvim='NVIM_APPNAME="name-of-folder nvim"
 ```
-
 replace name-of-folder with whatever name
-
 ## EXAMPLE
-
 ```bash
 git clone --depth 1 --branch stable_1.0 https://github.com/justlookz/knightvim ~/.config/kvim
 ```
