@@ -17,15 +17,15 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             require("cmp_nvim_lsp").default_capabilities()
         )
-        local function lsp_server_setup(lsp_list) -- {{{
-            if lsp_list ~= nil then
+        local function lsp_server_setup(lsp_list)
+            if lsp_list then
                 for _, v in ipairs(lsp_list) do
                     require('lspconfig')[v].setup({
                         capabilities = capabilities,
                     })
                 end
             end
-        end -- }}}
+        end
 
         local lsp_server = require(
             "mason-lspconfig"
