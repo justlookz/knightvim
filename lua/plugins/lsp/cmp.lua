@@ -13,10 +13,14 @@ return {
         { 'https://github.com/hrsh7th/cmp-calc' },
 
         { 'https://github.com/hrsh7th/cmp-nvim-lsp-document-symbol' },
-        { 'https://github.com/saadparwaiz1/cmp_luasnip' },
+        {
+            'https://github.com/saadparwaiz1/cmp_luasnip',
+            dependencies = {
+                "https://github.com/rafamadriz/friendly-snippets"
+            }
+        },
         { "https://github.com/rcarriga/cmp-dap" },
         { 'https://github.com/windwp/nvim-autopairs' },
-        { "https://github.com/rafamadriz/friendly-snippets" },
     },
     config = function()
         local luasnip       = require("luasnip")
