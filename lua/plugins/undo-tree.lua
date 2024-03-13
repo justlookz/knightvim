@@ -8,7 +8,7 @@ return {
         {
             "<leader>uu",
             vim.cmd.UndotreeToggle,
-            desc = "Undo Tree Structure"
+            desc = "Undo Tree Structure",
         },
     }
 }

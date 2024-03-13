@@ -15,19 +15,22 @@ vim.opt.rtp:prepend(lazypath)
 
 --- This is used to load lazy from pligins folder
 require("lazy").setup({
-    install = {
-        colorscheme = { kvim.theme, "default" },
+        { import = "plugins" },
+        { import = "plugins.colorscheme" },
+        { import = "plugins.lsp" },
+        { import = "plugins.dap" },
+        { import = "plugins.ui" },
     },
-    change_detection = {
-        enabled = true,
-        notify = false,
-    },
-    { import = "plugins" },
-    { import = "plugins.colorscheme" },
-    { import = "plugins.lsp" },
-    { import = "plugins.dap" },
-    { import = "plugins.ui" },
-})
+
+    {
+        install = {
+            colorscheme = { kvim.theme, "default" },
+        },
+        change_detection = {
+            enabled = true,
+            notify = false,
+        },
+    })
 
 require("toggler").setup()
 

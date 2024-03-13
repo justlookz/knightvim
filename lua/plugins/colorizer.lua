@@ -2,6 +2,6 @@
 return {
     'https://github.com/NvChad/nvim-colorizer.lua',
     opts = {},
-    lazy = false,
+    ft = { "css", "html ", "javascript" },
     event = "VeryLazy",
 }
