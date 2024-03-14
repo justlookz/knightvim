@@ -3,4 +3,5 @@ return {
     dependencies = { "https://github.com/nvim-treesitter/nvim-treesitter" },
     opts = {},
     ft = { "neorg", "markdown" },
+    enabled = false
 }
