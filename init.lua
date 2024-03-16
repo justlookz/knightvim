@@ -11,6 +11,7 @@ kvim.lsp.autoformat = true
 kvim.core_plugins = {}
 kvim.core_plugins.alpha = false
 kvim.core_plugins.noice = false
+kvim.core_plugins.neogit = true
 
 -- ensure user folder exsistance
 -- and init for user folder

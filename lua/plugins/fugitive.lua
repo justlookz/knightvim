@@ -3,6 +3,7 @@ return {
     "https://github.com/tpope/vim-fugitive",
     lazy = false,
     event = "VeryLazy",
+    enabled = not kvim.core_plugins.neogit,
     keys = {
         {
             "<leader>gw",

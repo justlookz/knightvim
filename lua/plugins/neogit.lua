@@ -14,19 +14,24 @@ return {
     keys = {
         {
             "<leader>gw",
-            "<cmd>w<cr><cmd>!git add %<cr><cr>",
+            "<cmd>w<cr><cmd>silent !git add %<cr>",
             desc = "Git add current file",
-            silent = true,
         },
         {
             "<leader>gc",
             "<cmd>Neogit commit<cr>",
             desc = "Git commit on current branch"
         },
+
         {
-            "<leader>gp",
-            "<cmd>!git push<cr><cr>",
-            desc = "Git push on current origin"
+            "<leader>gg",
+            "<cmd>Neogit<cr>",
+            desc = "Neogit window"
+        },
+        {
+            "<leader>gf",
+            "<cmd>Neogit kind=floating<cr>",
+            desc = "Float neogit window"
         },
     }
 }
