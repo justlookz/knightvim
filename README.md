@@ -30,8 +30,9 @@ sqlite needed for dadbod and dadbodui \(sql\)
 ## for windows 
 need packages from winget (windows store)
 ```powershell
-winget install -e --id LLVM.LLVM;winget install -e --id Neovim.Neovim.Nightly;winget install -e --id Git.Git
+winget install -e --id LLVM.LLVM;winget install -e --id Neovim.Neovim.Nightly;winget install -e --id Git.Git;winget install -e --id Python.Python.3.10
 ```
+remove anything bo needed
 
 and clone it
 ```powershell

@@ -3,13 +3,9 @@ return {
     'https://github.com/neovim/nvim-lspconfig', -- Required
     opts = { inlay_hints = { enabled = true } },
     dependencies = {
-        {
-            'https://github.com/williamboman/mason.nvim',
-        },
+        { 'https://github.com/williamboman/mason.nvim' },
         { 'https://github.com/williamboman/mason-lspconfig.nvim' },
-        {
-            'https://github.com/neovim/nvim-lspconfig',
-        }
+        { "folke/neodev.nvim",                                   opts = {} },
     },
     config = function()
         local capabilities = vim.tbl_deep_extend(

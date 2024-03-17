@@ -100,7 +100,7 @@ return {
                 "<leader>sf",
                 function()
                     require("telescope.builtin")
-                        .find_files(require("telescope.themes").get_dropdown())
+                        .find_files()
                 end,
                 desc = "Find file",
                 mode = "n",
@@ -110,7 +110,7 @@ return {
                 "<leader><leader>",
                 function()
                     require("telescope.builtin")
-                        .find_files(require("telescope.themes").get_dropdown())
+                        .find_files()
                 end,
                 desc = "Find file",
                 mode = "n",
@@ -120,7 +120,7 @@ return {
                 "<leader>se",
                 function()
                     require("telescope.builtin")
-                        .treesitter(require("telescope.themes").get_dropdown())
+                        .treesitter()
                 end,
                 desc = "Treesitter Scope",
                 mode = "n",
@@ -154,8 +154,7 @@ return {
                 "<leader>sw",
                 function()
                     require("telescope.builtin")
-                        .live_grep(require("telescope.themes")
-                            .get_dropdown())
+                        .live_grep()
                 end,
                 desc = "Find text",
                 mode = "n",
