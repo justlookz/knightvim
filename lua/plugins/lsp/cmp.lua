@@ -42,7 +42,7 @@ return {
                 return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
                     or require("cmp_dap").is_dap_buffer()
             end,
-
+            completion = { autocomplete = false },
             snippet = {
                 -- REQUIRED - you must specify a snippet engine
                 expand = function(args)
@@ -66,8 +66,6 @@ return {
                 ["<C-n>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_next_item()
-                    elseif luasnip.expand_or_jumpable() then
-                        luasnip.expand_or_jump()
                     elseif has_words_before() then
                         cmp.complete()
                     else
@@ -86,8 +84,9 @@ return {
                 ["<C-p>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_prev_item()
-                    elseif luasnip.jumpable(-1) then
                         luasnip.jump(-1)
+                    elseif has_words_before() then
+                        cmp.complete()
                     else
                         fallback()
                     end
