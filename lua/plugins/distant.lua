@@ -1,7 +1,7 @@
 return {
     'https://github.com/chipsenkbeil/distant.nvim',
     branch = 'v0.3',
-    event = "VeryLazy",
+    cmd = "DistantConnect",
     config = function()
         require('distant'):setup()
     end

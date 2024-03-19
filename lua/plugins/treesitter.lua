@@ -12,7 +12,6 @@ return {
         "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
         dependencies = { "https://github.com/nvim-treesitter/nvim-treesitter" },
     },
-
     {
         "https://github.com/Wansmer/treesj",
         opts = {
@@ -46,22 +45,23 @@ return {
     {
         'https://github.com/nvim-treesitter/nvim-treesitter',
         build = ":silent TSUpdateSync",
-        event = "VeryLazy",
         config = function()
             require 'nvim-treesitter.configs'.setup {
-                ensure_installed = { "c", "cpp", "lua", "vim", "vimdoc", "query", "sql" },
+                modules          = {},
+                ignore_install   = {},
+                ensure_installed = {
+                    "c",
+                    "cpp",
+                    "lua",
+                    "vim",
+                    "vimdoc",
+                    "query",
+                    "sql",
+                },
 
                 sync_install     = false,
 
                 auto_install     = true,
-
-                indent           = { enable = true },
-
-                autotag          = { enable = true },
-
-                rainbow          = { enable = true, extendent_mode = true },
-
-                ignore_install   = {},
 
                 highlight        = {
                     enable = true,
@@ -160,24 +160,6 @@ return {
                     },
                 },
             }
-
-            vim.o.foldmethod     = "expr"
-            vim.o.foldexpr       = "nvim_treesitter#foldexpr()"
-            vim.o.foldlevelstart = 99
-
-            vim.api.nvim_create_autocmd("BufWinEnter", {
-                group = vim.api.nvim_create_augroup("kvim-ts-Buf-Enter", { clear = true }),
-                callback = function()
-                    vim.cmd [[silent! loadview]]
-                end
-            })
-
-            vim.api.nvim_create_autocmd("BufWinLeave", {
-                group = vim.api.nvim_create_augroup("kvim-ts-Buf-Leave", { clear = true }),
-                callback = function()
-                    vim.cmd [[silent! mkview]]
-                end
-            })
         end,
     }
 }

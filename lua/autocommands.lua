@@ -166,3 +166,18 @@ vim.api.nvim_create_autocmd(
         end,
     }
 )
+
+
+vim.api.nvim_create_autocmd("BufWinEnter", {
+    group = vim.api.nvim_create_augroup("kvim-ts-Buf-Enter", { clear = true }),
+    callback = function()
+        vim.cmd [[silent! loadview]]
+    end
+})
+
+vim.api.nvim_create_autocmd("BufWinLeave", {
+    group = vim.api.nvim_create_augroup("kvim-ts-Buf-Leave", { clear = true }),
+    callback = function()
+        vim.cmd [[silent! mkview]]
+    end
+})

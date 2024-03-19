@@ -33,7 +33,7 @@ return {
         } },
 
     },
-    lazy = true,
+
     keys = {
         {
             "<leader>ud",

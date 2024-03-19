@@ -42,7 +42,7 @@ return {
                 return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
                     or require("cmp_dap").is_dap_buffer()
             end,
-            completion = { autocomplete = false },
+            -- completion = { autocomplete = false },
             snippet = {
                 -- REQUIRED - you must specify a snippet engine
                 expand = function(args)
