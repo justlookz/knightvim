@@ -1,3 +1,7 @@
 return {
-    { "LunarVim/bigfile.nvim", opts = {} },
+    {
+        "LunarVim/bigfile.nvim",
+        opts = {},
+        priority = 999,
+    },
 }

@@ -3,7 +3,6 @@ return {
     'https://github.com/nvim-lualine/lualine.nvim',
     dependencies = { 'https://github.com/nvim-tree/nvim-web-devicons', opt = true },
     lazy = false,
-    event = "VeryLazy",
     opts = { -- {{{
         options           = {
             icons_enabled        = true,
