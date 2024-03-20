@@ -10,7 +10,6 @@ return {
         { 'https://github.com/hrsh7th/cmp-path' },
         { 'https://github.com/hrsh7th/cmp-cmdline' },
         { 'https://github.com/hrsh7th/cmp-nvim-lua' },
-        { 'https://github.com/hrsh7th/cmp-calc' },
 
         { 'https://github.com/hrsh7th/cmp-nvim-lsp-document-symbol' },
         {
@@ -57,21 +56,12 @@ return {
                 -- { name = "cmdline" },
                 { name = "buffer", },
                 { name = 'nvim_lsp_document_symbol' },
-                { name = "calc", },
             },
             options = {
                 trailing_slash = false,
             },
             mapping = {
-                ["<C-n>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_next_item()
-                    elseif has_words_before() then
-                        cmp.complete()
-                    else
-                        fallback()
-                    end
-                end, { "i", "s" }),
+                ["<C-n>"] = { i = cmp.select_next_item() },
 
                 ["<C-j>"] = cmp.mapping(function(fallback)
                     if luasnip.jumpable(1) then
@@ -81,16 +71,7 @@ return {
                     end
                 end, { "i", "s" }),
 
-                ["<C-p>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_prev_item()
-                        luasnip.jump(-1)
-                    elseif has_words_before() then
-                        cmp.complete()
-                    else
-                        fallback()
-                    end
-                end, { "i", "s" }),
+                ["<C-p>"] = { i = cmp.select_prev_item() },
 
                 ["<C-k>"] = cmp.mapping(function(fallback)
                     if luasnip.jumpable(-1) then
