@@ -61,7 +61,14 @@ return {
                 trailing_slash = false,
             },
             mapping = {
-                ["<C-n>"] = { i = cmp.select_next_item() },
+                ["<C-n>"] = function(fallback)
+                    if cmp.visible() then
+                        cmp.select_next_item()
+                    else
+                        cmp.complete()
+                    end
+                end,
+
 
                 ["<C-j>"] = cmp.mapping(function(fallback)
                     if luasnip.jumpable(1) then
@@ -71,7 +78,13 @@ return {
                     end
                 end, { "i", "s" }),
 
-                ["<C-p>"] = { i = cmp.select_prev_item() },
+                ["<C-p>"] = function(fallback)
+                    if cmp.visible() then
+                        cmp.select_prev_item()
+                    else
+                        cmp.complete()
+                    end
+                end,
 
                 ["<C-k>"] = cmp.mapping(function(fallback)
                     if luasnip.jumpable(-1) then
