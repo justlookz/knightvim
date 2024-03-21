@@ -100,6 +100,12 @@ map(
     { desc = "Restore" }
 )
 
+map(
+    "n",
+    "<leader>Lp",
+    "<CMD>Lazy profile<CR>",
+    { desc = "Profile" }
+)
 
 -- UI settings with or without persistent
 map(

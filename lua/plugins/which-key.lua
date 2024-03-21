@@ -1,7 +1,18 @@
 -- Which Key - Nice menu on leader (DEFAULT SPACE)
 return {
     "https://github.com/folke/which-key.nvim",
-    opts = {},
+    opts = {
+        register = false,
+        spelling = { enabled = false },
+        icons = {
+            breadcrumb = "$",
+            separator = "|",
+            group = "#"
+        },
+        margin = { 0.3, 0, 1, 0 },
+        triggers_nowait = {},
+
+    },
     config = function()
         local wk = require("which-key")
 

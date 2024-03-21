@@ -9,7 +9,6 @@ return {
         "ibhagwan/fzf-lua",              -- optional
     },
     config = true,
-    enabled = kvim.core_plugins.neogit,
     cmd = "Neogit",
     keys = {
         {
