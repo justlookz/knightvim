@@ -1,7 +1,9 @@
 return {
     'mfussenegger/nvim-jdtls',
+    dependency = 'https://github.com/neovim/nvim-lspconfig', -- Required
     ft = "java",
     lazy = true,
+    enabled = false,
     config = function()
         local jdtls = require "jdtls"
         local jdtls_exec = vim.fn.stdpath("data") .. "/mason/bin/jdtls"
