@@ -2,7 +2,7 @@ return {
 
     "https://github.com/mfussenegger/nvim-dap",
     lazy = true,
-    init = function()
+    config = function()
         local dap = require("dap")
         dap.adapters.gdb = {
             type = "executable",

@@ -5,7 +5,7 @@ return {
         config = function()
             local size
             if vim.fn.has("termux") == 1 then
-                size = 0.100
+                size = 0.1
             else
                 size = 1.5
             end

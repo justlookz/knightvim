@@ -1,7 +1,7 @@
 return {
     "https://github.com/rcarriga/nvim-dap-ui",
     dependencies = {
-        "https://github.com/mfussenegger/nvim-dap",
+        "https://github.com/mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"
     },
     opts = {
         layouts = { {
