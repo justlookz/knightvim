@@ -11,15 +11,9 @@ kvim.lsp.autoformat = true
 
 -- ensure user folder exsistance
 -- and init for user folder
-local user_path
-local user_init_path
-if vim.fn.has("win32") then
-    user_path = vim.fn.stdpath("config") .. "\\lua\\user"
-    user_init_path = vim.fn.stdpath("config") .. "\\lua\\user\\init.lua"
-else
-    user_path = vim.fn.stdpath("config") .. "/lua/user"
-    user_init_path = vim.fn.stdpath("config") .. "/lua/user/init.lua"
-end
+
+local user_path = vim.fn.stdpath("config") .. "/lua/user"
+local user_init_path = vim.fn.stdpath("config") .. "/lua/user/init.lua"
 
 -- ensure user config files
 if (vim.fn.filereadable(user_init_path)) == 0 then

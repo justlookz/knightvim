@@ -42,7 +42,10 @@ vim.opt.lazyredraw     = true -- Faster scrolling
 vim.opt.synmaxcol      = 120  -- Max column for syntax highlight
 vim.opt.updatetime     = 250  -- ms to wait for trigger an event
 vim.opt.undofile       = true -- Persistent Undo History
-
+local spaces           = " "
+for _ = 3, vim.opt.tabstop:get() do
+    spaces = spaces .. " "
+end
 vim.opt.timeout        = true
 vim.opt.timeoutlen     = 300
 vim.opt.list           = true
@@ -50,7 +53,9 @@ vim.opt.listchars      = {
     tab = "» ",
     nbsp = "␣",
     eol = "↲",
+    leadmultispace = "|" .. spaces
 }
+
 vim.opt.showbreak      = "|"
 
 vim.opt.foldmethod     = "expr"
