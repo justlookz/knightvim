@@ -5,7 +5,10 @@ return {
     dependencies = {
         { 'https://github.com/williamboman/mason.nvim' },
         { 'https://github.com/williamboman/mason-lspconfig.nvim' },
-        { "folke/neodev.nvim",                                   opts = {} },
+        {
+            "folke/neodev.nvim",
+            opts = {},
+        },
     },
     config = function()
         local capabilities = vim.tbl_deep_extend(
@@ -13,6 +16,7 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             require("cmp_nvim_lsp").default_capabilities()
         )
+
         local function lsp_server_setup(lsp_list)
             if lsp_list then
                 for _, v in ipairs(lsp_list) do
@@ -27,8 +31,9 @@ return {
             "mason-lspconfig"
         ).get_installed_servers()
 
+        vim.list_extend(lsp_server, kvim.lsp.local_include)
+
         lsp_server_setup(lsp_server)
-        lsp_server_setup(kvim.lsp.local_include)
     end,
 
 }
