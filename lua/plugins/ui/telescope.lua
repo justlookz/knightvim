@@ -10,7 +10,8 @@ return {
         branch = '0.1.x',
         dependencies = {
             'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope-fzf-native.nvim'
+            'nvim-telescope/telescope-fzf-native.nvim',
+            'nvim-telescope/telescope-ui-select.nvim',
         },
         lazy = true,
         config = function()
@@ -36,6 +37,8 @@ return {
             -- load_extension, somewhere after setup function:
             telescope.load_extension('fzf')
             telescope.load_extension('dap')
+
+            require("telescope").load_extension("ui-select")
         end,
         keys = {
             -- Telescope for git
