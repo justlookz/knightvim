@@ -55,7 +55,6 @@ vim.opt.listchars      = {
     eol = "↲",
     leadmultispace = "|" .. spaces
 }
-
 vim.opt.showbreak      = "|"
 
 vim.opt.foldmethod     = "expr"
