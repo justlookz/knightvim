@@ -1,16 +1,16 @@
 -- telescope - for search
 return {
     {
-        'https://github.com/nvim-telescope/telescope-fzf-native.nvim',
+        'nvim-telescope/telescope-fzf-native.nvim',
         build = 'make',
     },
 
     {
-        "https://github.com/nvim-telescope/telescope.nvim",
+        "nvim-telescope/telescope.nvim",
         branch = '0.1.x',
         dependencies = {
-            'https://github.com/nvim-lua/plenary.nvim',
-            'https://github.com/nvim-telescope/telescope-fzf-native.nvim'
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope-fzf-native.nvim'
         },
         lazy = true,
         config = function()

@@ -1,8 +1,8 @@
 -- Bufferline - Title bars
 return {
-    'https://github.com/akinsho/bufferline.nvim',
+    'akinsho/bufferline.nvim',
     version = "*",
-    dependencies = { 'https://github.com/nvim-tree/nvim-web-devicons' },
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {},
     event = "VeryLazy",
 }

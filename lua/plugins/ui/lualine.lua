@@ -1,7 +1,7 @@
 --lualine - Bottom bar
 return {
-    'https://github.com/nvim-lualine/lualine.nvim',
-    dependencies = { 'https://github.com/nvim-tree/nvim-web-devicons', opt = true },
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
     lazy = false,
     opts = { -- {{{
         options           = {

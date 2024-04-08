@@ -1,13 +1,13 @@
 return {
-    'https://github.com/kristijanhusak/vim-dadbod-ui',
+    'kristijanhusak/vim-dadbod-ui',
     dependencies = {
         {
-            'https://github.com/tpope/vim-dadbod',
+            'tpope/vim-dadbod',
             lazy = true,
             cmd = { "DB " },
         },
         {
-            'https://github.com/kristijanhusak/vim-dadbod-completion',
+            'kristijanhusak/vim-dadbod-completion',
             ft = { 'sql', 'mysql', 'plsql' },
             lazy = true
         },

@@ -1,12 +1,12 @@
 return {
     {
-        "https://github.com/numToStr/Comment.nvim",
+        "numToStr/Comment.nvim",
         opts = {},
     },
 
     {
-        "https://github.com/folke/todo-comments.nvim",
-        dependencies = { "https://github.com/nvim-lua/plenary.nvim" },
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
         opts = {},
     }
 }

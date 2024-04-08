@@ -14,7 +14,7 @@ return {
         {
             "<leader>gw",
             "<cmd>w<cr><cmd>silent !git add %<cr>",
-            desc = "Git add current file",
+            desc = "Git add and save current file",
         },
         {
             "<leader>gc",

@@ -1,25 +1,25 @@
 return {
-    "https://github.com/hrsh7th/nvim-cmp",
+    "hrsh7th/nvim-cmp",
     event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
-        { "https://github.com/hrsh7th/cmp-nvim-lsp" },
-        { 'https://github.com/hrsh7th/nvim-cmp' },
-        { 'https://github.com/L3MON4D3/LuaSnip' },
+        { "hrsh7th/cmp-nvim-lsp" },
+        { 'hrsh7th/nvim-cmp' },
+        { 'L3MON4D3/LuaSnip' },
 
-        { 'https://github.com/hrsh7th/cmp-buffer' },
-        { 'https://github.com/hrsh7th/cmp-path' },
-        { 'https://github.com/hrsh7th/cmp-cmdline' },
-        { 'https://github.com/hrsh7th/cmp-nvim-lua' },
+        { 'hrsh7th/cmp-buffer' },
+        { 'hrsh7th/cmp-path' },
+        { 'hrsh7th/cmp-cmdline' },
+        { 'hrsh7th/cmp-nvim-lua' },
 
-        { 'https://github.com/hrsh7th/cmp-nvim-lsp-document-symbol' },
+        { 'hrsh7th/cmp-nvim-lsp-document-symbol' },
         {
-            'https://github.com/saadparwaiz1/cmp_luasnip',
+            'saadparwaiz1/cmp_luasnip',
             dependencies = {
-                "https://github.com/rafamadriz/friendly-snippets"
+                "rafamadriz/friendly-snippets"
             }
         },
-        { "https://github.com/rcarriga/cmp-dap" },
-        { 'https://github.com/windwp/nvim-autopairs' },
+        { "rcarriga/cmp-dap" },
+        { 'windwp/nvim-autopairs' },
     },
     config = function()
         local luasnip       = require("luasnip")

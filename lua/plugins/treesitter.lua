@@ -1,19 +1,22 @@
 -- treesitter - for highlighting
 return {
-    { "https://github.com/windwp/nvim-ts-autotag" },
-    { "https://gitlab.com/HiPhish/rainbow-delimiters.nvim" },
+    { "windwp/nvim-ts-autotag" },
+    {
+        "HiPhish/rainbow-delimiters.nvim",
+        url = "https://gitlab.com/HiPhish/rainbow-delimiters.nvim"
+    },
 
     {
-        "https://github.com/nvim-treesitter/nvim-treesitter-context",
+        "nvim-treesitter/nvim-treesitter-context",
         opts = { enable = true, },
     },
 
     {
-        "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
-        dependencies = { "https://github.com/nvim-treesitter/nvim-treesitter" },
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
     },
     {
-        "https://github.com/Wansmer/treesj",
+        "Wansmer/treesj",
         opts = {
             use_default_keymaps = false,
         },
@@ -43,7 +46,7 @@ return {
     },
 
     {
-        'https://github.com/nvim-treesitter/nvim-treesitter',
+        'nvim-treesitter/nvim-treesitter',
         build = ":silent TSUpdateSync",
         config = function()
             require 'nvim-treesitter.configs'.setup {

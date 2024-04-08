@@ -1,10 +1,10 @@
 -- LSP Support
 return {
-    'https://github.com/neovim/nvim-lspconfig', -- Required
+    'neovim/nvim-lspconfig', -- Required
     opts = { inlay_hints = { enabled = true } },
     dependencies = {
-        { 'https://github.com/williamboman/mason.nvim' },
-        { 'https://github.com/williamboman/mason-lspconfig.nvim' },
+        { 'williamboman/mason.nvim' },
+        { 'williamboman/mason-lspconfig.nvim' },
         {
             "folke/neodev.nvim",
             opts = {},

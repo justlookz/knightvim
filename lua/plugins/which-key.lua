@@ -1,6 +1,6 @@
 -- Which Key - Nice menu on leader (DEFAULT SPACE)
 return {
-    "https://github.com/folke/which-key.nvim",
+    "folke/which-key.nvim",
     opts = {
         register = false,
         spelling = { enabled = false },

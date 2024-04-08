@@ -1,5 +1,5 @@
 return {
-    'https://github.com/chipsenkbeil/distant.nvim',
+    'chipsenkbeil/distant.nvim',
     branch = 'v0.3',
     cmd = "DistantConnect",
     config = function()

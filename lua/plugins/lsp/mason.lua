@@ -1,14 +1,14 @@
 return {
     {
-        'https://github.com/williamboman/mason.nvim',
+        'williamboman/mason.nvim',
         opts = {},
         lazy = false,
     },
 
     {
-        'https://github.com/williamboman/mason-lspconfig.nvim',
+        'williamboman/mason-lspconfig.nvim',
         dependencies = {
-            'https://github.com/williamboman/mason.nvim',
+            'williamboman/mason.nvim',
         },
         config = function()
             local function no_auto_installed()

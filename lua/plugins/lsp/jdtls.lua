@@ -1,6 +1,6 @@
 return {
     'mfussenegger/nvim-jdtls',
-    dependency = 'https://github.com/neovim/nvim-lspconfig', -- Required
+    dependency = 'neovim/nvim-lspconfig', -- Required
     ft = "java",
     lazy = true,
     enabled = false,
