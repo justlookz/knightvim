@@ -18,6 +18,7 @@ return {
 
         wk.register({
             ["<leader>s"]  = { name = "Search" },
+            ["<leader>o"]  = { name = "Files - oil" },
             ["<leader>f"]  = { name = "Split - Join text" },
             ["<leader>sg"] = { name = "Git" },
             ["<leader>st"] = { name = "Type" },

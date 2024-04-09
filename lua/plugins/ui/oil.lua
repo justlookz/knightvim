@@ -13,7 +13,7 @@ return {
                     require("oil").close()
                 end
             end,
-            desc = "Oil File manager",
+            desc = "Window toggle",
         },
 
         {
@@ -21,7 +21,7 @@ return {
             function()
                 require("oil").toggle_float()
             end,
-            desc = "Oil File manager",
+            desc = "Float toggle",
         }
     }
 }
