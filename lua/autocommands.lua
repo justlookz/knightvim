@@ -153,7 +153,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 local yank_group = vim.api.nvim_create_augroup(
-    "yank_group", { clear = true }
+    "kvim-yank_group", { clear = true }
 )
 
 vim.api.nvim_create_autocmd(

@@ -14,7 +14,7 @@ map(
 map("n", "<leader>q", vim.cmd.qall, { desc = "Quit" })
 map("n", "<leader>x", vim.cmd.bdelete, { desc = "Close Buffer" })
 
-
+map("n", "<esc>", vim.cmd.nohlsearch)
 -- buffer swapping
 map(
     "n",
