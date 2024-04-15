@@ -20,6 +20,7 @@ return {
         },
         { "rcarriga/cmp-dap" },
         { 'windwp/nvim-autopairs' },
+        { "paopaol/cmp-doxygen" }
     },
     config = function()
         local luasnip       = require("luasnip")
@@ -48,6 +49,7 @@ return {
                 -- { name = "cmdline" },
                 { name = "buffer", },
                 { name = 'nvim_lsp_document_symbol' },
+                { name = "doxygen" },
             },
             options = {
                 trailing_slash = false,
