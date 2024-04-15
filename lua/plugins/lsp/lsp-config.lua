@@ -20,9 +20,17 @@ return {
         local function lsp_server_setup(lsp_list)
             if lsp_list then
                 for _, v in ipairs(lsp_list) do
-                    require('lspconfig')[v].setup({
-                        capabilities = capabilities,
-                    })
+                    if not kvim.lsp.options[v] then
+                        require('lspconfig')[v].setup({
+                            capabilities = capabilities,
+                        })
+                    else
+                        local tmp = { cababilities = capabilities }
+                        for k, v2 in pairs(kvim.lsp.options[v]) do
+                            tmp[k] = v2
+                        end
+                        require('lspconfig')[v].setup(tmp)
+                    end
                 end
             end
         end
