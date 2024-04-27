@@ -110,50 +110,54 @@ map(
     { desc = "Profile" }
 )
 
+-- Toggler is gonna get deprecated soon
 -- UI settings with or without persistent
-map(
+map( -- persistent
     "n",
     "<leader>usn",
     function() toggler.toggle("number") end,
     { desc = "Toggle Numbers" }
 )
 
-map(
+map( -- persistent
     "n",
     "<leader>usr",
     function() toggler.toggle("rnu") end,
     { desc = "Toggle relative Numbers" }
 )
 
-map(
+map( -- persistent
     "n",
     "<leader>usc",
     function() toggler.toggle("confirm") end,
     { desc = "Toggle Confirm" }
 )
 
-map(
+map( -- persistent
     "n",
     "<leader>usw",
     function() toggler.toggle("wrap") end,
     { desc = "Toggle wrap" }
 )
 
-map(
+-- If tabs are used like tab or spaces
+map( -- persistent
     "n",
     "<leader>use",
     function() toggler.toggle("expandtab") end,
     { desc = "Toggle Space or Tab" }
 )
 
-map(
+-- Dark light mode if theme support it
+map( -- persistent
     "n",
     "<leader>usm",
     function() toggler.toggle_with_states("bg", "dark", "light") end,
     { desc = "Toggle bg mode" }
 )
 
-map(
+-- Add remove vertical lines at 64 78 col lines
+map( -- persistent
     "n",
     "<leader>usl",
     function()
@@ -162,6 +166,7 @@ map(
     { desc = "Toggle Horizontal lines" }
 )
 
+-- Terminal on split window
 map(
     "n",
     "<leader>ut",
@@ -169,6 +174,7 @@ map(
     { desc = "Terminal" }
 )
 
+-- Text movement
 map(
     "i",
     "<A-j>",
@@ -211,6 +217,7 @@ map(
     { desc = "move up" }
 )
 
+-- Centered movement
 map(
     "n",
     "<C-d>",
@@ -225,6 +232,7 @@ map(
     { desc = "Fast moving down and centered" }
 )
 
+-- Swap buffer
 map(
     "n",
     "L",
@@ -241,11 +249,11 @@ map(
 
 map("t", "<ESC>", "<C-\\><C-n>")
 
-
-map("n", "]t", function()
-    require("todo-comments").jump_next()
-end, { desc = "Next todo comment" })
-
-map("n", "[t", function()
-    require("todo-comments").jump_prev()
-end, { desc = "Previous todo comment" })
+map("n", "<leader>Ku", function()
+    local tmp = vim.cmd.pwd()
+    local path = vim.fn.getenv("MYVIMRC")
+    path = path:sub(0, -9)
+    vim.cmd("cd " .. vim.fn.getenv("VIM"))
+    vim.cmd("! git pull origin main")
+    vim.cmd("cd" .. tmp)
+end, { desc = "Kvim update to latest" })
