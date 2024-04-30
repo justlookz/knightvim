@@ -34,3 +34,8 @@ require("lazy").setup({
 require("toggler").setup()
 
 vim.cmd.colorscheme(kvim.theme)
+
+vim.filetype.add({
+    extension = { typ = "typst" }
+}
+)

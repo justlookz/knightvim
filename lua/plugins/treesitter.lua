@@ -3,7 +3,7 @@ return {
     { "windwp/nvim-ts-autotag" },
     {
         "HiPhish/rainbow-delimiters.nvim",
-        url = "https://gitlab.com/HiPhish/rainbow-delimiters.nvim"
+        url = "https://gitlab.com/HiPhish/rainbow-delimiters.nvim.git"
     },
 
     {
@@ -15,6 +15,7 @@ return {
         "nvim-treesitter/nvim-treesitter-textobjects",
         dependencies = { "nvim-treesitter/nvim-treesitter" },
     },
+
     {
         "Wansmer/treesj",
         opts = {

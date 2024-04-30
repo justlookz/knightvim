@@ -12,10 +12,14 @@ map(
     vim.cmd.write, { desc = "Save" }
 )
 map("n", "<leader>q", vim.cmd.qall, { desc = "Quit" })
+
 map("n", "<leader>x", vim.cmd.bdelete, { desc = "Close Buffer" })
 
 map("n", "<esc>", vim.cmd.nohlsearch)
 
+map("v", ">", ">gv", { desc = "Left indentation" })
+
+map("v", "<", "<gv", { desc = "Right indentation" })
 -- Delete character without removing registers
 map("n", "x", '"_x', { noremap = true })
 -- buffer swapping
