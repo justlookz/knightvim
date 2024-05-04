@@ -1,3 +1,3 @@
-vim.opt_local.shiftwidth = 2
-vim.opt_local.tabstop = 2
-vim.opt_local.fileencoding = "ascii"
+vim.bo.shiftwidth = 2
+vim.bo.tabstop = 2
+vim.bo.fileencoding = "ascii"

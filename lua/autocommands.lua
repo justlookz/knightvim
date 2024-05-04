@@ -85,7 +85,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
             {
                 buffer = args.buf,
                 desc   = 'Rename a variable from lsp'
-            })
+            }
+        )
+
+        vim.keymap.set(
+            'n', '<leader>lh',
+            vim.diagnostic.open_float,
+            {
+                buffer = args.buf,
+                desc = 'Open float diagnostic window'
+            }
+        )
 
         vim.keymap.set(
             'n', ']d',
