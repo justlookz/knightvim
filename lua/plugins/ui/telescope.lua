@@ -113,7 +113,7 @@ return {
                 "<leader><leader>",
                 function()
                     require("telescope.builtin")
-                        .find_files()
+                        .buffers()
                 end,
                 desc = "Find file",
                 mode = "n",

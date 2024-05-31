@@ -7,11 +7,6 @@ return {
     },
 
     {
-        "nvim-treesitter/nvim-treesitter-context",
-        opts = { enable = true, },
-    },
-
-    {
         "nvim-treesitter/nvim-treesitter-textobjects",
         dependencies = { "nvim-treesitter/nvim-treesitter" },
     },

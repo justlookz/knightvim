@@ -1,5 +1,10 @@
+if vim.version()['minor'] < 10 then
+    Tagv = 'v0.0.1'
+end
+
 return {
     "NeogitOrg/neogit",
+    tag = Tagv,
     dependencies = {
         "nvim-lua/plenary.nvim",  -- required
         "sindrets/diffview.nvim", -- optional - Diff integration
