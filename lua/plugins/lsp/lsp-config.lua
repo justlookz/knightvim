@@ -1,7 +1,7 @@
 -- LSP Support
 return {
     'neovim/nvim-lspconfig', -- Required
-    opts = { inlay_hints = { enabled = true } },
+    opts = {},
     dependencies = {
         { 'williamboman/mason.nvim' },
         { 'williamboman/mason-lspconfig.nvim' },
