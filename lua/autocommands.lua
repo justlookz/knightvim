@@ -171,6 +171,7 @@ vim.api.nvim_create_autocmd(
         group = yank_group,
         callback = function()
             vim.highlight.on_yank({
+                higroup = "Visual",
                 timeout = 550,
             })
         end,
