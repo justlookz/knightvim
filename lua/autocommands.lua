@@ -115,6 +115,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         -- End of Keymaps --------------------
 
+        local client = vim.lsp.get_clients()[1]
+
+        if client then
+            if client.server_capabilities.inlayHintProvider then
+                vim.lsp.inlay_hint.enable()
+            end
+        end
 
         -- Before Write ----------------------
         local auto_save_group =
@@ -124,8 +131,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.api.nvim_create_autocmd('BufWritePre', {
             group = auto_save_group,
             callback = function()
-                local client = vim.lsp.get_active_clients()[1]
-
                 if client then
                     if client.server_capabilities.documentFormattingProvider and kvim.lsp.autoformat then
                         vim.lsp.buf.format { async = false }
