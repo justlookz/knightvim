@@ -151,7 +151,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 {
                     group = hightlight_word_group,
                     buffer = args.buf,
-                    callback = vim.lsp.buf.document_highlight
+                    callback = function()
+                        vim.lsp.buf.document_highlight()
+                        vim.diagnostic.open_float()
+                    end
                 }
             )
 
