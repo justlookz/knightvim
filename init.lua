@@ -1,5 +1,5 @@
 kvim = {}
-kvim.theme = "nord"
+kvim.theme = "monokai-pro-octagon"
 kvim.leader = " "
 kvim.plugins = nil
 kvim.lsp = {}

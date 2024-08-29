@@ -153,7 +153,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
                     buffer = args.buf,
                     callback = function()
                         vim.lsp.buf.document_highlight()
-                        vim.diagnostic.open_float()
                     end
                 }
             )
