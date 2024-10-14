@@ -113,6 +113,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 desc   = "Previous diagnostic"
             })
 
+        vim.keymap.set(
+            'n', '<leader>lf', function() vim.lsp.buf.format { async = true } end,
+            { desc = 'format file using lsp', buffer = 0 }
+        )
+
         -- End of Keymaps --------------------
 
         local client = vim.lsp.get_clients()[1]
