@@ -113,14 +113,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 desc   = "Previous diagnostic"
             })
 
-        vim.keymap.set(
-            'n', '<leader>lf', function() vim.lsp.buf.format { async = true } end,
-            { desc = 'format file using lsp', buffer = 0 }
-        )
+        local client = vim.lsp.get_clients()[1]
+
+        if client.server_capabilities.documentFormattingProvider then
+            vim.keymap.set(
+                'n', '<leader>lf', function()
+                    vim.lsp.buf.format { async = true }
+                end,
+                { desc = 'format file using lsp', buffer = 0 }
+            )
+        end
 
         -- End of Keymaps --------------------
-
-        local client = vim.lsp.get_clients()[1]
 
         if client then
             if client.server_capabilities.inlayHintProvider then
@@ -144,7 +148,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
             end,
         })
         -- end before Write ------------------
-        local client = vim.lsp.get_client_by_id(args.data.client_id)
         if client and client.server_capabilities.documentHighlightProvider then
             local hightlight_word_group =
                 vim.api.nvim_create_augroup(
