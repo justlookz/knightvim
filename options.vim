@@ -1,6 +1,5 @@
 " UI settings
-set number
-set showmatch
+set number showmatch
 set foldmethod=marker
 set colorcolumn=64,78
 set splitright
