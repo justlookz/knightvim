@@ -15,6 +15,7 @@ set encoding=utf-8
 set confirm
 set shortmess=IfilnxtToOF
 set noshowmode
+set mouse=a
 
 " Spell Checking
 set spell

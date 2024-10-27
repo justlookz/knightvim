@@ -34,6 +34,10 @@ return {
                 -- `z` key
                 { mode = 'n', keys = 'z' },
                 { mode = 'x', keys = 'z' },
+
+                -- [ keys
+                { mode = "n", keys = "["},
+                { mode = "n", keys = "]"},
             },
 
             clues = {

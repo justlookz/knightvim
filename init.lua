@@ -35,6 +35,8 @@ end
 
 require("user")
 
+vim.g.mapleader = kvim.leader
+
 vim.cmd("source " .. config_path .. "/options.vim")
 -- require("options")
 require("bootstrap")
