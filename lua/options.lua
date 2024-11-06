@@ -38,14 +38,11 @@ vim.opt.smartindent    = true -- Autoindent new lines
 -- Memory, CPU
 vim.opt.hidden         = true -- Enable background buffers
 vim.opt.history        = 100  -- Remember N lines in history
-vim.opt.lazyredraw     = true -- Faster scrolling
+vim.opt.lazyredraw     = false -- Faster scrolling
 vim.opt.synmaxcol      = 120  -- Max column for syntax highlight
 vim.opt.updatetime     = 250  -- ms to wait for trigger an event
 vim.opt.undofile       = true -- Persistent Undo History
 local spaces           = " "
-for _ = 3, vim.opt.tabstop:get() do
-    spaces = spaces .. " "
-end
 vim.opt.timeout        = true
 vim.opt.timeoutlen     = 300
 vim.opt.list           = true
@@ -53,7 +50,7 @@ vim.opt.listchars      = {
     tab = "» ",
     nbsp = "␣",
     eol = "↲",
-    leadmultispace = "|" .. spaces
+    leadmultispace = "| "
 }
 vim.opt.showbreak      = "|"
 

@@ -1,3 +1,4 @@
+vim.loader.enable()
 kvim = {}
 kvim.theme = "nord"
 kvim.leader = " "
@@ -37,8 +38,7 @@ require("user")
 
 vim.g.mapleader = kvim.leader
 
-vim.cmd("source " .. config_path .. "/options.vim")
--- require("options")
+require("options")
 require("bootstrap")
 require("keymap")
 require("autocommands")

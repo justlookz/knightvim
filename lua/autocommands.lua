@@ -64,7 +64,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 
         vim.keymap.set(
-            'n', 'ga',
+            'n', '<leader>la',
             vim.lsp.buf.code_action,
             {
                 buffer = args.buf,
@@ -128,7 +128,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         if client then
             if client.server_capabilities.inlayHintProvider then
-                vim.lsp.inlay_hint.enable()
+                vim.keymap.set(
+                    'n', "<leader>li", function()
+                        vim.lsp.inlay_hint.enable(
+                            vim.lsp.inlay_hint.is_enabled())
+                    end,
+                    { desc = "Toggle inlay hint", buffer = 0 }
+                )
             end
         end
 
@@ -197,13 +203,13 @@ vim.api.nvim_create_autocmd(
 vim.api.nvim_create_autocmd("BufWinEnter", {
     group = vim.api.nvim_create_augroup("kvim-ts-Buf-Enter", { clear = true }),
     callback = function()
-        vim.cmd [[silent! loadview]]
+        pcall(vim.cmd.loadview)
     end
 })
 
 vim.api.nvim_create_autocmd("BufWinLeave", {
     group = vim.api.nvim_create_augroup("kvim-ts-Buf-Leave", { clear = true }),
     callback = function()
-        vim.cmd [[silent! mkview]]
+        pcall(vim.cmd.mkview)
     end
 })
