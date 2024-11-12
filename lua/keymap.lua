@@ -1,5 +1,3 @@
-local toggler = require("toggler.functions")
-
 local map = vim.keymap.set
 
 -- Basic Keymaps
