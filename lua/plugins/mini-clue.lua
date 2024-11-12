@@ -51,15 +51,14 @@ return {
 
                 -- User spesific
                 { mode = 'n', keys = '<Leader>d',   desc = '+Debugger' },
+                { mode = 'n', keys = '<Leader>c',   desc = '+Change' },
+                { mode = 'n', keys = '<Leader>b',   desc = '+Buffer' },
                 { mode = 'n', keys = '<Leader>f',   desc = '+Fold' },
-                { mode = 'n', keys = '<Leader>o',   desc = '+Persistent options' },
                 { mode = 'n', keys = '<Leader>o',   desc = '+Oil' },
                 { mode = 'n', keys = '<Leader>s',   desc = '+search' },
                 { mode = 'n', keys = '<Leader>sg',  desc = '+Git' },
                 { mode = 'n', keys = '<Leader>sgt', desc = '+Type' },
                 { mode = 'n', keys = '<Leader>u',   desc = '+UI options' },
-                { mode = 'n', keys = '<Leader>ug',  desc = '+Git' },
-                { mode = 'n', keys = '<Leader>us',  desc = '+settings' },
                 { mode = 'n', keys = '<Leader>K',   desc = '+Knightvim options' },
                 { mode = 'n', keys = '<Leader>L',   desc = '+Lazy' },
                 { mode = 'n', keys = '<Leader>l',   desc = '+LSP options' },
