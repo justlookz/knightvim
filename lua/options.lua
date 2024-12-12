@@ -54,6 +54,8 @@ vim.opt.listchars      = {
 }
 vim.opt.showbreak      = "|"
 
+vim.opt.viewoptions = { "folds", "cursor" }
+
 vim.opt.foldmethod     = "expr"
 vim.opt.foldexpr       = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevelstart = 99

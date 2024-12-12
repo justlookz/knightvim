@@ -33,7 +33,8 @@ require("lazy").setup({
 
 vim.cmd.colorscheme(kvim.theme)
 
-vim.filetype.add({
-    extension = { typ = "typst" }
-}
+vim.filetype.add(
+    {
+        extension = { typ = "typst" }
+    }
 )
