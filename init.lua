@@ -33,11 +33,8 @@ if (vim.fn.filereadable(user_init_path)) == 0 then
     file:close()
 end
 
-require("user")
-
 vim.g.mapleader = kvim.leader
 
-require("options")
+require("user")
 require("bootstrap")
-require("keymap")
-require("autocommands")
+
