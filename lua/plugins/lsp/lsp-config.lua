@@ -3,6 +3,7 @@ return {
     'neovim/nvim-lspconfig', -- Required
     opts = {},
     dependencies = {
+        { 'saghen/blink.cmp' },
         { 'williamboman/mason.nvim' },
         { 'williamboman/mason-lspconfig.nvim' },
         {
@@ -11,12 +12,7 @@ return {
         },
     },
     config = function()
-        local capabilities = vim.tbl_deep_extend(
-            "force",
-            vim.lsp.protocol.make_client_capabilities(),
-            require("cmp_nvim_lsp").default_capabilities()
-        )
-
+        local capabilities = require('blink.cmp').get_lsp_capabilities()
         local function lsp_server_setup(lsp_list)
             if lsp_list then
                 for _, v in ipairs(lsp_list) do
@@ -42,6 +38,18 @@ return {
         vim.list_extend(lsp_server, kvim.lsp.local_include)
 
         lsp_server_setup(lsp_server)
+
+require('lspconfig').jdtls.setup {
+    capabilities = capabilities,
+    root_dir = require('lspconfig.util').root_pattern('.git', 'pom.xml', 'build.gradle', '.classpath'),
+    settings = {
+        java = {
+            project = {
+                referencedLibraries = { "lib/**/*.jar" }
+            }
+        }
+    }
+}
     end,
 
 }
