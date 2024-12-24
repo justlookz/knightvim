@@ -3,13 +3,14 @@ return {
     version = '*',
     -- !Important! Make sure you're using the latest release of LuaSnip
     -- `main` does not work at the moment
-    dependencies = { { 'L3MON4D3/LuaSnip', version = 'v2.*',
-    config = function() 
-
-        require('luasnip.loaders.from_vscode').lazy_load()
-    end,
-    dependencies = "rafamadriz/friendly-snippets",
-},
+    dependencies = { {
+        'L3MON4D3/LuaSnip',
+        version = 'v2.*',
+        config = function()
+            require('luasnip.loaders.from_vscode').lazy_load()
+        end,
+        dependencies = "rafamadriz/friendly-snippets",
+    },
 
         "rafamadriz/friendly-snippets"
     },
@@ -20,16 +21,24 @@ return {
         keymap = {
             ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
             ['<C-e>'] = { 'hide' },
-            ['<C-y>'] = { 'select_and_accept' },
+            ['<C-y>'] = { 'select_and_accept', 'show' },
 
-            ['<C-p>'] = { 'select_prev', 'show' },
-            ['<C-n>'] = { 'select_next', 'show' },
+            ['<C-p>'] = { 'select_prev', 'show', "fallback" },
+            ['<C-n>'] = { 'select_next', 'show', "fallback" },
 
             ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
             ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
 
-            ['<C-j>'] = { 'snippet_forward', 'fallback' },
-            ['<C-k>'] = { 'snippet_backward', 'fallback' },
+            ['<C-j>'] = { 'snippet_forward',
+                function(cmp)
+                    cmp.show({providers = {"luasnip"} })
+                end
+        },
+            ['<C-k>'] = { 'snippet_backward',
+                function(cmp)
+                    cmp.show({providers = {"luasnip"} })
+                end
+        },
         },
         snippets = {
             expand = function(snippet) require('luasnip').lsp_expand(snippet) end,
@@ -42,7 +51,7 @@ return {
             jump = function(direction) require('luasnip').jump(direction) end,
         },
         sources = {
-            default = { 'lsp', 'path', 'luasnip', 'buffer' },
+            default = { 'luasnip', 'lsp', 'path', 'buffer' },
         },
     }
 }
