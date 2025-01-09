@@ -1,7 +1,6 @@
 vim.loader.enable()
 kvim = {}
 kvim.theme = "nord"
-kvim.leader = " "
 kvim.plugins = nil
 kvim.lsp = {}
 kvim.lsp.local_include = nil
@@ -32,8 +31,6 @@ if (vim.fn.filereadable(user_init_path)) == 0 then
     )
     file:close()
 end
-
-vim.g.mapleader = kvim.leader
 
 require("user")
 require("bootstrap")

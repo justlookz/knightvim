@@ -16,7 +16,15 @@ return {
     },
     opts = {
 
-        completion = { menu = { auto_show = false, }, },
+        completion = {
+            trigger = { show_on_keyword = false },
+            list = {
+                selection = {
+                    preselect = true,
+                    auto_insert = true,
+                },
+            },
+        },
 
         keymap = {
             ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
@@ -31,27 +39,17 @@ return {
 
             ['<C-j>'] = { 'snippet_forward',
                 function(cmp)
-                    cmp.show({providers = {"luasnip"} })
+                    cmp.show({providers = {"snippets"} })
                 end
         },
             ['<C-k>'] = { 'snippet_backward',
                 function(cmp)
-                    cmp.show({providers = {"luasnip"} })
+                    cmp.show({providers = {"snippets"} })
                 end
         },
-        },
-        snippets = {
-            expand = function(snippet) require('luasnip').lsp_expand(snippet) end,
-            active = function(filter)
-                if filter and filter.direction then
-                    return require('luasnip').jumpable(filter.direction)
-                end
-                return require('luasnip').in_snippet()
-            end,
-            jump = function(direction) require('luasnip').jump(direction) end,
         },
         sources = {
-            default = { 'luasnip', 'lsp', 'path', 'buffer' },
+            default = { 'snippets', 'lsp', 'path', 'buffer' },
         },
     }
 }

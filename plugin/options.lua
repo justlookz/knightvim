@@ -1,5 +1,3 @@
-vim.g.mapleader        = kvim.leader
-
 -- the list for the options are from
 -- https://github.com/brainfucksec/neovim-lua/blob/main/nvim/lua/core/options.lua
 
@@ -50,7 +48,7 @@ vim.opt.listchars      = {
     tab = "» ",
     nbsp = "␣",
     eol = "↲",
-    leadmultispace = "| "
+    leadmultispace = "| ",
 }
 vim.opt.showbreak      = "|"
 
